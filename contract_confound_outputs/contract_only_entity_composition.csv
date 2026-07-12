@@ -1,0 +1,15 @@
+sub_label,n,label
+uniswap,64,DeFi
+curve,10,DeFi
+0x API,2,DeFi
+dodo,2,DeFi
+bancor,1,DeFi
+balancer,1,DeFi
+1inch-LOP,1,DeFi
+ekubo,1,DeFi
+fluid,1,DeFi
+pancakeswap,1,DeFi
+sushiswap,1,DeFi
+swaap,1,DeFi
+Arbitrage Trader,33,Malicious_MEV
+Arbitrage Trader; Sandwich Attacker,1,Malicious_MEV

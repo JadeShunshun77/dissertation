@@ -1,0 +1,11 @@
+{
+  "rpc_url": "https://ethereum-rpc.publicnode.com",
+  "query_started_utc": "2026-07-12T12:40:53.151867+00:00",
+  "query_finished_utc": "2026-07-12T12:43:24.788818+00:00",
+  "block_parameter_used": "latest",
+  "chain_head_block_number_at_query_start": 25516603,
+  "n_addresses_rechecked": 500,
+  "n_matches_vs_original_is_contract_csv": 500,
+  "match_rate": 1.0,
+  "n_mismatches": 0
+}

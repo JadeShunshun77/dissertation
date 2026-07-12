@@ -1,0 +1,63 @@
+=== sub_label composition (contract-only pools) ===
+DeFi contracts:
+ sub_label
+uniswap        64
+curve          10
+0x API          2
+dodo            2
+bancor          1
+balancer        1
+1inch-LOP       1
+ekubo           1
+fluid           1
+pancakeswap     1
+sushiswap       1
+swaap           1
+
+Malicious_MEV contracts:
+ sub_label
+Arbitrage Trader                       33
+Arbitrage Trader; Sandwich Attacker     1
+
+Saved contract_confound_outputs\contract_only_entity_composition.csv
+
+Full contract-only pool (no rebalancing): n=120, {'DeFi': np.int64(86), 'Malicious_MEV': np.int64(34)}, unique sub_label groups=14
+
+=== GroupKFold(sub_label) on contract-only DeFi vs Malicious_MEV, full pool (n=120) ===
+             model  fold  macro_f1  degenerate                                                         test_groups  n_train  n_test
+LogisticRegression     0       NaN        True                                                             uniswap       56      64
+LogisticRegression     1       NaN        True                                                    Arbitrage Trader       87      33
+LogisticRegression     2       NaN        True                                                               curve      110      10
+LogisticRegression     3       NaN        True                       0x API;1inch-LOP;bancor;fluid;sushiswap;swaap      113       7
+LogisticRegression     4       1.0       False Arbitrage Trader; Sandwich Attacker;balancer;dodo;ekubo;pancakeswap      114       6
+      RandomForest     0       NaN        True                                                             uniswap       56      64
+      RandomForest     1       NaN        True                                                    Arbitrage Trader       87      33
+      RandomForest     2       NaN        True                                                               curve      110      10
+      RandomForest     3       NaN        True                       0x API;1inch-LOP;bancor;fluid;sushiswap;swaap      113       7
+      RandomForest     4       1.0       False Arbitrage Trader; Sandwich Attacker;balancer;dodo;ekubo;pancakeswap      114       6
+
+=== Fold composition (train/test label counts per fold) ===
+ fold                                                         test_groups               test_label_counts                train_label_counts
+    0                                                             uniswap                    {'DeFi': 64} {'Malicious_MEV': 34, 'DeFi': 22}
+    1                                                    Arbitrage Trader           {'Malicious_MEV': 33}  {'DeFi': 86, 'Malicious_MEV': 1}
+    2                                                               curve                    {'DeFi': 10} {'DeFi': 76, 'Malicious_MEV': 34}
+    3                       0x API;1inch-LOP;bancor;fluid;sushiswap;swaap                     {'DeFi': 7} {'DeFi': 79, 'Malicious_MEV': 34}
+    4 Arbitrage Trader; Sandwich Attacker;balancer;dodo;ekubo;pancakeswap {'DeFi': 5, 'Malicious_MEV': 1} {'DeFi': 81, 'Malicious_MEV': 33}
+
+8/10 fold x model combinations were degenerate (one class entirely missing from train or test after entity-level grouping).
+
+DeFi protocols with >=2 contract addresses (testable as held-out groups): ['uniswap', 'curve', '0x API', 'dodo']
+
+=== Leave-one-DeFi-protocol-out (MEV side still homogeneous -- see caveat) ===
+held_out_defi_protocol              model  n_test_defi  defi_recall  defi_f1  mev_recall  mev_f1  macro_f1
+               uniswap LogisticRegression           64       1.0000   1.0000         1.0  1.0000    1.0000
+               uniswap       RandomForest           64       0.9844   0.9921         1.0  0.9855    0.9888
+                 curve LogisticRegression           10       1.0000   1.0000         1.0  1.0000    1.0000
+                 curve       RandomForest           10       1.0000   1.0000         1.0  1.0000    1.0000
+                0x API LogisticRegression            2       1.0000   1.0000         1.0  1.0000    1.0000
+                0x API       RandomForest            2       1.0000   1.0000         1.0  1.0000    1.0000
+                  dodo LogisticRegression            2       1.0000   1.0000         1.0  1.0000    1.0000
+                  dodo       RandomForest            2       1.0000   1.0000         1.0  1.0000    1.0000
+Saved contract_confound_outputs\contract_only_entity_grouped_comparison.png
+
+=== Entity-grouped robustness check complete ===

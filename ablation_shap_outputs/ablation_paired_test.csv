@@ -1,0 +1,7 @@
+comparison,model,mean_diff,paired_t_stat,paired_p_value,n_folds_improved
+combined vs transaction_behaviour,LogisticRegression,0.0075,0.3243,0.762,2
+combined vs transaction_behaviour,RandomForest,-0.0172,-1.5125,0.2049,0
+combined vs transaction_behaviour,XGBoost,-0.0097,-0.6461,0.5534,1
+combined vs graph_structural,LogisticRegression,0.2161,5.8572,0.0042,5
+combined vs graph_structural,RandomForest,0.0715,3.4285,0.0266,5
+combined vs graph_structural,XGBoost,0.0763,2.8053,0.0485,5

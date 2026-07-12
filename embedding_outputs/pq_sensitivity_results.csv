@@ -1,0 +1,4 @@
+setting,p,q,n_seeds,kmeans_nmi,kmeans_nmi_p,kmeans_ari,kmeans_ari_p,balanced_ari_mean,balanced_ari_std,balanced_ari_pct_significant
+"baseline (unbiased, DeepWalk-equivalent)",1.0,1.0,436,0.112,0.0,-0.0327,0.955,0.116,0.0133,1.0
+BFS-like (local/structural),0.25,4.0,436,0.1221,0.0,0.0097,0.2395,0.1987,0.0239,1.0
+DFS-like (outward/community),4.0,0.25,436,0.1251,0.0,-0.0351,0.9895,0.1305,0.0185,1.0

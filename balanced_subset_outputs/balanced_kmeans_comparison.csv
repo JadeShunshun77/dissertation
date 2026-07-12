@@ -1,0 +1,6 @@
+condition,method,NMI,NMI_p,ARI,ARI_p
+Full sample (n=436),KMeans,0.1389,0.0,0.0166,0.176
+Balanced evaluation subset of full-sample clustering (n=153),KMeans,0.2891,0.0,0.2522,0.0
+KMeans re-fit on balanced subset only (n=153),KMeans,0.3577,0.0,0.3131,0.0
+Full sample (n=436),Louvain,0.3039,0.0,0.0577,0.0
+Balanced evaluation subset of full-sample clustering (n=153),Louvain,0.4712,0.0,0.2447,0.0

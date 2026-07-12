@@ -1,0 +1,4 @@
+model,full_mean,no_outbound_mean,mean_diff,paired_t_stat,paired_p_value
+LogisticRegression,0.8918,0.8954,-0.0037,-0.3383,0.7521
+RandomForest,0.9048,0.8825,0.0223,2.281,0.0847
+XGBoost,0.9059,0.8888,0.0171,2.1821,0.0945

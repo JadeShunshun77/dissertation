@@ -1,0 +1,10 @@
+feature_group,model,macro_f1_mean,macro_f1_std,balanced_accuracy_mean,balanced_accuracy_std
+transaction_behaviour,LogisticRegression,0.8843,0.0234,0.8966,0.0278
+transaction_behaviour,RandomForest,0.9221,0.0274,0.9123,0.0228
+transaction_behaviour,XGBoost,0.9155,0.0079,0.9057,0.0116
+graph_structural,LogisticRegression,0.6756,0.0809,0.7605,0.0715
+graph_structural,RandomForest,0.8334,0.0694,0.8233,0.0578
+graph_structural,XGBoost,0.8296,0.0714,0.831,0.0628
+combined,LogisticRegression,0.8918,0.0324,0.9016,0.0244
+combined,RandomForest,0.9048,0.0367,0.8923,0.0303
+combined,XGBoost,0.9059,0.0344,0.8991,0.0357

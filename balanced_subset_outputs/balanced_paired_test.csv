@@ -1,0 +1,10 @@
+group,comparison,model,mean_diff,paired_t_stat,paired_p_value,n_folds_improved
+week8_embedding,combined vs hand_crafted,LogisticRegression,0.0298,1.1362,0.3193,3
+week8_embedding,combined vs hand_crafted,RandomForest,-0.0073,-0.5671,0.601,1
+week8_embedding,combined vs hand_crafted,XGBoost,0.0149,0.3857,0.7193,3
+week9_ablation,combined vs transaction_behaviour,LogisticRegression,-0.0451,-2.3772,0.0762,0
+week9_ablation,combined vs transaction_behaviour,RandomForest,-0.0156,-1.5892,0.1872,0
+week9_ablation,combined vs transaction_behaviour,XGBoost,-0.0253,-1.1455,0.3159,1
+week9_ablation,combined vs graph_structural,LogisticRegression,0.1266,2.5054,0.0664,4
+week9_ablation,combined vs graph_structural,RandomForest,0.1316,2.1895,0.0937,4
+week9_ablation,combined vs graph_structural,XGBoost,0.089,2.0309,0.1121,4
