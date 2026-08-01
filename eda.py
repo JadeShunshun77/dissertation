@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,8 +8,12 @@ from pathlib import Path
 # =========================
 # 0. Setup
 # =========================
+# Optional CLI arg: feat_file -- defaults to the Plan-B reconstructed graph's
+# feature matrix (progress_summary.md §13), since the reconstructed graph is
+# the project's main-line dataset from Week 11 onward.
+FEAT_FILE = sys.argv[1] if len(sys.argv) > 1 else "seed_feature_matrix_reconstructed.csv"
 
-feat = pd.read_csv("seed_feature_matrix.csv")
+feat = pd.read_csv(FEAT_FILE)
 
 OUT_DIR = Path("eda_outputs")
 OUT_DIR.mkdir(exist_ok=True)

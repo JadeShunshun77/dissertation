@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import numpy as np
 import networkx as nx
@@ -5,9 +6,15 @@ import networkx as nx
 # =========================
 # 0. Read data
 # =========================
+# Optional CLI args: edges_file output_suffix
+# e.g. `python feature_engineering.py raw_edges_reconstructed.csv _reconstructed`
+# reruns the same pipeline on the Plan-B reconstructed graph (see
+# topology_baseline.py) without touching the original seed_feature_matrix.csv.
+EDGES_FILE = sys.argv[1] if len(sys.argv) > 1 else "raw_edges.csv"
+OUTPUT_SUFFIX = sys.argv[2] if len(sys.argv) > 2 else ""
 
 seeds = pd.read_csv("final_seed_address500.csv")
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 
 SEED_ADDRESS_COL = "address"
 LABEL_COL = "label"
@@ -163,11 +170,12 @@ print("\n=== Feature matrix summary ===")
 print(f"Rows: {len(feat)}, Columns: {len(feat.columns)}")
 print(feat.groupby(LABEL_COL)["is_active"].agg(["sum", "count", "mean"]))
 
-feat.to_csv("seed_feature_matrix.csv", index=False)
-print("\nSaved feature matrix to seed_feature_matrix.csv")
+out_name = f"seed_feature_matrix{OUTPUT_SUFFIX}.csv"
+feat.to_csv(out_name, index=False)
+print(f"\nSaved feature matrix to {out_name}")
 
 # =========================
-# 5. Feature group assignment (for the Week 9 ablation study)
+# 5. Feature group assignment 
 # =========================
 # weighted_in_degree/weighted_out_degree/weighted_degree are edge weight (tx_count)
 # sums, and since raw_edges.csv has no duplicate source-target rows, they are

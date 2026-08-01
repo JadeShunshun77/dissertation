@@ -1,0 +1,16 @@
+comparison,model,n_runs,a_mean,a_std,b_mean,b_std,mean_diff,diff_95ci_lo,diff_95ci_hi,paired_t_stat,paired_p_value,pct_runs_improved,pct_runs_diff_over_0.01
+main_hand_crafted vs main_transaction,LogisticRegression,50,0.8919,0.043,0.8823,0.0282,0.0096,-0.0008,0.0199,1.8163,0.0754,0.58,0.78
+main_hand_crafted vs main_transaction,RandomForest,50,0.8911,0.0382,0.9103,0.0353,-0.0192,-0.0257,-0.0128,-5.8374,0.0,0.1,0.72
+main_hand_crafted vs main_transaction,XGBoost,50,0.8946,0.0417,0.8952,0.0385,-0.0006,-0.0071,0.006,-0.1714,0.8646,0.38,0.56
+main_hand_crafted_embedding vs main_hand_crafted,LogisticRegression,50,0.9201,0.0395,0.8919,0.043,0.0282,0.0166,0.0398,4.7581,0.0,0.7,0.86
+main_hand_crafted_embedding vs main_hand_crafted,RandomForest,50,0.9057,0.0403,0.8911,0.0382,0.0146,0.0088,0.0204,4.9547,0.0,0.72,0.76
+main_hand_crafted_embedding vs main_hand_crafted,XGBoost,50,0.9201,0.0416,0.8946,0.0417,0.0254,0.0172,0.0337,6.0425,0.0,0.78,0.8
+main_hand_crafted vs main_coarse,LogisticRegression,50,0.8919,0.043,0.5766,0.0764,0.3153,0.2929,0.3377,27.5398,0.0,1.0,1.0
+main_hand_crafted vs main_coarse,RandomForest,50,0.8911,0.0382,0.9102,0.0307,-0.0192,-0.0297,-0.0086,-3.56,0.0008,0.3,0.84
+main_hand_crafted vs main_coarse,XGBoost,50,0.8946,0.0417,0.9055,0.0303,-0.0109,-0.0239,0.0021,-1.6459,0.1062,0.4,0.78
+eoa_hand_crafted_embedding vs eoa_hand_crafted,LogisticRegression,50,0.9273,0.0322,0.9153,0.0397,0.012,0.0027,0.0214,2.5253,0.0148,0.38,0.54
+eoa_hand_crafted_embedding vs eoa_hand_crafted,RandomForest,50,0.9186,0.0496,0.9195,0.0483,-0.0009,-0.0069,0.0051,-0.2907,0.7725,0.16,0.3
+eoa_hand_crafted_embedding vs eoa_hand_crafted,XGBoost,50,0.925,0.055,0.9251,0.0522,-0.0001,-0.0082,0.008,-0.0222,0.9824,0.26,0.48
+eoa_hand_crafted vs eoa_transaction,LogisticRegression,50,0.9153,0.0397,0.933,0.0361,-0.0177,-0.0263,-0.0092,-4.0609,0.0002,0.14,0.56
+eoa_hand_crafted vs eoa_transaction,RandomForest,50,0.9195,0.0483,0.9212,0.0494,-0.0017,-0.0077,0.0043,-0.5572,0.5799,0.18,0.36
+eoa_hand_crafted vs eoa_transaction,XGBoost,50,0.9251,0.0522,0.9267,0.0532,-0.0016,-0.0092,0.0059,-0.4161,0.6792,0.22,0.48

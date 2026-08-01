@@ -1,0 +1,6 @@
+baseline,gcn_mean,baseline_mean,mean_diff,paired_t_stat,paired_p_value,n_folds_gcn_better
+"graph_structural (RF, structural-only, apples-to-apples)",0.7256,0.7886,-0.063,-1.8606,0.1363,1
+"graph_structural (XGBoost, structural-only, apples-to-apples)",0.7256,0.8146,-0.089,-1.8295,0.1413,1
+"hand_crafted (RF, includes transaction features -- NOT apples-to-apples)",0.7256,0.9184,-0.1927,-4.6053,0.01,0
+"hand_crafted (XGBoost, includes transaction features -- NOT apples-to-apples)",0.7256,0.8843,-0.1586,-3.9955,0.0162,0
+"GraphSAGE (same structural input, same folds)",0.7256,0.731,-0.0054,-0.0833,0.9376,2

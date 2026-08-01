@@ -1,3 +1,4 @@
+import sys
 import json
 from pathlib import Path
 
@@ -30,7 +31,15 @@ MODEL_ORDER = ["LogisticRegression", "RandomForest", "XGBoost"]
 MODEL_COLORS = {"LogisticRegression": "#2a78d6", "RandomForest": "#1baf7a", "XGBoost": "#eb6834"}
 FEATURE_SET_ORDER = ["hand_crafted", "embedding", "combined"]
 
-OUT_DIR = Path("classification_outputs")
+# Optional CLI args: feat_file edges_file emb_dir out_subdir -- reruns
+# classification on the Plan-B reconstructed graph, e.g.
+# `python classification.py seed_feature_matrix_reconstructed.csv raw_edges_reconstructed.csv embedding_outputs_reconstructed classification_outputs_reconstructed`
+FEAT_FILE = sys.argv[1] if len(sys.argv) > 1 else "seed_feature_matrix.csv"
+EDGES_FILE = sys.argv[2] if len(sys.argv) > 2 else "raw_edges.csv"
+EMB_DIR = sys.argv[3] if len(sys.argv) > 3 else "embedding_outputs"
+OUT_SUBDIR = sys.argv[4] if len(sys.argv) > 4 else "classification_outputs"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 plt.rcParams.update({
@@ -56,7 +65,7 @@ def clean_address(x):
 # 1. Load hand-crafted features + feature groups
 # =========================
 
-feat = pd.read_csv("seed_feature_matrix.csv")
+feat = pd.read_csv(FEAT_FILE)
 with open("feature_groups.json") as f:
     feature_groups = json.load(f)
 
@@ -73,7 +82,7 @@ handcrafted_cols = list(feature_groups["transaction_behaviour"] + feature_groups
 # matters for LR, but is applied to all models' hand-crafted feature set for
 # a single consistent feature matrix.
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])
@@ -116,7 +125,7 @@ print(f"PageRank tie-floor check: {n_tied_at_floor}/{len(pagerank_raw_full)} gra
 # to feature content, not sample differences.
 
 active = feat[feat["is_active"]].copy()
-emb = pd.read_csv("embedding_outputs/seed_node2vec_embeddings.csv")
+emb = pd.read_csv(f"{EMB_DIR}/seed_node2vec_embeddings.csv")
 emb_cols = [c for c in emb.columns if c.startswith("emb_")]
 
 data = active.merge(emb[["address"] + emb_cols], on="address", how="inner")

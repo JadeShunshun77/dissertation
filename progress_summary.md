@@ -2,14 +2,39 @@
 
 **项目**：Graph-Based Clustering and Classification of Publicly Labelled Ethereum Addresses Using Public On-Chain Data
 **学生**：Qi Wang 2683181　**导师**：Zixing Song
-**文档日期**：2026-07-11（更新至 Plan Week 9，23 Jul–29 Jul）
+**文档日期**：2026-07-31（更新至 Week 11 追加：图重构 + GCN baseline，见 §13）
 **提交截止**：2026-09-04
 
 本文档记录截至目前的方法、结果与结论，供后续写作和答辩参考。所有结果均可通过对应脚本重新生成。
 
-> **重要更新（Week 10 追加）**：Week 8/9/10 早期版本里所有"三类地址可被有效区分"式的表述都需要按类别拆开看——链上真实合约/EOA 查询（`eth_getCode`）发现本数据集中全部 DeFi 地址均为合约地址（150/150 = 100%），即 **DeFi 身份完全嵌套于合约身份之内**（而非与合约身份外延相等——Malicious_MEV 类中也有 34 个合约、CEX 类中有 2 个合约，为去混杂分析留出了同账户类型对照样本），这意味着完整三分类实验无法把"DeFi 的经济行为"和"泛化的合约地址特征"分离开。完整的混杂分析、去混杂后的补充实验和修正后的结论见 **§10**。本文档其余章节涉及"三类均可分"的措辞，均应结合 §10 一并阅读，不应单独引用。
+## 研究问题
 
-### 研究定位
+这个项目围绕两个问题展开，论文的每一章都在回答其中一个：
+
+**RQ1：哪些信息更能区分三类地址（CEX / DeFi / Malicious_MEV）？** 一个地址可以用两类完全不同的信息描述——"它怎么用钱"（转账次数、金额、gas 花费，即交易行为特征）和"它在交易网络图里处于什么位置"（连了多少个地址、是不是图上的枢纽，即图结构特征）。RQ1 问的是这两类信息各自的判别力有多强、谁的贡献更大。这个问题由 §6（特征分组消融 + SHAP）直接回答。
+
+**RQ2：把图结构信息用更高级的方式提取出来，能不能带来额外的分类增量？** 光靠人工数出来的度数、PageRank 这类统计量，可能没有把图结构里的信息榨干。RQ2 问的是，如果换成 Node2Vec（无监督图嵌入）或 GraphSAGE（端到端图神经网络）这类更强的图表示学习方法，能不能比人工统计特征学到更多、让分类结果更准。这个问题由 §5（Node2Vec embedding 消融）和 §9（GraphSAGE）共同回答。
+
+## 论文写作地图
+
+**主线定位**：论文以一条正面、清晰的故事线为主干——特征工程 → 传统方法与图方法的分类对比（macro-F1 0.90–0.95）→ SHAP 可解释性分析，直接回答 RQ1 和 RQ2。围绕稳健性做的大量自我核查（重复交叉验证、类别平衡复核、p/q 敏感性等）不再作为主线展开，而是压缩进 Discussion，用来给主线结论做统计背书；账户类型混杂分析（DeFi 是否等同于合约地址）单独放进 Limitations，如实交代、不软化。
+
+| 论文章节 | 主要素材来源 | 写作权重 |
+|---|---|---|
+| Introduction / Background | 本节 RQ1/RQ2、§0 时间线 | 中——讲清楚两个问题即可 |
+| Data & Graph Construction | §1、§3（EDA，挑 1–2 张图） | 中 |
+| Methodology | §2（特征工程）、§4.1–4.3（Node2Vec 方法）、§9.1–9.2（GraphSAGE 方法） | **重** |
+| Results | §5（分类结果表，主打 0.90+ macro-F1）、§9.3（GraphSAGE 结果，如实报告未超基线） | **重——论文最重要的一节** |
+| Interpretability | §6（特征分组消融 + SHAP） | **重——论文第二重点** |
+| Discussion | §7（类别平衡稳健性）、§5.2/§5.3 的重复 CV 背书（不展开方法论纠错叙事）、§9.4/§9.5（GraphSAGE 为什么没超基线）、§7.5（p/q 敏感性，一句话带过） | 轻——每条压缩到 1 段 |
+| Limitations | §10（账户类型混杂，**如实交代、不可省略或软化**） | 轻但**不可删** |
+| Future Work | §11、§7.5 的网格搜索方向 | 轻 |
+
+> **重要更新（Week 10 追加，Limitations 核心内容，写作时不可省略或软化）**：Week 8/9/10 早期版本里所有"三类地址可被有效区分"式的表述都需要按类别拆开看——链上真实合约/EOA 查询（`eth_getCode`）发现本数据集中全部 DeFi 地址均为合约地址（150/150 = 100%），即 **DeFi 身份完全嵌套于合约身份之内**（而非与合约身份外延相等——Malicious_MEV 类中也有 34 个合约、CEX 类中有 2 个合约，为去混杂分析留出了同账户类型对照样本），这意味着完整三分类实验无法把"DeFi 的经济行为"和"泛化的合约地址特征"分离开。完整的混杂分析、去混杂后的补充实验和修正后的结论见 **§10**。本文档其余章节涉及"三类均可分"的措辞，均应结合 §10 一并阅读，不应单独引用。
+
+### 详细方法论说明（供 Discussion 撰写参考，非正文主线）
+
+以下内容是完整的自我核查过程记录，写 Discussion 时应压缩成 1–2 段背书性文字（"我们用重复交叉验证和类别平衡检验确认了主要结论的稳健性"），不需要在正文里重现整个纠错过程。
 
 本项目的核心贡献不是"训练出一个 macro-F1 0.90+ 的以太坊地址分类器"——手工交易行为特征本身已经能做到这一点（见下文 §5、§6），分类器的绝对性能不是本文的创新点。真正的贡献是：**在一个真实、有采样约束（Top-100 counterparty、90 天窗口）的以太坊子图上，系统性地检验三种机制完全不同的图结构信息提取方式（Node2Vec 浅层无监督 embedding、手工图结构特征、GraphSAGE 端到端监督表示学习）相对于简单交易行为特征是否有增量价值**。**⚠️ 这三种方法不再收敛到同一个结论**（此前版本曾如此表述，已被 Week 10 的重复交叉验证复核推翻——见下文与 §5.3 的修正说明）：三者的结果是**分化的**，答案需要逐一给出：
 
@@ -37,7 +62,7 @@
 
 ---
 
-## 1. 数据与图（Week 1–4，会话前完成）
+## 1. 数据与图（Week 1–4，会话前完成）【Data 章节核心】
 
 - **种子地址**：500 个，`Malicious_MEV=299`、`DeFi=150`、`CEX=51`（[final_seed_address500.csv](final_seed_address500.csv)）
 - **90 天有向以太坊交易 ego-network**：12,861 条边、8,029 个节点（[raw_edges.csv](raw_edges.csv)），Top-100 counterparty 抽样构建
@@ -45,7 +70,7 @@
 
 ---
 
-## 2. 特征工程（Week 5，[feature_engineering.py](feature_engineering.py)）
+## 2. 特征工程（Week 5，[feature_engineering.py](feature_engineering.py)）【Methodology 核心】
 
 **输出**：[seed_feature_matrix.csv](seed_feature_matrix.csv)（500 行 × 42 列）、[feature_groups.json](feature_groups.json)
 
@@ -58,7 +83,7 @@
 
 ---
 
-## 3. 探索性数据分析（Week 6，[eda.py](eda.py) → `eda_outputs/`）
+## 3. 探索性数据分析（Week 6，[eda.py](eda.py) → `eda_outputs/`）【Data/Methodology 支撑材料，写作时挑 1–2 张图即可，不需要整节展开】
 
 ### 3.1 活跃度（`activity_by_label.csv`）
 
@@ -90,7 +115,7 @@ log1p 对 tx_count/degree 类特征效果很好，但对 pagerank 几乎无效�
 | DeFi | 150 | 42.67% | 82% | **100%** | 42.67% | 98.67% |
 | Malicious_MEV | 299 | 0% | 13.04% | 2.68% | 19.4% | 80.27% |
 
-活跃 DeFi 种子的 `out_edge_count` 100% 为零，说明它们只作为交易接收方（符合合约地址行为模式）。三类的 clustering_coeff 普遍 80–99% 为零，说明抽样后的图整体稀疏、呈 star-like 结构（Top-100 counterparty 抽样很难保留对手方之间的三角闭合），呼应 Project Plan Risk 5（Sampling Bias）。
+活跃 DeFi 种子的 `out_edge_count` 100% 为零，说明它们只作为交易接收方（符合合约地址行为模式）。三类的 clustering_coeff 普遍 80–99% 为零，说明抽样后的图整体稀疏、呈 star-like 结构（Top-100 counterparty 抽样很难保留对手方之间的三角闭合），呼应 Project Plan Risk 5（Sampling Bias）。这一说法的直接可视化证据见 §3.6。
 
 ### 3.4 特征相关性（`feature_correlation_heatmap.png`）
 
@@ -99,9 +124,19 @@ log1p 对 tx_count/degree 类特征效果很好，但对 pagerank 几乎无效�
 ### 3.5 图表文件
 `feature_distributions_by_label.png`（7 个特征按 label 分组箱线图，仅活跃种子）、`feature_correlation_heatmap.png`
 
+### 3.6 图拓扑可视化（[visualize_graph_topology.py](visualize_graph_topology.py) → `eda_outputs/graph_topology_examples.png` / `graph_topology_multi_seed_sample.png`）
+
+§3.3 用 clustering_coeff 数字说明图整体稀疏、呈 star-like 结构，这里补充直接的可视化证据：挑 4 个种子地址（DeFi/CEX/两个 Malicious_MEV，度数从 5 到 119 不等），画出各自的 ego-network（种子本身 + 直接相连的邻居 + 邻居之间若存在的连接）。
+
+**结果**：4 个例子中 3 个是教科书式的星形——所有连接从种子节点辐射向外，邻居之间几乎不互相连接（DeFi 例子：119 个邻居中仅 1 条边在邻居间；度数 5 的 MEV 例子：5 个邻居间 0 条边）。**但 CEX 例子是一个例外**：118 个邻居之间有 124 条边，邻居彼此之间连接紧密，不是纯星形——这提示星形程度可能与账户类型/交易对手构成有关（CEX 的交易对手可能包含其它活跃地址如做市商、其它交易所热钱包，彼此之间也有转账），而不是所有种子都严格符合同一种拓扑模式。第二张图把 4 个种子的邻域拼在一起，可以看到它们大体各自成团、很少互相搭边，直观印证"整张图是许多个星形拼接而成"这一表述。
+
+**用途**：为 §3.3/§6.3 点 4/§9.4 边界 1 反复引用的"star-like 稀疏拓扑"提供一个可以直接放进论文 Data 或 Methodology 章节的图，比单独引用聚类系数数字更直观；CEX 例外也值得在正文里提一句，避免把"星形"过度泛化成对所有种子都成立的规律。
+
+> **⚠️ Week 11 更新：已补齐重构后版本**（`graph_topology_examples_reconstructed.png` / `graph_topology_multi_seed_sample_reconstructed.png`，同一套四个例子种子，边表换成 `raw_edges_reconstructed.csv`，见 §13.2）。**前后对比非常直观**：DeFi 例子邻居间边数从 1 条增加到 9 条，CEX 例子从 124 条增加到 216 条，高度数 MEV 例子从近乎星形增加到 258 条邻居间边；四个 ego-network 合并图从"四个几乎不相连的独立星形"变成"三个紧密融合成一整块的社区 + 一个依然独立的低度数星形"（度数为 5 的 MEV 例子的 5 个邻居之间确实没有真实链上转账，重构没有、也不应该凭空制造连接）。写作时建议前后两版图并排放，作为 §13.2 图重构方法的直接视觉证据。
+
 ---
 
-## 4. Node2Vec Embedding 与聚类（Week 7，[node2vec_clustering.py](node2vec_clustering.py) → `embedding_outputs/`）
+## 4. Node2Vec Embedding 与聚类（Week 7，[node2vec_clustering.py](node2vec_clustering.py) → `embedding_outputs/`）【Methodology 核心（图方法之一）+ §4.4 结论供 Discussion 一句话引用】
 
 ### 4.1 方法
 
@@ -166,7 +201,7 @@ eps 偏小时大部分点被标记为噪声，eps 稍大直接坍缩成一个大
 
 ---
 
-## 5. 监督分类器（Week 8，[classification.py](classification.py) → `classification_outputs/`）
+## 5. 监督分类器（Week 8，[classification.py](classification.py) → `classification_outputs/`）【Results 核心——论文最重要的一节，主打 0.90+ macro-F1】
 
 ### 5.1 方法
 
@@ -251,7 +286,7 @@ RF 的 importance 前 10 名全部是手工特征；LR 的 |coef| 前 10 名里�
 
 ---
 
-## 6. 特征分组消融与 SHAP（Week 9，[feature_ablation_shap.py](feature_ablation_shap.py) → `ablation_shap_outputs/`）
+## 6. 特征分组消融与 SHAP（Week 9，[feature_ablation_shap.py](feature_ablation_shap.py) → `ablation_shap_outputs/`）【Results/Interpretability 核心——论文第二重点，直接回答 RQ1】
 
 ### 6.1 方法
 
@@ -312,7 +347,7 @@ RF 的 importance 前 10 名全部是手工特征；LR 的 |coef| 前 10 名里�
 
 ---
 
-## 7. 类别平衡子集稳健性复核（Week 10，[balanced_subset_robustness.py](balanced_subset_robustness.py) → `balanced_subset_outputs/`）
+## 7. 类别平衡子集稳健性复核（Week 10，[balanced_subset_robustness.py](balanced_subset_robustness.py) → `balanced_subset_outputs/`）【Discussion 精简用——压缩成 1 段背书文字，不需要展开全部细节】
 
 ### 7.1 方法与动机
 
@@ -359,7 +394,7 @@ Week 8/9 的所有结论都建立在同一个 436 活跃种子样本（299 Malic
 - 聚类相关的原始负向结论（"embedding 空间无结构"）被证明部分不成立，已在 §4.4 修正为"存在中度结构，但标准 pairwise 指标在不均衡评估下会系统性低估它"。
 - 两条修正方向相反（一条被加固、一条被部分推翻）恰好说明这次检验不是走过场——如果平衡子集总是"确认已有结论"，就不能排除确认偏误；这里出现了一个意料之外、机制清晰、可独立复现的反例，反而是这项检验真正起作用的证据。
 
-### 7.5 Node2Vec p/q 敏感性检验（[node2vec_pq_sensitivity.py](node2vec_pq_sensitivity.py) → `embedding_outputs/pq_sensitivity_results.csv` / `.png`）
+### 7.5 Node2Vec p/q 敏感性检验（[node2vec_pq_sensitivity.py](node2vec_pq_sensitivity.py) → `embedding_outputs/pq_sensitivity_results.csv` / `.png`）【最低优先级——写作时一句话带过或放附录：未发现哪组参数系统性更优】
 
 Project Plan Risk 5（Sampling Bias）的缓解措施之一是"test sensitivity if possible"，Week 10 里程碑也明确列了"sensitivity analysis"（与 balanced subset test 并列的两个子任务之一）。Week 7 全程只用 Node2Vec 的无偏游走（p=q=1，等价 DeepWalk），当时在训练代码里留了一条注释把这项检验记成待办。这里补上：用 Grover & Leskovec (2016) 原论文网格搜索的两个极端点重新训练 embedding——BFS-like（p=0.25, q=4，偏向局部/结构等价角色）和 DFS-like（p=4, q=0.25，偏向远距离/社区同质性），与 p=q=1 基线比较。
 
@@ -371,7 +406,7 @@ Project Plan Risk 5（Sampling Bias）的缓解措施之一是"test sensitivity 
 | BFS-like（局部/结构等价） | 0.25 | 4.00 | 0.010 | 0.240（不显著） | **0.199** | 0.024 | 100% |
 | DFS-like（远距离/社区同质性） | 4.00 | 0.25 | -0.035 | 0.990（不显著） | 0.131 | 0.019 | 100% |
 
-**结论（已被平衡子集评估修正，替代此前"无偏基线最优"的表述）**：全样本评估下三组设置的 ARI 全部不显著，无法据此排序；这与 §4.4/§7.3 的诊断一致——全样本评估条件本身检出力不足，不适合作为比较基准。**改用平衡子集评估后，三组设置的 ARI 全部转为统计显著（30 次重采样 100% 显著），且排序为 BFS-like（0.199）> DFS-like（0.131）> 无偏基线（0.116）**。这修正了此前"无偏游走已是三者中最优选择"的结论：在公平的评估条件下，无偏基线并非最优，只是三者中检出力最低的全样本比较让它看起来"损失最小"。
+**结论（单一训练实例观察，后被下方训练种子稳健性复核修正——见下）**：全样本评估下三组设置的 ARI 全部不显著，无法据此排序；这与 §4.4/§7.3 的诊断一致——全样本评估条件本身检出力不足，不适合作为比较基准。**改用平衡子集评估后，三组设置的 ARI 全部转为统计显著（30 次重采样 100% 显著），且这一单一训练实例下的排序为 BFS-like（0.199）> DFS-like（0.131）> 无偏基线（0.116）**。**⚠️ 这一排序未能在下方的多训练种子复核中复现，请勿单独引用本段结论——最终结论见下方"训练种子稳健性复核"**。
 
 **⚠️ 重要限定：上表每组 p/q 设置只训练了一次 Node2Vec，30 次重采样检验的是"评估用的平衡子集选择"的稳定性，不是"Node2Vec 训练本身的随机性"（walk 生成 + Word2Vec SGD 即使固定 `random_state` 也不完全确定，见脚本注释）**。因此**不应表述为"BFS-like 已被证明是更优参数"**，更准确的说法是：**在当前训练实例和类别平衡评价条件下，BFS-like 设置显示出更高的标签对齐；由于每组 embedding 的训练随机性尚未通过多个训练种子系统评估，该结果目前视为探索性敏感性发现，而非最优参数的确定性证明**。`node2vec_pq_multiseed.py` 补充了 5 个独立训练种子 × 3 组 p/q 设置（共 15 次独立 Node2Vec 训练，每次训练用 10 次平衡子集重采样评估）的复核，结果见下方"训练种子稳健性复核"。
 
@@ -385,7 +420,7 @@ Project Plan Risk 5（Sampling Bias）的缓解措施之一是"test sensitivity 
 
 **结果反转了单一训练实例得出的排序，并直接印证了上面的担忧是对的**：单一实例比较显示 BFS-like（0.199）明显高于无偏基线（0.116），但那只是这一次具体训练实例的结果。跨 5 个独立训练种子后，**三组设置的平衡 ARI 均值实际上非常接近（0.20–0.22），彼此的取值范围大量重叠**（无偏基线单个种子最低到 0.119、最高到 0.255；BFS-like 落在 0.151–0.242 之间），**训练种子之间的波动（std 0.03–0.05）与三组 p/q 设置之间的均值差（≤0.02）同一量级**。逐种子配对比较：无偏基线 − BFS-like 的差值在 5 个种子中只有 3 个为正（即基线更高），2 个为负，方向一致率 60%，远低于本文其它稳健发现（如 §5.2 的 10/10）的一致率；无偏基线 − DFS-like 同样是 3/5。**结论：在计入 Node2Vec 训练随机性后，没有证据表明 BFS-like（或任何测试过的有偏游走）系统性优于本文全程使用的无偏基线**——单一训练实例下观察到的"BFS-like 更优"是这一具体实例的特征，不是可复现的参数效应。这修正（而非加固）了上一版基于单一实例做出的排序结论，**该案例本身也是本文反复强调的方法论教训（单一小样本点估计不可靠，需要多次独立重复）在参数敏感性检验这一新场景下的又一次印证**。
 
-**这一发现的边界**：(1) 只测试了 Grover & Leskovec (2016) 网格的两个极端点，不是完整的 p/q 网格搜索，不能断言 BFS-like 的具体取值（p=0.25, q=4）就是全局最优；(2) Week 5–10 全部分类、SHAP、contract-only 跨协议泛化等下游实验用的都是无偏基线 embedding，这一发现**不会使那些已有结果失效**——它们测量的是无偏基线 embedding 空间中真实存在的信号，只是提示无偏基线本身未必是这个采样图上表示学习的最优参数选择；(3) 这更适合作为 Future Work 中的一个具体方向（系统性 p/q 网格搜索 + 平衡子集评估，而非仅在全样本上评估）记录，而不是重新训练全部下游实验——**没有必要现在把所有主要实验换成 BFS-like embedding，因为那会构成"用同一份标签选定参数后又在同一份数据上报告性能"的数据泄漏风险**。（注：本表的绝对数值与 §4.4/§7.3 存在差异——Node2Vec 的游走生成即使固定 `random_state`，不同调用点仍有随机性，本表三行在同一次脚本运行内用相同流程重新训练，内部可比。）
+**最终结论与边界**：(1) 计入训练随机性后，**没有证据表明本文测试过的任何有偏游走（BFS-like 或 DFS-like）系统性优于无偏基线**——三组设置的平衡 ARI 在 5 个训练种子上的均值差（≤0.02）小于训练种子间的波动（std 0.03–0.05），逐种子方向一致率也只有 60%；(2) 只测试了 Grover & Leskovec (2016) 网格的两个极端点，不是完整的 p/q 网格搜索，本发现不能推广为"无偏游走就是全局最优"这一更强断言，只能说"在测试过的两个极端点范围内，未发现能稳定超越无偏基线的设置"；(3) Week 5–10 全部分类、SHAP、contract-only 跨协议泛化等下游实验用的都是无偏基线 embedding，这一发现**不会使那些已有结果失效**；(4) 完整的 p/q 网格搜索（若要继续做）需要先解决训练随机性这一更基本的问题——每个网格点都应像本节一样跑多个训练种子，而不是单实例比较，这是 Future Work 中若要继续这一方向必须采用的方法标准。（注：本表的绝对数值与 §4.4/§7.3 存在差异——Node2Vec 的游走生成即使固定 `random_state`，不同调用点仍有随机性，本表三行在同一次脚本运行内用相同流程重新训练，内部可比。）
 
 ---
 
@@ -400,6 +435,9 @@ eda.py                         → eda_outputs/
   ├─ zero_inflation_by_label.csv
   ├─ feature_distributions_by_label.png
   └─ feature_correlation_heatmap.png
+visualize_graph_topology.py   → eda_outputs/（Week 11 起接受 edges_file/out_dir/suffix 参数，见 §13.3 更新提示）
+  ├─ graph_topology_examples.png / _reconstructed.png              (4 个种子的 ego-network，重构前/后对比)
+  └─ graph_topology_multi_seed_sample.png / _reconstructed.png     (4 个种子邻域拼接总览，重构前/后对比)
 node2vec_clustering.py        → embedding_outputs/
   ├─ node2vec_embeddings.csv          (全部 8,029 节点)
   ├─ seed_node2vec_embeddings.csv     (436 个有标签活跃种子)
@@ -412,6 +450,10 @@ node2vec_clustering.py        → embedding_outputs/
 node2vec_pq_sensitivity.py    → embedding_outputs/
   ├─ pq_sensitivity_results.csv       (p/q 三组设置下 KMeans NMI/ARI + 置换检验，含全样本与 30 次平衡子集重采样两种评估条件)
   └─ pq_sensitivity.png
+node2vec_pq_multiseed.py      → embedding_outputs/
+  ├─ pq_multiseed_summary.csv         (5 个训练种子 × 3 组 p/q 设置的平衡 ARI 均值/标准差/最小-最大)
+  ├─ pq_multiseed_per_seed.csv        (逐训练种子原始结果)
+  └─ pq_multiseed_distribution.png
 classification.py             → classification_outputs/
   ├─ cv_fold_scores.csv               (逐折原始分数)
   ├─ classification_summary.csv       (9 组合的均值±标准差)
@@ -438,6 +480,12 @@ graphsage_classification.py   → graphsage_outputs/
   ├─ graphsage_cv_fold_scores.csv     (5 折逐折分数 + 早停 epoch 数)
   ├─ graphsage_vs_baseline_comparison.csv  (vs graph_structural/hand_crafted 配对检验)
   └─ graphsage_vs_baseline.png
+graphsage_p3_ablation.py      → graphsage_outputs/
+  ├─ p3_ablation_summary.csv          (MLP / 真实边 / 度保持重连边三条件的均值±标准差)
+  ├─ p3_ablation_primary_comparisons.csv  (两个预注册比较的配对估计)
+  ├─ p3_ablation_fold_scores.csv      (逐训练种子×折原始分数)
+  ├─ p3_ablation_seed_level.csv       (按训练种子聚合后的结果)
+  └─ p3_ablation.png
 contract_confound_check.py    → contract_confound_outputs/
   ├─ seed_is_contract.csv             (500 个种子的链上真实 is_contract 查询结果)
   ├─ contract_ratio_by_label(_active).csv
@@ -466,11 +514,34 @@ repeated_balanced_ari.py       → embedding_outputs/
   ├─ balanced_ari_repeated_runs.csv   (50 次独立平衡抽样的逐次 ARI)
   ├─ balanced_ari_summary.csv
   └─ balanced_ari_distribution.png
+topology_baseline.py           → topology_outputs/
+  └─ topology_comparison.csv    (§13.3 重构前后拓扑指标对比)
+gcn_classification.py          → gcn_outputs(_reconstructed)/
+  ├─ gcn_cv_fold_scores.csv
+  ├─ gcn_vs_baseline_comparison.csv   (含 vs GraphSAGE 的直接配对比较)
+  └─ gcn_vs_baseline.png
 ```
+
+**Week 11 追加（§13）：以下脚本已改造为接受命令行参数（edges_file / feat_file / emb_dir / out_dir），可在原图和 Plan-B 重构图之间切换重跑**：`feature_engineering.py`、`node2vec_clustering.py`、`classification.py`、`feature_ablation_shap.py`、`balanced_subset_robustness.py`、`graphsage_classification.py`、`repeated_cv.py`。重构图版本的输出统一写入同名 `*_reconstructed` 后缀目录/文件，不覆盖原始结果：
+```
+raw_edges_reconstructed.csv              (§13.2 Plan B 重构后的边表)
+seed_feature_matrix_reconstructed.csv
+embedding_outputs_reconstructed/
+classification_outputs_reconstructed/
+ablation_shap_outputs_reconstructed/
+balanced_subset_outputs_reconstructed/
+graphsage_outputs_reconstructed/
+gcn_outputs_reconstructed/
+contract_confound_outputs_reconstructed/   (§13.4b Node2Vec 增量重复 CV + §13.5a 全部 account-type
+                                             混杂分析在重构图上的结果；is_contract 缓存复用原
+                                             contract_confound_outputs/seed_is_contract.csv，不重新查 RPC)
+```
+
+**Week 11 追加（§13.5a 全仓库审计后补齐）：以下脚本同样已改造为接受命令行参数，默认值指向重构图，输出统一写入原名 `contract_confound_outputs_reconstructed/`（除 `repeated_balanced_ari.py` 写入 `embedding_outputs_reconstructed/`）**：`contract_confound_check.py`（outbound_ablation 部分）、`confound_followup.py`、`entity_grouped_check.py`、`repeated_balanced_ari.py`、`graphsage_p3_ablation.py`（输出到 `graphsage_outputs_reconstructed/`）、`eda.py`、`sanity_check.py`（这两个直接覆盖原 `eda_outputs/` 和 `seed_sanity_check_summary.csv`，因为新图已是主线，不需要保留旧版并排）。
 
 ---
 
-## 9. GraphSAGE：基于结构输入的监督消息传递实验（Week 10 可选项，[graphsage_classification.py](graphsage_classification.py) → `graphsage_outputs/`）
+## 9. GraphSAGE：基于结构输入的监督消息传递实验（Week 10 可选项，[graphsage_classification.py](graphsage_classification.py) → `graphsage_outputs/`）【Results 核心（图方法之二，§9.3 结果如实写入正文）+ §9.4/9.5 结论压缩进 Discussion】
 
 ### 9.1 环境与动机
 
@@ -547,7 +618,7 @@ Project Plan 把 GraphSAGE 列为 Week 10 的可选项（"if core pipeline is co
 
 ---
 
-## 10. Account-type 混杂与去混杂分析（Week 10 追加，[contract_confound_check.py](contract_confound_check.py) → `contract_confound_outputs/`）
+## 10. Account-type 混杂与去混杂分析（Week 10 追加，[contract_confound_check.py](contract_confound_check.py) → `contract_confound_outputs/`）【Limitations 核心——如实交代，不可省略或软化，见文档开头"论文写作地图"】
 
 ### 10.1 动机
 
@@ -703,15 +774,19 @@ RF/XGBoost 用这 3 个特征就拿到和 28 特征完整 `hand_crafted` 基线�
 - ~~重复分层 CV（10×5=50 折）+ 95% 置信区间 + 实际意义阈值~~ ✅ 已完成，结果见 §5.2/§5.3/§10.8a——**这一步产生了本项目迄今最重要的修正：RandomForest 对 embedding 的反应从单次 5 折"无效果"修正为"效应较小但能在重复评估中稳定复现"，EOA-only 场景下 LogisticRegression 的一次边界性提升则未能在重复评估中复现，更可能是噪声，两次修正方向相反，共同确立了"n=5 折点估计不可靠，需重复 CV 复核"这一方法论教训。统计口径：置信区间与配对 t 检验基于 10 个 repeat-level 配对估计（按重复聚合），而非把 50 个高度相关的 fold 当作独立观测**
 - ~~重复平衡子集聚类检验（50 次独立抽样，ARI 分布）~~ ✅ 已完成，结果见 §7.3——ARI 稳定在 0.09–0.32 区间，50 次全部显著，确认 §4.4/§7.3 的中度结构发现不是单次抽样的巧合
 
-P3（可选）：GraphSAGE 消息传递消融（MLP vs 真实边 vs 打乱边）尚未开始。
+~~P3（可选）：GraphSAGE 消息传递消融（MLP vs 真实边 vs 打乱边）~~ ✅ 已完成，结果见 §9.5——真实边相对度保持重连边有显著优势（+0.120，p=0.007，5/5 训练种子方向一致），真实边相对纯节点特征 MLP 的优势未达统计显著（+0.023，p=0.088，4/5 训练种子方向一致）。
 
-**§7.5 p/q 敏感性检验已用平衡子集重采样评估重新修正**：改用与 §7.3 一致的公平评估条件后，BFS-like 游走（p=0.25, q=4）的平衡子集 ARI（0.199）显著高于 Week 5–10 全程使用的无偏基线（0.116），推翻了此前"无偏基线已是最优选择"的结论。这一发现不影响已有下游实验的有效性（它们测量的是无偏基线 embedding 中真实存在的信号），但值得作为 Future Work 中的一个具体方向记录：完整的 p/q 网格搜索（而非仅两个极端点）+ 平衡子集评估，可能进一步提升 embedding 空间中的标签对齐强度。
+**§7.5 p/q 敏感性检验已完成多训练种子复核，结论已再次修正**：单一训练实例下 BFS-like 游走（p=0.25, q=4）的平衡子集 ARI（0.199）曾显著高于无偏基线（0.116），但跨 5 个独立训练种子复核后，单训练实例下的 BFS-like 优势未能稳定复现；三组设置（无偏 0.217、BFS-like 0.203、DFS-like 0.199）表现接近、范围大量重叠，训练随机性（std 0.03–0.05）大于平均参数差异（≤0.02），逐种子方向一致率仅 60%。这一发现不影响已有下游实验的有效性（它们测量的是无偏基线 embedding 中真实存在的信号），但值得作为 Future Work 中的一个具体方向记录：完整的 p/q 网格搜索（而非仅两个极端点）+ 多训练种子 + 平衡子集评估，是否存在系统性优于无偏基线的参数组合仍是一个开放问题。
 
 ---
 
 ## 11. 待办 / 下一步
 
-**核心流程（Week 1–9）、全部稳健性检验、可选扩展（Week 10：balanced subset、GraphSAGE、account-type 混杂分析、P1/P2/P3 补充实验）已经全部完成**，§10.8/§10.9 的补充实验、§9.5 的 P3 消息传递消融均已并入正文。**实验阶段自本次更新起正式冻结**——GCN/GAT/RGCN 等新模型或新数据集不再纳入本项目范围：现有实验矩阵（图构建与 sanity check、EDA/特征工程、Node2Vec 聚类与 p/q 敏感性、三种监督分类器、手工特征消融、SHAP、contract/EOA 识别、EOA-only、contract-only、leave-one-protocol-out、重复 CV、GraphSAGE 三方对比含 P3 消融）已经足够支撑论文的核心论证，继续扩展实验带来的边际价值低于写作时间的机会成本。冻结后的最终结论见 **§12**。剩余工作是 Project Plan Week 11–14 的写作阶段：
+**核心流程（Week 1–9）、全部稳健性检验、可选扩展（Week 10：balanced subset、GraphSAGE、account-type 混杂分析、P1/P2/P3 补充实验）已经全部完成**，§10.8/§10.9 的补充实验、§9.5 的 P3 消息传递消融均已并入正文。**实验阶段自本次更新起正式冻结**——GCN/GAT/RGCN 等新模型或新数据集不再纳入本项目范围：现有实验矩阵（图构建与 sanity check、EDA/特征工程、Node2Vec 聚类与 p/q 敏感性、三种监督分类器、手工特征消融、SHAP、contract/EOA 识别、EOA-only、contract-only、leave-one-protocol-out、重复 CV、GraphSAGE 三方对比含 P3 消融）已经足够支撑论文的核心论证，继续扩展实验带来的边际价值低于写作时间的机会成本。冻结后的最终结论见 **§12**。
+
+> **⚠️ Week 11 有范围地重新打开（2026-07-31 导师反馈驱动，见 §13）**：导师review 进度后明确要求 (1) 补一个 GraphSAGE 之外的 GNN baseline、(2) 解决 star-like 采样拓扑问题而不只是报告局限。这两项是导师指定的、范围有限的追加（1 次图重构 + 1 个新 baseline），不是重新打开"继续扩展实验矩阵"这一更宽泛的口子——GAT/RGCN、新数据集等仍不在范围内。追加实验的方法与结果见 §13；实验阶段在这两项追加完成后再次冻结。
+
+剩余工作是 Project Plan Week 11–14 的写作阶段：
 
 1. Week 11（6–12 Aug）：Introduction、Background、Data and Graph Construction、Methodology（**须包含 n=5→重复 CV 的方法论教训**——单次 5 折 CV 曾未能检测到一个后来稳定复现的效应、也曾出现一次未能复现的边界性结果，见顶部"研究定位"），含 pipeline 图和数据集汇总表
 2. Week 12（13–19 Aug）：Experiments and Results，生成正式图表（confusion matrix、SHAP plot、embedding 可视化、重复 CV 置信区间图、P3 消息传递消融图等，本文档 §3–10、§9.5 已提供全部素材和结论文字）
@@ -738,7 +813,7 @@ P3（可选）：GraphSAGE 消息传递消融（MLP vs 真实边 vs 打乱边）
 |---|---|
 | **实验** | Node2Vec embedding 消融（§5，重复 CV 修正版 §5.2/§5.3）+ EOA-only/contract-only 场景对比（§10.8a/§10.8b）+ GraphSAGE 三方对比（§9.3/§9.4）+ P3 消息传递消融（§9.5）+ p/q 敏感性（§7.5，探索性） |
 | **最终证据** | Node2Vec embedding 在完整三分类任务中对 LR、RF、XGBoost 均提供正向增量（+0.068/+0.016/+0.035，10 个 repeat-level 配对估计，置信区间均不含零，方向 100% 一致），但增益大小具有明显模型依赖性，且在 EOA-only CEX–MEV 任务中未能复现（均值差降至 +0.004，p=0.49）。GraphSAGE 相对静态结构特征基线（graph_structural）没有显示出优势（p=0.24–0.32）；**P3 消融进一步拆分了这一结果的成因**：GraphSAGE 真实边显著优于度保持重连边（+0.120，p=0.007，5/5 训练种子方向一致）——排除了"消息传递没有跑起来"这一种解释，说明真实拓扑本身携带信息；但真实边相对纯节点特征 MLP 只有小幅、未达统计显著的优势（+0.023，p=0.088，4/5 训练种子方向一致）——说明消息传递能提供的、节点特征之外的增量信息有限，这个采样图上大部分可用结构信号已经被单节点的静态结构统计量吸收 |
-| **限制** | GraphSAGE 全部结论的作用域限定在这个 star-like 采样拓扑下（§9.4 边界 1），且未做系统性超参数网格搜索（P3 固定了容量与超参数，只改变消息传递对象）；p/q 敏感性发现 BFS-like 游走在平衡子集评估下 ARI 高于无偏基线，但目前只是单一训练实例的探索性发现，多训练种子稳健性复核见 §7.5 更新（进行中/见下） |
+| **限制** | GraphSAGE 全部结论的作用域限定在这个 star-like 采样拓扑下（§9.4 边界 1），且未做系统性超参数网格搜索（P3 固定了容量与超参数，只改变消息传递对象）；五个训练种子的复核未发现任何测试过的 p/q 设置具有稳定优势（§7.5），单一训练实例下观察到的 BFS-like 优势是训练随机性而非可复现的参数效应 |
 
 ### 账户类型混杂
 
@@ -754,6 +829,173 @@ P3（可选）：GraphSAGE 消息传递消融（MLP vs 真实边 vs 打乱边）
 |---|---|
 | **实验** | Node2Vec 基础聚类（§4）+ 平衡子集复核（§7.3）+ 重复平衡 ARI 稳定性检验（§7.3）+ p/q 敏感性（§7.5） |
 | **最终证据** | Node2Vec embedding 在类别平衡评价中表现出稳定的中度标签对齐（ARI≈0.22–0.31，KMeans 与 Louvain 独立验证，50 次重复平衡抽样 100% 显著）。完整不平衡样本（299/86/51）上的低 ARI（≈0.02，不显著）是**本数据集和当前聚类划分下的评价现象**，源于 pairwise 指标被多数类点对主导，**不能被解释为 embedding 完全没有结构** |
-| **限制** | 这一"全样本评估低估信号"的机制解释目前只在本数据集验证，不构成对 ARI/NMI 类指标在不均衡数据下普遍表现的一般性证明（§4.4/§7.3 已明确措辞边界）；p/q 敏感性方向的探索性发现（BFS-like 设置平衡 ARI 高于无偏基线）尚待多训练种子验证，见 §7.5 |
+| **限制** | 这一"全样本评估低估信号"的机制解释目前只在本数据集验证，不构成对 ARI/NMI 类指标在不均衡数据下普遍表现的一般性证明（§4.4/§7.3 已明确措辞边界）；五个训练种子的复核未发现任何测试过的 p/q 设置具有稳定优势（§7.5），此前基于单一训练实例的 BFS-like 优势结论已被推翻 |
+
+> **⚠️ Week 11 更新（2026-07-31 导师反馈驱动，见 §13）**：§11 "实验阶段已冻结" 的声明已被有范围地重新打开——图重构（解决 star-like 拓扑）和新增 GCN baseline 属于导师明确要求的追加范围，不属于"继续扩展实验"。**RQ2 涉及 GNN/图结构方法的证据已在重构后的图上复核，结论方向未变但证据强度提高**（手工结构特征、GraphSAGE 的负向结论都在更密集的图上复现，且新增的 GCN 与 GraphSAGE 相互印证）——完整细节见 §13，写作时 RQ2 部分应同时引用本表和 §13。
+
+---
+
+## 13. 图重构 + GCN Baseline（Week 11 追加，2026-07-31 导师反馈驱动）
+
+### 13.1 背景与动机
+
+学生向导师（Zixing Song）汇报进度后，导师针对 5 个问题逐一回复：(1) 方向没问题；(2) **需要在 GraphSAGE 之外补一个 GNN baseline**；(3) 与 Tam et al. (2019/2024) 的相似性处理方式 OK；(4) **star-like 采样拓扑"最好还是解决"，而非仅作为局限报告**；(5) 账户类型混杂等局限可以放进 Limitations。本节记录 (2)(4) 触发的追加实验，(2) 与 (4) 合并处理——按学生与导师讨论后确定的方案（"方案 B"）：先重构图解决拓扑问题，再让新的 GCN baseline 直接在重构后的图上评估，不做重构前的 GCN 版本，以节省一轮重复实验。
+
+这次追加**不构成对 §11 "实验冻结"声明的推翻**——冻结声明针对的是"继续扩展实验矩阵"的一般性风险（边际收益低于写作时间的机会成本），而这里的两项追加是导师明确要求的、范围有限的修正（1 次图重构 + 1 个新 baseline），不再扩展到 GAT/RGCN 等更多模型或新数据集。
+
+### 13.2 方法：Plan B 图重构
+
+**问题根源**：§3.3/§6.3 反复引用的"star-like 拓扑"是 Top-100-per-direction-per-seed 抽样的产物——建图时只保留了每个种子地址出向/入向交易量最大的 100 个对手方，从未查询过"这些对手方彼此之间是否也有真实链上转账"，人为把三角闭合和跨种子连通性压薄了。
+
+**修复方案（三个候选中最干净的一个，与导师讨论确定）**：不改变节点集合、不重新抽样种子的对手方，只针对**已经在图里的 8,029 个节点**，额外查询"任意两个**非种子**节点之间，在同一 90 天窗口内是否存在真实链上转账"，把发现的边并入原图。**刻意排除任何触及种子地址的新边**，这样种子层面的交易行为特征（in/out tx 数量、ETH 金额、gas 费，全部通过对 raw_edges 按种子 groupby 得到）在数学上不可能改变——保证"固定节点特征、只改拓扑"这一实验设计的干净性，改动只影响图结构相关的量（degree、PageRank、clustering、wcc_size、Node2Vec、GraphSAGE/GCN 的消息传递输入）。
+
+**数据来源**：项目当前的链上数据实际来自 **Google BigQuery**（`bigquery-public-data.crypto_ethereum.transactions`，项目 `dissertation-500320`），而非 Dune——`Archive_Dune_Legacy/` 下的 Dune 查询只用于早期的种子地址标签收集（CEX/DeFi 名单），已经完成并落盘为 `final_seed_address500.csv`，与图边构建无关；Dune 账号后续被封不影响现有数据或本次重构（当时曾误以为边数据来自 Dune，经排查 BigQuery 的 job 历史和表结构后更正）。BigQuery 访问通过服务账号密钥被组织策略（`iam.disableServiceAccountKeyCreation`）禁止后，改用 `gcloud auth application-default login` 的用户级 OAuth 凭证（Application Default Credentials）完成授权。
+
+**查询设计**：
+
+```sql
+WITH non_seed_nodes AS (
+  SELECT DISTINCT addr FROM (
+    SELECT source AS addr FROM ethereum_data.raw_edges
+    UNION ALL SELECT target AS addr FROM ethereum_data.raw_edges
+  ) WHERE addr NOT IN (SELECT address FROM ethereum_data.final_seed_addresses)
+)
+SELECT from_address AS source, to_address AS target,
+       COUNT(*) AS tx_count, SUM(value)/1e18 AS total_eth_value,
+       AVG(receipt_gas_used * COALESCE(receipt_effective_gas_price, gas_price))/1e18 AS avg_gas_fee
+FROM bigquery-public-data.crypto_ethereum.transactions t
+JOIN non_seed_nodes s ON t.from_address = s.addr
+JOIN non_seed_nodes r ON t.to_address = r.addr
+WHERE block_timestamp BETWEEN "2026-03-25" AND "2026-06-23"  -- 与原始 90 天窗口对齐
+  AND to_address IS NOT NULL AND from_address != to_address AND receipt_status = 1
+GROUP BY source, target
+```
+
+（`avg_gas_fee` 的精确公式沿用链上分析的标准约定 `gas_used × effective_gas_price / 1e18`；原始 raw_edges 的确切建表查询已在 BigQuery job 历史中找不到复现记录，但由于新边从不触及种子地址，`avg_gas_fee` 的具体取值不影响任何已报告的分类结果——它只是消息传递图的边属性，当前 Node2Vec/GraphSAGE/GCN 都不使用边权重，只用拓扑连通性。）
+
+**结果**：查询扫描 27.5GB（远低于免费额度），发现 **34,336 条**此前缺失的对手方-对手方边，与原始 12,861 条边合并后得到 `raw_edges_reconstructed.csv`（节点数不变 8,029，无向去重边数 12,694 → 46,953）。
+
+**验证（`topology_baseline.py`）**：
+- 新边 0 个涉及此前不存在的节点、0 自环、0 与已有边重复
+- 交易行为特征（19 列，`seed_feature_matrix_reconstructed.csv` vs 原 `seed_feature_matrix.csv`）**数值 100% 一致**，差异全部是 1e-11～1e-16 级浮点噪声，验证了"只改拓扑"的设计目标
+
+### 13.3 拓扑前后对比（`topology_outputs/topology_comparison.csv`）
+
+| 指标 | 重构前 | 重构后 | 变化 |
+|---|---|---|---|
+| 边数（无向去重） | 12,694 | 46,953 | +270% |
+| 平均度 | 3.162 | 11.696 | 3.7× |
+| 全图 clustering coefficient 均值 | 0.0065 | 0.1306 | 20× |
+| 全图 clustering coefficient 为 0 的比例 | 97.2% | 61.2% | — |
+| **种子地址** clustering coefficient 均值 | 0.0259 | 0.0567 | 2.2× |
+| 种子 clustering coefficient 为 0 的比例 | 85.3% | 53.4% | — |
+| 三角形总数 | 525 | 14,847 | 28× |
+| 连通分量数 | 52 | 15 | — |
+| 最大连通分量占比 | 91.1% | 99.45% | 几乎全连通 |
+
+这组数字证实了导师判断的方向是对的——star-like 拓扑确实是 Top-100 抽样的人为产物，真实链上这些对手方之间大量存在直接连接，只是原始抽样从未去查询过。
+
+### 13.4 下游结果在重构图上的复核
+
+以下脚本均已改造为接受 `edges_file`/`feat_file`/`out_dir` 等命令行参数，可在原图和重构图之间切换重跑而不覆盖原始结果（原始输出目录不变，重构结果统一写入 `*_reconstructed` 后缀目录）。
+
+**(a) 手工图结构特征 vs 交易行为特征（`feature_ablation_shap.py` → `ablation_shap_outputs_reconstructed/`）**：
+
+| | 重构前（§6.2/§6.3） | 重构后 |
+|---|---|---|
+| SHAP mass（graph_structural） | 15.4% | **15.15%** |
+| combined vs transaction_behaviour（RF，单次 5 折） | -0.017（不显著） | **-0.022（不显著）** |
+| combined vs transaction_behaviour（XGBoost，单次 5 折） | -0.010（不显著） | **-0.009（不显著）** |
+
+**这是本轮复核中最重要的发现，且方向出乎意料**：尽管拓扑指标本身发生了数量级变化（§13.3），手工结构特征相对交易行为特征的**边际预测价值几乎没有变化**。这说明"手工结构特征无稳定增量"这一结论**不是稀疏采样的伪影**——重构后图的三角密度、聚类系数、连通性都大幅改善，但 RF/XGBoost 从中提炼出的额外判别信号并没有相应增加。比起"因为图太稀疏所以没有信号"，这是一个更强的负向证据：**信号确实已经被交易行为特征和几个粗粒度结构统计量（degree、pagerank_rank）吸收殆尽，不是被采样噪声掩盖了**。
+
+**(b) Node2Vec embedding 增量 —— 已补齐重复 CV（`repeated_cv.py` → `contract_confound_outputs_reconstructed/`，10 次重复 × 5 折，repeat-level 配对估计，n=10 独立重复，方法与 §5.2/§5.3 完全一致）**：
+
+单次 5 折的初步观察（`classification.py`，combined vs hand_crafted）：LogisticRegression 的 p 值从重构前的 0.115（不显著）变为 0.018（显著），RandomForest/XGBoost 仍不显著——这组数字**已被下方的重复 CV 取代，不再单独引用**。
+
+**主样本（n=436，`main_hand_crafted_embedding vs main_hand_crafted`）重构前 vs 重构后对比**：
+
+| model | 重构前均值差（§5.2/§5.3） | 重构后均值差 | 重构后 95% CI | 重构后 p 值 | 方向一致的重复次数 |
+|---|---|---|---|---|---|
+| LogisticRegression | +0.068 | **+0.028** | [0.020, 0.037] | <0.0001 | 10/10 |
+| RandomForest | +0.016 | **+0.015** | [0.008, 0.021] | 0.0008 | 10/10 |
+| XGBoost | +0.035 | **+0.025** | [0.018, 0.033] | <0.0001 | 10/10 |
+
+**结论**：三个模型在重构图上依然呈现方向 100% 一致、置信区间均不含零的正向效应——**Node2Vec 的增量价值是真实且稳健的，不是采样稀疏性的伪影**。但幅度普遍收窄（LogisticRegression 从 +0.068 降到 +0.028，接近减半；XGBoost 从 +0.035 降到 +0.025；RandomForest 基本不变，+0.016→+0.015），与用户预判的"密图上结构信号更容易被静态特征吸收，增量可能缩小"这一假设方向一致——图重构后手工结构特征能看到的拓扑信息更多，Node2Vec 相对手工特征的**独有**增量因此被压缩了一部分，但没有消失。
+
+**EOA-only 子样本（n=314，`eoa_hand_crafted_embedding vs eoa_hand_crafted`）重构前 vs 重构后对比**：
+
+| model | 重构前均值差（§10.8a，不显著） | 重构后均值差 | 重构后 95% CI | 重构后 p 值 | 方向一致的重复次数 |
+|---|---|---|---|---|---|
+| LogisticRegression | +0.004（p=0.49，不显著） | **+0.012（p=0.005，显著）** | [0.005, 0.019] | 0.0051 | 8/10 |
+| RandomForest | 不显著（p=0.53） | -0.001（不显著） | [-0.007, 0.006] | 0.76 | 6/10 |
+| XGBoost | 不显著（p=0.33） | -0.0001（不显著） | [-0.007, 0.007] | 0.98 | 5/10 |
+
+**这是本轮复核中唯一发生方向性变化的结果**：EOA-only 场景下 LogisticRegression 的 embedding 增量从"重构前不显著（接近随机，6/10 重复方向为正）"变为"重构后小幅但统计显著（+0.012，8/10 重复方向一致）"。RF/XGBoost 在 EOA-only 下依然不显著，与重构前一致。**解读需谨慎，不宜过度上升**：这只是一个模型（LR）在一个子样本（EOA-only）上从"无效果"变为"小幅有效果"，幅度本身很小（1.2 个百分点），且 §5.3 已经反复提醒过"n 有限时二元判断本身不稳定"这条方法论教训同样适用于这次比较本身——更准确的表述是"图重构后，embedding 在 EOA-only 场景下的价值可能不再是完全为零，但依然远小于主样本中的效应，且这一结论本身的稳健性不如主样本那组结果"，而不是宣称"EOA-only 场景的负向结论被推翻"。
+
+**结论范围界定**：图重构没有改变本文关于 RQ2 的核心论证结构——Node2Vec 在主样本上有稳健的正向增量（现在幅度更精确，且已知会随拓扑改善而收窄）；手工结构特征和两种 GNN（GraphSAGE、GCN）都没有显示出增量（§13.4a/c/d）。EOA-only 场景下 LR 的这个新出现的小幅效应是一个值得在 Discussion 里如实报告的细节，但不改变整体结论的形状。
+
+**(c) GraphSAGE（`graphsage_classification.py` → `graphsage_outputs_reconstructed/`）**：
+
+| | 重构前（§9.3） | 重构后 |
+|---|---|---|
+| Macro-F1（5 折，n=153 平衡子集） | 0.741 ± 0.156 | **0.731 ± 0.200** |
+| vs graph_structural（RF），p 值 | 0.324（不显著） | 0.211（不显著） |
+| vs graph_structural（XGBoost），p 值 | 0.238（不显著） | **0.014（显著，GraphSAGE 更差）** |
+
+图重构后 GraphSAGE 的绝对表现基本不变（甚至略降），**核心结论未变**：没有观察到 GraphSAGE 优于静态结构特征基线的证据；对 XGBoost 基线的比较甚至从不显著变为显著更差。这排除了"GraphSAGE 表现不佳是因为之前的图太稀疏、消息传递没有素材可传"这一种解释——图密度提高了 3.7 倍，GraphSAGE 依然没有超过简单统计量。
+
+**(d) 新增 GCN baseline（`gcn_classification.py` → `gcn_outputs_reconstructed/`，导师要求的第二个 GNN baseline，直接在重构图上评估）**：2 层 `GCNConv`，与 GraphSAGE 完全相同的容量、超参数、训练协议、153 样本平衡子集、5 折划分，唯一变量是把 `SAGEConv` 换成 `GCNConv`。
+
+| 对比 | GCN 均值 | 对照均值 | 均值差 | p 值 |
+|---|---|---|---|---|
+| vs graph_structural（RF） | 0.7256 | 0.7886 | -0.063 | 0.136（不显著） |
+| vs graph_structural（XGBoost） | 0.7256 | 0.8146 | -0.089 | 0.141（不显著） |
+| vs hand_crafted（RF，非苹果对苹果） | 0.7256 | 0.9184 | -0.193 | **0.010（显著更差）** |
+| vs hand_crafted（XGBoost，非苹果对苹果） | 0.7256 | 0.8843 | -0.159 | **0.016（显著更差）** |
+| **vs GraphSAGE（同结构输入、同折）** | 0.7256 | 0.7310 | **-0.005** | **0.938（几乎完全相同）** |
+
+**GCN 与 GraphSAGE 的表现几乎无法区分**（均值差仅 0.005，p=0.938）——两种机制不同的消息传递方式（GraphSAGE 的邻域采样聚合 vs GCN 的谱域归一化聚合）收敛到了几乎相同的、不超过静态结构特征基线的水平。这比单一 GraphSAGE 负向结果更有说服力：不太可能是"恰好这一个模型没调好"，而更像是这批结构特征输入本身，在当前的容量/超参数设定下，对两种主流 GNN 架构而言都已经没有额外可榨取的信息。
+
+### 13.5 修正后的结论
+
+1. **导师对拓扑问题"最好解决"的判断被证实是对的**：star-like 拓扑确实是抽样产物而非以太坊交易图的固有属性，重构后三角密度、聚类系数、连通性都有数量级改善（§13.3），这部分不再需要作为"未解决的局限"写入论文，可以直接作为方法论贡献报告。
+2. **但"图结构信息相对交易行为特征增量有限"这一核心负向结论，在重构后的图上没有被推翻，反而证据更强**：手工结构特征的边际价值几乎不随拓扑改善而变化（§13.4a），GraphSAGE 的负向结果在更密集的图上复现甚至略微加强（§13.4c），新增的 GCN baseline 独立得出几乎相同的负向结果并与 GraphSAGE 高度一致（§13.4d）。这是一个此前未预料到、且比"图太稀疏所以没有信号"更强的论证——图连接大幅加密之后依然没有出现增量信号，说明这部分信息确实已经被现有特征吸收，而不是被采样稀疏性掩盖了。
+3. **Node2Vec embedding 的增量结论已在重构图上补齐重复 CV，达到与主线（§5.2/§5.3）同等的置信度**（§13.4b）：主样本上三个模型依然方向 100% 一致、置信区间不含零，增量真实但幅度收窄（尤其 LogisticRegression，接近减半）；EOA-only 场景下出现了一处新的方向性变化（LR 从不显著变为小幅显著），已如实记录并给出谨慎解读。**至此，图重构实验（§13.2–§13.4）在方法论上与主线保持一致的严格度——手工结构特征消融、GraphSAGE、GCN、Node2Vec 增量全部经过与原图相同标准的检验（单次 5 折用于描述性汇总，关键结论以重复 CV 为准），没有遗留"只做了初步观察"的部分。**
+
+### 13.5a 全仓库审计：还有哪些结果基于旧图，已全部补齐
+
+学生要求"严谨检查还有哪些实验基于旧数据集展开"。逐个 grep 每个脚本的实际文件依赖（而非凭记忆判断）后，发现除 §13.4 已完成的部分外，还有 6 个脚本的结果依赖旧图拓扑但未重跑，已全部补齐（`eda.py`/`sanity_check.py`/`contract_confound_check.py`/`confound_followup.py`/`entity_grouped_check.py`/`repeated_balanced_ari.py`/`graphsage_p3_ablation.py` 均已改造为接受命令行参数，默认值已指向重构图文件，仓库现在"开箱即用"就是跑在新图上）：
+
+| 脚本/结果 | 重构前 | 重构后 | 结论是否变化 |
+|---|---|---|---|
+| §3.3 zero-inflation：clustering_coeff 为 0 的比例 | CEX 94.1% / DeFi 98.7% / MEV 80.3% | **CEX 78.4% / DeFi 92.0% / MEV 39.8%** | 数字大幅下降（预期内，即§13.3 拓扑改善的另一体现），但"三类都高度零膨胀"这一定性描述不变 |
+| sanity_check：自环/重复边/节点数 | 0 / 0 / 8029 | 0 / 0 / 8029 | 无变化，图仍然干净 |
+| outbound_ablation（去除出向特征） | RF 均值差 +0.017（不显著） | RF 均值差 +0.017（不显著，几乎相同） | **不变** |
+| EOA-only 特征分组消融（§10.8a，单次 5 折） | transaction_behaviour 领先 graph_structural 8-26 个百分点 | **同一模式复现**（transaction_behaviour 0.928-0.942 vs graph_structural 0.659-0.838） | **不变** |
+| contract-only DeFi vs MEV（§10.8b，50 次平衡重采样） | hand_crafted+embedding 0.973-0.996 | hand_crafted+embedding 0.929-0.950（仍很高，略降） | **不变**（仍高度可分） |
+| leave-one-DeFi-protocol-out：留出 Uniswap（占 74%） | macro-F1 0.989-1.000 | **macro-F1 0.924-0.935**（defi_recall 从 1.00 降到 0.89-0.91） | **唯一发生实质变化的结果**——跨协议泛化依然强（>0.92），但不再是近乎完美，见下方解读 |
+| 50 次独立平衡重采样 ARI 稳定性（§7.3） | fixed 0.223±0.022 / refit 0.182±0.068，100% 显著 | fixed 0.144±0.038 / refit 0.162±0.065，**100% 显著** | **不变**（中度结构依然稳定存在，绝对值略降） |
+| P3 消息传递消融：真实边 vs 重连边 | +0.120，p=0.007，5/5 | **+0.146，p=0.030，5/5** | **不变**（仍显著，p 值宽松了一些） |
+| P3 消息传递消融：真实边 vs MLP | +0.023，p=0.088，4/5 | +0.034，p=0.134，4/5 | **不变**（仍不显著） |
+
+**唯一值得展开说明的变化**：leave-one-DeFi-protocol-out 中，留出 Uniswap（86 个 DeFi 合约里的 64 个）后，模型在重构图上的 macro-F1 从 0.99-1.00 降到 0.92-0.93（64 个测试样本里错分了 6-7 个）。**这不是结论的反转**——0.92-0.93 依然远高于随机水平，"contract-only 可分性不依赖记住特定协议"这一核心论断没有变化，只是不再是"近乎完美泛化"，而是"强但不完美的跨协议泛化"。一个合理的解释：图重构后每个地址的 graph_structural 特征（尤其 clustering_coeff、wcc_size）携带了更多真实拓扑信息，这部分信息在同协议内部更相似（同一 DeFi 协议的地址往往共享类似的连接模式），因此留出整个协议后，模型能利用的"协议无关"信号占比相对下降了一点。这个机制解释尚未验证，写作时应如实报告数字变化，不必过度归因。
+
+**其余 8 项结果的核心结论无一发生变化**——这本身就是对"图重构后 RQ1/RQ2/账户类型混杂的整体结论保持稳健"这一论断的进一步支撑，补充了 §13.4 的证据面。
+
+### 13.5b 写作用：精简版"重构前后对比"证据段（约半页，可直接引用/改写）
+
+> To rule out the possibility that the observed lack of incremental value from graph-structural features was an artefact of the sparse sampling procedure, the graph was reconstructed by querying BigQuery for previously-missing counterparty-to-counterparty transactions (holding the node set and all seed-level transaction-behaviour features fixed — verified numerically identical to floating-point precision). This intervention increased average degree from 3.16 to 11.70, mean clustering coefficient from 0.0065 to 0.131 (a 20-fold increase), and the number of triangles from 525 to 14,847. Despite this substantial densification, the SHAP-based importance share attributable to graph-structural features barely moved (15.4% → 15.2%), the hand-crafted structural-feature ablation result was unchanged, and both GraphSAGE and a newly-added GCN baseline continued to show no advantage over static structural-feature baselines — with the two GNN architectures converging to statistically indistinguishable performance (mean difference 0.005, p=0.94). Node2Vec's positive incremental contribution, by contrast, remained statistically significant across all three classifiers after repeated cross-validation, though its magnitude narrowed (e.g. Logistic Regression: +0.068 → +0.028). These controlled before/after results indicate that the limited incremental value of graph-structural information is not an artefact of topology sparsity, but reflects a more fundamental saturation of the signal already captured by transaction-behaviour features and simple degree/PageRank statistics.
+
+**旧图（重构前）的完整明细结果**（§3–§10 正文中标注了具体数字的部分）建议作为方法论过程记录保留在附录或补充材料里，不需要在正文 Results/Discussion 里与新图数字并排出现；正文全篇统一引用重构图（§13.4/§13.5a）的数字。
+
+### 13.6 写作阶段注意事项
+
+**核心原则（学生 2026-07-31 确认）：全文正文统一以重构图为主数据集，单一叙事，不在正文里并排展示新旧两套数字。** 重构前后对比只以 §13.5b 那段精简证据（拓扑指标 + SHAP 占比 + GNN 结论是否变）的形式保留，作为"已排除稀疏采样是解释"这一论断的证据，其余旧图明细数字降级为过程记录，可放附录、不占正文篇幅。
+
+- Data/Methodology 章节报告图重构方法（§13.2）；Results 章节全部使用重构图数字：分类/SHAP（§13.4a）、Node2Vec 增量（§13.4b，重复 CV 最终结论）、GraphSAGE（§13.4c）、新增 GCN baseline（§13.4d）；§13.5a 审计出的其余 8 项结果（EDA 零膨胀、contract-only、leave-one-protocol-out、ARI 稳定性、P3 消息传递消融等）同样已在重构图上补齐，全部并入正文对应小节，不再是"待办"
+- Limitations 中原本"star-like 拓扑限定了图方法结论的作用域"这一条应改写为"已诊断并解决，解决后核心负向结论被加固、Node2Vec 正向结论收窄但保持稳健"（§13.5b 精简证据段可直接引用/改写为 Limitations 或 Discussion 的一段文字）
+- 两处需要如实报告的小幅变化，各用一两句话交代，不展开、不过度解读：(1) EOA-only 场景下 LogisticRegression 的新增小幅显著效应（§13.4b）；(2) leave-one-DeFi-protocol-out 留出 Uniswap 后 macro-F1 从 0.99-1.00 降到 0.92-0.93（§13.5a），跨协议泛化依然强，只是不再"近乎完美"
+- SHAP 图、混淆矩阵、GraphSAGE/GCN 对比条形图等插图统一使用 `*_reconstructed` 目录里的版本（即现在的主线版本）；`eda_outputs/` 下的两张拓扑可视化图已经是重构后版本、无后缀（旧版已删除，不存在并排版本）
 
 ---

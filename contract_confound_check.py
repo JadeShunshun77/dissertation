@@ -1,3 +1,4 @@
+import sys
 import json
 import time
 from pathlib import Path
@@ -34,8 +35,19 @@ LABEL_COL = "label"
 LABEL_ORDER = ["CEX", "DeFi", "Malicious_MEV"]
 MODEL_ORDER = ["LogisticRegression", "RandomForest", "XGBoost"]
 
+# Optional CLI args: feat_file edges_file out_subdir contract_cache_dir --
+# reruns the topology-dependent parts (outbound_ablation) on the Plan-B
+# reconstructed graph. is_contract is an on-chain bytecode property,
+# independent of edge-sampling topology, so its cache is always read from
+# contract_cache_dir (defaults to the original contract_confound_outputs/) to
+# avoid re-querying the RPC.
+FEAT_FILE = sys.argv[1] if len(sys.argv) > 1 else "seed_feature_matrix_reconstructed.csv"
+EDGES_FILE = sys.argv[2] if len(sys.argv) > 2 else "raw_edges_reconstructed.csv"
+OUT_SUBDIR = sys.argv[3] if len(sys.argv) > 3 else "contract_confound_outputs_reconstructed"
+CONTRACT_CACHE_DIR = sys.argv[4] if len(sys.argv) > 4 else "contract_confound_outputs"
+
 RPC_URL = "https://ethereum-rpc.publicnode.com"
-OUT_DIR = Path("contract_confound_outputs")
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 
@@ -95,8 +107,8 @@ def clean_address(x):
 # 1. Query is_contract for all 500 seeds
 # =========================
 
-feat = pd.read_csv("seed_feature_matrix.csv")
-cache_path = OUT_DIR / "seed_is_contract.csv"
+feat = pd.read_csv(FEAT_FILE)
+cache_path = Path(CONTRACT_CACHE_DIR) / "seed_is_contract.csv"
 
 if cache_path.exists():
     contract_df = pd.read_csv(cache_path)
@@ -161,7 +173,7 @@ with open("feature_groups.json") as f:
     feature_groups = json.load(f)
 handcrafted_cols = list(feature_groups["transaction_behaviour"] + feature_groups["graph_structural"])
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])

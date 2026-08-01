@@ -62,7 +62,14 @@ MAX_EPOCHS = 300
 PATIENCE = 20
 VAL_FRACTION = 0.2
 
-OUT_DIR = Path("graphsage_outputs")
+# Optional CLI args: edges_file balanced_subset_dir out_subdir -- reruns
+# GraphSAGE on the Plan-B reconstructed graph, e.g.
+# `python graphsage_classification.py raw_edges_reconstructed.csv balanced_subset_outputs_reconstructed graphsage_outputs_reconstructed`
+EDGES_FILE = sys.argv[1] if len(sys.argv) > 1 else "raw_edges.csv"
+BALANCED_DIR = sys.argv[2] if len(sys.argv) > 2 else "balanced_subset_outputs"
+OUT_SUBDIR = sys.argv[3] if len(sys.argv) > 3 else "graphsage_outputs"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 torch.manual_seed(RANDOM_STATE)
@@ -91,7 +98,7 @@ def clean_address(x):
 # 1. Build the full 8,029-node graph (same construction as node2vec_clustering.py)
 # =========================
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])
@@ -164,7 +171,7 @@ x = torch.tensor(X_all, dtype=torch.float)
 # 4. Load the SAME 153-seed balanced subset used in balanced_subset_robustness.py
 # =========================
 
-balanced = pd.read_csv("balanced_subset_outputs/balanced_subset_seeds.csv")
+balanced = pd.read_csv(f"{BALANCED_DIR}/balanced_subset_seeds.csv")
 assert balanced["address"].isin(node_to_idx).all(), "balanced subset contains an address not in the graph"
 balanced_idx = balanced["address"].map(node_to_idx).to_numpy()
 label_encoder = LabelEncoder().fit(LABEL_ORDER)
@@ -294,7 +301,7 @@ print(f"Saved {OUT_DIR / 'graphsage_cv_fold_scores.csv'}")
 # 7. Compare against Week 10 balanced-subset baselines (same folds)
 # =========================
 
-baseline_folds = pd.read_csv("balanced_subset_outputs/balanced_cv_fold_scores.csv")
+baseline_folds = pd.read_csv(f"{BALANCED_DIR}/balanced_cv_fold_scores.csv")
 comparisons = []
 for group, fs_name, model_name, label in [
     ("week9_ablation", "graph_structural", "RandomForest", "graph_structural (RF, structural-only, apples-to-apples)"),

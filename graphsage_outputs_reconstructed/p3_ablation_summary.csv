@@ -1,0 +1,4 @@
+condition,n_seeds,macro_f1_mean,macro_f1_std
+A_MLP_no_edges,5,0.6861,0.017
+B_GraphSAGE_real_edges,5,0.72,0.0327
+C_GraphSAGE_rewired_edges,5,0.5745,0.0687

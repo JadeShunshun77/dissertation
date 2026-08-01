@@ -1,3 +1,4 @@
+import sys
 import json
 from pathlib import Path
 
@@ -38,7 +39,19 @@ LABEL_ORDER = ["CEX", "DeFi", "Malicious_MEV"]
 MODEL_ORDER = ["LogisticRegression", "RandomForest", "XGBoost"]
 PRACTICAL_SIGNIFICANCE_THRESHOLD = 0.01  # macro-F1 points
 
-OUT_DIR = Path("contract_confound_outputs")
+# Optional CLI args: feat_file edges_file emb_dir out_subdir contract_dir
+# -- reruns the full repeated-CV suite on the Plan-B reconstructed graph, e.g.
+# `python repeated_cv.py seed_feature_matrix_reconstructed.csv raw_edges_reconstructed.csv embedding_outputs_reconstructed contract_confound_outputs_reconstructed contract_confound_outputs`
+# contract_dir defaults to the original contract_confound_outputs -- is_contract
+# is an on-chain bytecode property, independent of edge-sampling topology, so
+# it is reused rather than recomputed.
+FEAT_FILE = sys.argv[1] if len(sys.argv) > 1 else "seed_feature_matrix.csv"
+EDGES_FILE = sys.argv[2] if len(sys.argv) > 2 else "raw_edges.csv"
+EMB_DIR = sys.argv[3] if len(sys.argv) > 3 else "embedding_outputs"
+OUT_SUBDIR = sys.argv[4] if len(sys.argv) > 4 else "contract_confound_outputs"
+CONTRACT_DIR = sys.argv[5] if len(sys.argv) > 5 else "contract_confound_outputs"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 
@@ -111,13 +124,13 @@ def summarize_and_compare(fold_df_a, fold_df_b, name_a, name_b):
 # 1. Load data (same construction as prior scripts)
 # =========================
 
-feat = pd.read_csv("seed_feature_matrix.csv")
+feat = pd.read_csv(FEAT_FILE)
 with open("feature_groups.json") as f:
     feature_groups = json.load(f)
 txn_cols = list(feature_groups["transaction_behaviour"])
 struct_cols = list(feature_groups["graph_structural"])
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])
@@ -132,11 +145,11 @@ for col in ["pagerank", "pagerank_weighted", "log_pagerank", "log_pagerank_weigh
 struct_cols += ["pagerank_rank", "pagerank_weighted_rank"]
 handcrafted_cols = txn_cols + struct_cols
 
-contract_df = pd.read_csv(OUT_DIR / "seed_is_contract.csv")
+contract_df = pd.read_csv(Path(CONTRACT_DIR) / "seed_is_contract.csv")
 feat = feat.merge(contract_df[["address", "is_contract"]], on="address", how="left")
 feat["is_contract"] = feat["is_contract"].fillna(False)
 
-emb = pd.read_csv("embedding_outputs/seed_node2vec_embeddings.csv")
+emb = pd.read_csv(f"{EMB_DIR}/seed_node2vec_embeddings.csv")
 emb_cols = [c for c in emb.columns if c.startswith("emb_")]
 active = feat[feat["is_active"]].copy()
 data = active.merge(emb[["address"] + emb_cols], on="address", how="inner")

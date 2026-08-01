@@ -1,0 +1,3 @@
+group,n_features,share_of_all_features,RF_importance_share,LR_coef_share
+hand_crafted,28,0.3043,0.7256,0.3438
+embedding,64,0.6957,0.2744,0.6562

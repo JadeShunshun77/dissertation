@@ -1,12 +1,16 @@
+import sys
 import pandas as pd
 import numpy as np
 
 # =========================
 # 0. Read data
 # =========================
+# Optional CLI arg: edges_file -- defaults to the Plan-B reconstructed graph
+# (progress_summary.md §13), the project's main-line dataset from Week 11 on.
+EDGES_FILE = sys.argv[1] if len(sys.argv) > 1 else "raw_edges_reconstructed.csv"
 
 seeds = pd.read_csv("final_seed_address500.csv")
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 
 print("Seeds columns:", seeds.columns.tolist())
 print("Edges columns:", edges.columns.tolist())
@@ -21,7 +25,6 @@ LABEL_COL = "label"
 SOURCE_COL = "source"
 TARGET_COL = "target"
 
-# 如果你的列名不是这些，在这里改
 required_seed_cols = [SEED_ADDRESS_COL, LABEL_COL]
 required_edge_cols = [SOURCE_COL, TARGET_COL]
 
@@ -140,7 +143,7 @@ print("\n")
 
 print("=== Check 5: Edge / Transaction Count per Seed ===")
 
-# 判断 raw_edges 是否已经有 tx_count
+# Judge whether raw_edges already has a tx_count column
 if "tx_count" in edges.columns:
     print("Detected 'tx_count' column. Using summed tx_count instead of row count.")
     source_counts = edges.groupby(SOURCE_COL)["tx_count"].sum()

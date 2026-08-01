@@ -1,3 +1,4 @@
+import sys
 import json
 from pathlib import Path
 
@@ -38,7 +39,14 @@ MODEL_COLORS = {"LogisticRegression": "#2a78d6", "RandomForest": "#1baf7a", "XGB
 GROUP_ORDER = ["transaction_behaviour", "graph_structural", "combined"]
 GROUP_COLORS = {"transaction_behaviour": "#2a78d6", "graph_structural": "#1baf7a", "combined": "#6b4fa0"}
 
-OUT_DIR = Path("ablation_shap_outputs")
+# Optional CLI args: feat_file edges_file out_subdir -- reruns this ablation on
+# the Plan-B reconstructed graph's structural features, e.g.
+# `python feature_ablation_shap.py seed_feature_matrix_reconstructed.csv raw_edges_reconstructed.csv ablation_shap_outputs_reconstructed`
+FEAT_FILE = sys.argv[1] if len(sys.argv) > 1 else "seed_feature_matrix.csv"
+EDGES_FILE = sys.argv[2] if len(sys.argv) > 2 else "raw_edges.csv"
+OUT_SUBDIR = sys.argv[3] if len(sys.argv) > 3 else "ablation_shap_outputs"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 plt.rcParams.update({
@@ -64,7 +72,7 @@ def clean_address(x):
 # 1. Load hand-crafted features + feature groups
 # =========================
 
-feat = pd.read_csv("seed_feature_matrix.csv")
+feat = pd.read_csv(FEAT_FILE)
 with open("feature_groups.json") as f:
     feature_groups = json.load(f)
 
@@ -79,7 +87,7 @@ struct_cols = list(feature_groups["graph_structural"])
 # (classification_outputs/classification_summary.csv), not a re-derivation
 # that could silently drift.
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])

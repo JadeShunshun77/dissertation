@@ -76,7 +76,13 @@ MAX_EPOCHS = 300
 PATIENCE = 20
 VAL_FRACTION = 0.2
 
-OUT_DIR = Path("graphsage_outputs")
+# Optional CLI args: edges_file balanced_subset_dir out_subdir -- reruns the
+# message-passing ablation on the Plan-B reconstructed graph.
+EDGES_FILE = sys.argv[1] if len(sys.argv) > 1 else "raw_edges_reconstructed.csv"
+BALANCED_DIR = sys.argv[2] if len(sys.argv) > 2 else "balanced_subset_outputs_reconstructed"
+OUT_SUBDIR = sys.argv[3] if len(sys.argv) > 3 else "graphsage_outputs_reconstructed"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 plt.rcParams.update({
@@ -96,7 +102,7 @@ def clean_address(x):
 # 1. Build the full graph (identical construction to graphsage_classification.py)
 # =========================
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])
@@ -175,7 +181,7 @@ def make_rewired_edge_index(seed):
 # 4. Load the SAME 153-seed balanced subset + SAME fold assignment
 # =========================
 
-balanced = pd.read_csv("balanced_subset_outputs/balanced_subset_seeds.csv")
+balanced = pd.read_csv(f"{BALANCED_DIR}/balanced_subset_seeds.csv")
 assert balanced["address"].isin(node_to_idx).all()
 balanced_idx = balanced["address"].map(node_to_idx).to_numpy()
 label_encoder = LabelEncoder().fit(LABEL_ORDER)

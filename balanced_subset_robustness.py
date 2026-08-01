@@ -1,3 +1,4 @@
+import sys
 import json
 from pathlib import Path
 
@@ -44,7 +45,16 @@ LABEL_ORDER = ["CEX", "DeFi", "Malicious_MEV"]
 MODEL_ORDER = ["LogisticRegression", "RandomForest", "XGBoost"]
 MODEL_COLORS = {"LogisticRegression": "#2a78d6", "RandomForest": "#1baf7a", "XGBoost": "#eb6834"}
 
-OUT_DIR = Path("balanced_subset_outputs")
+# Optional CLI args: feat_file edges_file emb_dir out_subdir classification_dir
+# -- reruns this robustness check on the Plan-B reconstructed graph, e.g.
+# `python balanced_subset_robustness.py seed_feature_matrix_reconstructed.csv raw_edges_reconstructed.csv embedding_outputs_reconstructed balanced_subset_outputs_reconstructed classification_outputs_reconstructed`
+FEAT_FILE = sys.argv[1] if len(sys.argv) > 1 else "seed_feature_matrix.csv"
+EDGES_FILE = sys.argv[2] if len(sys.argv) > 2 else "raw_edges.csv"
+EMB_DIR = sys.argv[3] if len(sys.argv) > 3 else "embedding_outputs"
+OUT_SUBDIR = sys.argv[4] if len(sys.argv) > 4 else "balanced_subset_outputs"
+CLASSIFICATION_DIR = sys.argv[5] if len(sys.argv) > 5 else "classification_outputs"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 plt.rcParams.update({
@@ -147,14 +157,14 @@ def paired_tests(fold_df, pairs, group_label):
 # Identical construction to classification.py / feature_ablation_shap.py so
 # the balanced-subset numbers are directly comparable to the full-sample ones.
 
-feat = pd.read_csv("seed_feature_matrix.csv")
+feat = pd.read_csv(FEAT_FILE)
 with open("feature_groups.json") as f:
     feature_groups = json.load(f)
 
 txn_cols = list(feature_groups["transaction_behaviour"])
 struct_cols = list(feature_groups["graph_structural"])
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])
@@ -178,7 +188,7 @@ handcrafted_cols = txn_cols + struct_cols
 # =========================
 
 active = feat[feat["is_active"]].copy()
-emb = pd.read_csv("embedding_outputs/seed_node2vec_embeddings.csv")
+emb = pd.read_csv(f"{EMB_DIR}/seed_node2vec_embeddings.csv")
 emb_cols = [c for c in emb.columns if c.startswith("emb_")]
 data_full = active.merge(emb[["address"] + emb_cols], on="address", how="inner")
 
@@ -260,7 +270,7 @@ print(f"\nSaved {OUT_DIR / 'balanced_cv_fold_scores.csv'}, 'balanced_summary.csv
 # 5. Side-by-side comparison chart: full sample vs balanced subset (combined feature set)
 # =========================
 
-full_summary = pd.read_csv("classification_outputs/classification_summary.csv")
+full_summary = pd.read_csv(f"{CLASSIFICATION_DIR}/classification_summary.csv")
 full_combined = full_summary[full_summary.feature_set == "combined"].set_index("model")["macro_f1_mean"]
 bal_combined = week8_summary[week8_summary.feature_set == "combined"].set_index("model")["macro_f1_mean"]
 
@@ -302,7 +312,7 @@ print(f"NMI={kmeans_bal_result['nmi_observed']:.4f} (p={kmeans_bal_result['nmi_p
 # Full-sample KMeans clustering, restricted to the SAME balanced subset of
 # seeds, to isolate "does balancing the evaluation set change the picture"
 # from "does balancing the sample fed into KMeans change the picture".
-full_emb_df = pd.read_csv("embedding_outputs/seed_node2vec_embeddings.csv")
+full_emb_df = pd.read_csv(f"{EMB_DIR}/seed_node2vec_embeddings.csv")
 full_kmeans = KMeans(n_clusters=k, random_state=RANDOM_STATE, n_init=10)
 full_clusters = full_kmeans.fit_predict(full_emb_df[emb_cols].to_numpy(dtype=float))
 full_emb_df["kmeans_cluster"] = full_clusters
@@ -316,7 +326,7 @@ print(f"\n=== [Balanced EVALUATION SUBSET of the full-sample KMeans clustering] 
 print(f"NMI={eval_only_result['nmi_observed']:.4f} (p={eval_only_result['nmi_p_value']:.4f}), "
       f"ARI={eval_only_result['ari_observed']:.4f} (p={eval_only_result['ari_p_value']:.4f})")
 
-full_result = pd.read_csv("embedding_outputs/clustering_significance_test.csv")
+full_result = pd.read_csv(f"{EMB_DIR}/clustering_significance_test.csv")
 full_kmeans_row = full_result[full_result.method == "KMeans"].iloc[0]
 full_louvain_row = full_result[full_result.method == "Louvain"].iloc[0]
 

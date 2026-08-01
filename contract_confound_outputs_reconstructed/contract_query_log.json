@@ -1,0 +1,11 @@
+{
+  "rpc_endpoint": "https://ethereum-rpc.publicnode.com",
+  "method": "eth_getCode",
+  "empty_bytecode_rule": "result == \"0x\" (or length <= 2) => EOA; otherwise => contract",
+  "query_run_recorded_at_utc": "2026-07-31T19:32:31.663122+00:00",
+  "n_addresses_queried": 500,
+  "n_rpc_success": 500,
+  "n_rpc_failed_after_retries": 0,
+  "retry_policy": "up to 3 attempts per address, 1.5s * attempt_number backoff",
+  "coverage_pct": 100.0
+}

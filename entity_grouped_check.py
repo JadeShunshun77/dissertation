@@ -1,3 +1,4 @@
+import sys
 import json
 from pathlib import Path
 
@@ -40,7 +41,17 @@ RANDOM_STATE = 42
 LABEL_COL = "label"
 MODEL_COLORS = {"LogisticRegression": "#2a78d6", "RandomForest": "#1baf7a"}
 
-OUT_DIR = Path("contract_confound_outputs")
+# Optional CLI args: feat_file edges_file emb_dir out_subdir contract_cache_dir
+# -- reruns on the Plan-B reconstructed graph. out_subdir must match the
+# out_subdir used for confound_followup.py's rerun, since this script reads
+# contract_only_summary.csv (written by confound_followup.py) back out of it.
+FEAT_FILE = sys.argv[1] if len(sys.argv) > 1 else "seed_feature_matrix_reconstructed.csv"
+EDGES_FILE = sys.argv[2] if len(sys.argv) > 2 else "raw_edges_reconstructed.csv"
+EMB_DIR = sys.argv[3] if len(sys.argv) > 3 else "embedding_outputs_reconstructed"
+OUT_SUBDIR = sys.argv[4] if len(sys.argv) > 4 else "contract_confound_outputs_reconstructed"
+CONTRACT_CACHE_DIR = sys.argv[5] if len(sys.argv) > 5 else "contract_confound_outputs"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 plt.rcParams.update({"figure.facecolor": "#fcfcfb", "axes.facecolor": "#fcfcfb", "axes.edgecolor": "#c3c2b7",
@@ -67,13 +78,13 @@ def fit_predict(model_name, X_train, y_train, X_test, random_state=RANDOM_STATE)
 # 1. Load data (same construction as confound_followup.py)
 # =========================
 
-feat = pd.read_csv("seed_feature_matrix.csv")
+feat = pd.read_csv(FEAT_FILE)
 with open("feature_groups.json") as f:
     feature_groups = json.load(f)
 txn_cols = list(feature_groups["transaction_behaviour"])
 struct_cols = list(feature_groups["graph_structural"])
 
-edges = pd.read_csv("raw_edges.csv")
+edges = pd.read_csv(EDGES_FILE)
 edges["source"] = edges["source"].apply(clean_address)
 edges["target"] = edges["target"].apply(clean_address)
 edges = edges.dropna(subset=["source", "target"])
@@ -88,11 +99,11 @@ for col in ["pagerank", "pagerank_weighted", "log_pagerank", "log_pagerank_weigh
 struct_cols += ["pagerank_rank", "pagerank_weighted_rank"]
 handcrafted_cols = txn_cols + struct_cols
 
-contract_df = pd.read_csv(OUT_DIR / "seed_is_contract.csv")
+contract_df = pd.read_csv(Path(CONTRACT_CACHE_DIR) / "seed_is_contract.csv")
 feat = feat.merge(contract_df[["address", "is_contract"]], on="address", how="left")
 feat["is_contract"] = feat["is_contract"].fillna(False)
 
-emb = pd.read_csv("embedding_outputs/seed_node2vec_embeddings.csv")
+emb = pd.read_csv(f"{EMB_DIR}/seed_node2vec_embeddings.csv")
 emb_cols = [c for c in emb.columns if c.startswith("emb_")]
 active = feat[feat["is_active"]].copy()
 data = active.merge(emb[["address"] + emb_cols], on="address", how="inner")

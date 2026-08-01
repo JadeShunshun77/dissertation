@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -26,7 +27,12 @@ LABEL_COL = "label"
 LABEL_ORDER = ["CEX", "DeFi", "Malicious_MEV"]
 N_PERM = 500  # reduced from 2000 (Week 7/10 default) since this runs 50x -- still ample for a 0.05 alpha threshold
 
-OUT_DIR = Path("embedding_outputs")
+# Optional CLI args: emb_dir out_subdir -- reruns on the Plan-B reconstructed
+# graph's Node2Vec embeddings.
+EMB_DIR = sys.argv[1] if len(sys.argv) > 1 else "embedding_outputs_reconstructed"
+OUT_SUBDIR = sys.argv[2] if len(sys.argv) > 2 else "embedding_outputs_reconstructed"
+
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 plt.rcParams.update({"figure.facecolor": "#fcfcfb", "axes.facecolor": "#fcfcfb", "axes.edgecolor": "#c3c2b7",
@@ -47,7 +53,7 @@ def permutation_p(y_true, y_pred, n_perm=N_PERM, random_state=RANDOM_STATE):
 # 1. Load embeddings + labels, and the FIXED full-sample KMeans clustering
 # =========================
 
-seed_emb = pd.read_csv("embedding_outputs/seed_node2vec_embeddings.csv")
+seed_emb = pd.read_csv(f"{EMB_DIR}/seed_node2vec_embeddings.csv")
 emb_cols = [c for c in seed_emb.columns if c.startswith("emb_")]
 X_full = seed_emb[emb_cols].to_numpy(dtype=float)
 y_full = seed_emb[LABEL_COL].to_numpy()

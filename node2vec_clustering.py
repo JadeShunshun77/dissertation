@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import numpy as np
 import networkx as nx
@@ -15,11 +16,17 @@ from sklearn.metrics import normalized_mutual_info_score, adjusted_rand_score, s
 # =========================
 # 0. Setup
 # =========================
+# Optional CLI args: edges_file output_subdir -- reruns the same pipeline on
+# the Plan-B reconstructed graph, e.g.
+# `python node2vec_clustering.py raw_edges_reconstructed.csv embedding_outputs_reconstructed`
 
-edges = pd.read_csv("raw_edges.csv")
+EDGES_FILE = sys.argv[1] if len(sys.argv) > 1 else "raw_edges.csv"
+OUT_SUBDIR = sys.argv[2] if len(sys.argv) > 2 else "embedding_outputs"
+
+edges = pd.read_csv(EDGES_FILE)
 feat = pd.read_csv("seed_feature_matrix.csv")
 
-OUT_DIR = Path("embedding_outputs")
+OUT_DIR = Path(OUT_SUBDIR)
 OUT_DIR.mkdir(exist_ok=True)
 
 SOURCE_COL, TARGET_COL, TX_COUNT_COL = "source", "target", "tx_count"
