@@ -1,0 +1,52 @@
+{
+  "verification_date": "2026-08-06",
+  "status": "PASS",
+  "active_graph_sha256": "59CECEDA94AF4792C1B3397A9EA5F5E44A3B15C2A59BB14FA27AE01B05BB1DAB",
+  "source_scope": {
+    "window": "2026-03-25 through 2026-06-23",
+    "stored_unit": "directed source-target pair aggregated over the full window",
+    "stored_edge_fields": [
+      "source",
+      "target",
+      "tx_count",
+      "total_eth_value",
+      "avg_gas_fee"
+    ],
+    "included": "successful top-level transactions with a non-null recipient",
+    "not_stored": [
+      "per-transaction timestamps or temporal ordering",
+      "ERC-20/ERC-721 token transfers",
+      "internal call traces",
+      "event logs and decoded protocol actions",
+      "calldata or function signatures",
+      "failed transactions"
+    ]
+  },
+  "code_contracts": {
+    "node2vec_uses_undirected_graph": true,
+    "node2vec_weight_key_is_explicit": true,
+    "gnn_builds_undirected_adjacency": true,
+    "gnn_propagation_call_has_no_edge_weight": true,
+    "feature_engineering_builds_directed_graph": true,
+    "feature_engineering_uses_weighted_pagerank": true
+  },
+  "representation_conclusion": "Direction and weights are retained in hand-crafted and GNN node features; Node2Vec uses undirected tx-count-weighted walks; GNN message passing is undirected and unweighted. Time and interaction type are not modelled.",
+  "sensitivity_decision": {
+    "new_model_run": false,
+    "decision": "not added to the frozen dissertation experiment matrix",
+    "reason": "A valid directed and weighted GNN comparison is not a one-parameter ablation: it requires direction-aware relation channels or architecture changes, a common weighting design for GraphSAGE and GCN, and multiseed retraining under the M05 standard. Missing temporal and interaction-type data cannot be recovered by model reruns."
+  },
+  "materiality": "Representation loss is not assumed harmless. Near-zero seed-level in/out degree correlation and concentrated transaction weights show nonredundant direction and weight information, so claims are restricted accordingly.",
+  "permitted_claims": [
+    "Performance of static models on the sampled 90-day top-level transaction graph.",
+    "Comparison of an undirected tx-count-weighted Node2Vec representation.",
+    "Comparison of unweighted undirected GNN propagation with directed and weighted node features."
+  ],
+  "prohibited_claims": [
+    "Complete representation of DeFi or Ethereum interactions.",
+    "Direction-aware or amount-aware GNN message passing.",
+    "Temporal prediction, temporal stability or causal ordering.",
+    "Token-transfer, internal-call or decoded-protocol coverage.",
+    "Evidence that omitted direction, weight, time or edge types are unimportant."
+  ]
+}

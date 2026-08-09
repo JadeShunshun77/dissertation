@@ -1,0 +1,3 @@
+method,nmi_observed,nmi_null_mean,nmi_null_std,nmi_p_value,ari_observed,ari_null_mean,ari_null_std,ari_p_value
+KMeans,0.1632,0.0053,0.0038,0.0,0.0265,-0.0003,0.0115,0.0195
+Louvain,0.2185,0.0905,0.0072,0.0,0.0131,-0.0001,0.0056,0.0155

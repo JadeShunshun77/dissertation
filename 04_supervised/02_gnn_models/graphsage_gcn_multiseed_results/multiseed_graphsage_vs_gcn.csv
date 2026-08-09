@@ -1,0 +1,2 @@
+comparison,n_seeds,mean_diff,diff_95ci_lo,diff_95ci_hi,paired_t_stat,paired_p_value,pct_seeds_graphsage_better
+GraphSAGE - GCN (both structural+transaction_behaviour features),5,0.0019,-0.0158,0.0196,0.3009,0.7785,0.6

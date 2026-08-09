@@ -1,0 +1,16 @@
+feature_set,model,macro_f1_mean,macro_f1_std,balanced_accuracy_mean,balanced_accuracy_std
+embedding,LogisticRegression,0.885,0.0359,0.9342,0.0248
+embedding,RandomForest,0.8421,0.0986,0.7996,0.1036
+embedding,XGBoost,0.8686,0.0666,0.838,0.0822
+graph_structural,LogisticRegression,0.659,0.0671,0.7394,0.1093
+graph_structural,RandomForest,0.8383,0.0856,0.8131,0.1127
+graph_structural,XGBoost,0.8244,0.0783,0.8284,0.0904
+hand_crafted,LogisticRegression,0.9238,0.0339,0.9257,0.0185
+hand_crafted,RandomForest,0.932,0.0393,0.9048,0.0662
+hand_crafted,XGBoost,0.9228,0.0708,0.9172,0.0843
+hand_crafted_embedding,LogisticRegression,0.9238,0.0443,0.9268,0.0431
+hand_crafted_embedding,RandomForest,0.919,0.025,0.8848,0.0431
+hand_crafted_embedding,XGBoost,0.9204,0.0493,0.901,0.0691
+transaction_behaviour,LogisticRegression,0.9355,0.0411,0.9295,0.022
+transaction_behaviour,RandomForest,0.9283,0.018,0.904,0.0478
+transaction_behaviour,XGBoost,0.9415,0.0451,0.9321,0.0664

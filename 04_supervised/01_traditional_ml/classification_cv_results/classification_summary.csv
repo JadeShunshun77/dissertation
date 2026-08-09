@@ -1,0 +1,10 @@
+feature_set,model,macro_f1_mean,macro_f1_std,balanced_accuracy_mean,balanced_accuracy_std
+hand_crafted,LogisticRegression,0.8847,0.0337,0.8982,0.0327
+hand_crafted,RandomForest,0.9,0.0279,0.8884,0.0231
+hand_crafted,XGBoost,0.9065,0.0259,0.9005,0.0296
+embedding,LogisticRegression,0.782,0.0661,0.8324,0.0731
+embedding,RandomForest,0.7855,0.1163,0.7344,0.1292
+embedding,XGBoost,0.8433,0.0698,0.8179,0.077
+combined,LogisticRegression,0.9022,0.06,0.9151,0.0463
+combined,RandomForest,0.9069,0.0475,0.889,0.0423
+combined,XGBoost,0.9177,0.0405,0.9017,0.0458

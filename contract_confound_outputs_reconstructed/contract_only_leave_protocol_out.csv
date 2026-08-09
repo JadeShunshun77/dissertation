@@ -1,9 +1,0 @@
-held_out_defi_protocol,model,n_test_defi,defi_recall,defi_f1,mev_recall,mev_f1,macro_f1
-uniswap,LogisticRegression,64,0.9062,0.9508,1.0,0.9189,0.9349
-uniswap,RandomForest,64,0.8906,0.9421,1.0,0.9067,0.9244
-curve,LogisticRegression,10,1.0,1.0,1.0,1.0,1.0
-curve,RandomForest,10,1.0,1.0,1.0,1.0,1.0
-0x API,LogisticRegression,2,1.0,1.0,1.0,1.0,1.0
-0x API,RandomForest,2,1.0,1.0,1.0,1.0,1.0
-dodo,LogisticRegression,2,1.0,1.0,1.0,1.0,1.0
-dodo,RandomForest,2,1.0,1.0,1.0,1.0,1.0

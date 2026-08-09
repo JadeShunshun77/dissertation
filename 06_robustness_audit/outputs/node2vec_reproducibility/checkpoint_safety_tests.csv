@@ -1,0 +1,5 @@
+test,passed,return_code,expected
+legacy_complete_checkpoint_read_only,True,0,success with no active output hash changes
+missing_metadata_rejected,True,1,non-zero return and missing metadata error
+mismatched_graph_hash_rejected,True,1,non-zero return and input hash error
+mismatched_code_hash_rejected,True,1,non-zero return and compatibility error

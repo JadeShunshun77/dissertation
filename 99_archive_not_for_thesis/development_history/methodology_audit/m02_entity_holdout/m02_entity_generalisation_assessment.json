@@ -1,0 +1,10 @@
+{
+  "n_active_labels": 436,
+  "n_repeats": 50,
+  "max_test_per_class": 10,
+  "full_three_class_entity_disjoint_identifiable": false,
+  "mev_entity_groups_available": false,
+  "one_sided_holdout_runs": 1400,
+  "max_train_test_address_overlap": 0,
+  "interpretation": "One-sided unseen CEX-entity and DeFi-protocol tests with address-disjoint MEV controls; not full unseen-entity generalisation"
+}

@@ -1,0 +1,89 @@
+{
+  "verification_date": "2026-08-06",
+  "status": "PASS",
+  "active_graph_sha256": "59CECEDA94AF4792C1B3397A9EA5F5E44A3B15C2A59BB14FA27AE01B05BB1DAB",
+  "sampling_design": "Label-seeded bidirectional Top-100 candidate graph plus fixed-node nonseed-to-nonseed augmentation.",
+  "precise_graph_definition": "Label-seeded, fixed-node, partially reconstructed 90-day transaction subgraph.",
+  "controlled_comparison_supported": "A structural sensitivity comparison after adding observed nonseed-to-nonseed edges while holding the node set and seed-incident edge rows fixed.",
+  "claims_not_supported": [
+    "Complete induced-subgraph coverage of the 8,029 addresses.",
+    "Unbiased sampling of the Ethereum network or its address population.",
+    "A causal effect of graph reconstruction.",
+    "Complete on-chain degree or transaction history for labelled addresses."
+  ],
+  "top100_note": "Top-100 was applied per seed and direction during candidate selection. After incoming/outgoing unions, a seed's final incident-row count is not a hard 100 cap.",
+  "graph_summary": [
+    {
+      "graph": "original_top100",
+      "directed_rows": 12861,
+      "undirected_pairs": 12694,
+      "nodes": 8029,
+      "seeds_present": 436,
+      "seed_seed_rows": 158,
+      "seed_nonseed_rows": 12703,
+      "nonseed_nonseed_rows": 0,
+      "self_loops": 0,
+      "duplicate_directed_pairs": 0
+    },
+    {
+      "graph": "fixed_node_augmentation",
+      "directed_rows": 34336,
+      "undirected_pairs": 34259,
+      "nodes": 5314,
+      "seeds_present": 0,
+      "seed_seed_rows": 0,
+      "seed_nonseed_rows": 0,
+      "nonseed_nonseed_rows": 34336,
+      "self_loops": 0,
+      "duplicate_directed_pairs": 0
+    },
+    {
+      "graph": "active_reconstructed",
+      "directed_rows": 47197,
+      "undirected_pairs": 46953,
+      "nodes": 8029,
+      "seeds_present": 436,
+      "seed_seed_rows": 158,
+      "seed_nonseed_rows": 12703,
+      "nonseed_nonseed_rows": 34336,
+      "self_loops": 0,
+      "duplicate_directed_pairs": 0
+    }
+  ],
+  "label_coverage": [
+    {
+      "label": "CEX",
+      "total_seeds": 51,
+      "seeds_in_graph": 51,
+      "coverage_fraction": 1.0
+    },
+    {
+      "label": "DeFi",
+      "total_seeds": 150,
+      "seeds_in_graph": 86,
+      "coverage_fraction": 0.5733333333333334
+    },
+    {
+      "label": "Malicious_MEV",
+      "total_seeds": 299,
+      "seeds_in_graph": 299,
+      "coverage_fraction": 1.0
+    },
+    {
+      "label": "ALL",
+      "total_seeds": 500,
+      "seeds_in_graph": 436,
+      "coverage_fraction": 0.872
+    }
+  ],
+  "invariants": {
+    "active_pairs_equal_component_union": true,
+    "component_pair_overlap": 0,
+    "fixed_node_set": true,
+    "augmentation_new_nodes": 0,
+    "augmentation_seed_touching_pairs": 0,
+    "seed_incident_pair_set_unchanged": true,
+    "raw_component_values_unchanged": true,
+    "augmentation_component_values_unchanged": true
+  }
+}

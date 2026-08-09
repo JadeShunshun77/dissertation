@@ -1,0 +1,16 @@
+setting,p,q,train_seed,balanced_ari_mean_over_resamples,balanced_ari_std_over_resamples
+"baseline (unbiased, DeepWalk-equivalent)",1.0,1.0,42,0.1531,0.0349
+"baseline (unbiased, DeepWalk-equivalent)",1.0,1.0,43,0.1337,0.0189
+"baseline (unbiased, DeepWalk-equivalent)",1.0,1.0,44,0.1345,0.032
+"baseline (unbiased, DeepWalk-equivalent)",1.0,1.0,45,0.1443,0.0429
+"baseline (unbiased, DeepWalk-equivalent)",1.0,1.0,46,0.1312,0.0445
+BFS-like (local/structural),0.25,4.0,42,0.1223,0.0317
+BFS-like (local/structural),0.25,4.0,43,0.1188,0.0153
+BFS-like (local/structural),0.25,4.0,44,0.1072,0.034
+BFS-like (local/structural),0.25,4.0,45,0.1107,0.0359
+BFS-like (local/structural),0.25,4.0,46,0.0994,0.0399
+DFS-like (outward/community),4.0,0.25,42,0.1135,0.0298
+DFS-like (outward/community),4.0,0.25,43,0.0949,0.025
+DFS-like (outward/community),4.0,0.25,44,0.11,0.028
+DFS-like (outward/community),4.0,0.25,45,0.1077,0.0384
+DFS-like (outward/community),4.0,0.25,46,0.0967,0.0355

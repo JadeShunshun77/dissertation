@@ -1,0 +1,4 @@
+setting,p,q,n_train_seeds,ari_mean_across_seeds,ari_std_across_seeds,ari_min_across_seeds,ari_max_across_seeds
+"baseline (unbiased, DeepWalk-equivalent)",1.0,1.0,5,0.1394,0.0082,0.1312,0.1531
+BFS-like (local/structural),0.25,4.0,5,0.1117,0.0082,0.0994,0.1223
+DFS-like (outward/community),4.0,0.25,5,0.1046,0.0074,0.0949,0.1135

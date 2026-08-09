@@ -1,0 +1,4 @@
+model,mean_diff_combined_minus_handcrafted,paired_t_stat,paired_p_value,n_folds_improved
+LogisticRegression,0.0175,0.8773,0.4299,2
+RandomForest,0.007,0.7342,0.5036,4
+XGBoost,0.0112,0.5392,0.6183,4

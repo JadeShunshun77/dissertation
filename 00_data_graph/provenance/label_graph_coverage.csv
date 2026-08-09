@@ -1,0 +1,5 @@
+label,total_seeds,seeds_in_graph,coverage_fraction
+CEX,51,51,1.0
+DeFi,150,86,0.5733333333333334
+Malicious_MEV,299,299,1.0
+ALL,500,436,0.872

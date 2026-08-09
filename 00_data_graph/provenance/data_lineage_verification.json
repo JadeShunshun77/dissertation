@@ -1,0 +1,96 @@
+{
+  "verification_date": "2026-08-06",
+  "scope": "Frozen local inputs; no BigQuery, Dune or RPC call was executed.",
+  "status": "PASS",
+  "historical_limitations": [
+    "The exact original Top-100 BigQuery SQL and Job ID were not retained.",
+    "Dune query IDs, retrieval dates and the upstream MEV-label source were not retained.",
+    "The historical row-ordering step for the final seed CSV was not retained."
+  ],
+  "files": [
+    {
+      "path": "00_data_graph/data/main/final_seed_address500.csv",
+      "bytes": 33465,
+      "data_rows": 500,
+      "sha256": "88B00CFE2A1A3CE5B6C3FD9AD2CA993A6C116EDD709E49ADA655B00F8B374E7F"
+    },
+    {
+      "path": "00_data_graph/data/main/raw_edges_reconstructed.csv",
+      "bytes": 5418677,
+      "data_rows": 47197,
+      "sha256": "59CECEDA94AF4792C1B3397A9EA5F5E44A3B15C2A59BB14FA27AE01B05BB1DAB"
+    },
+    {
+      "path": "00_data_graph/data/reconstruction_reference/raw_edges.csv",
+      "bytes": 1620874,
+      "data_rows": 12861,
+      "sha256": "20C1E59DEAF44094CED41B2DC5BC9FC2A7C88D03CCD68507AC56208D2BD79618"
+    },
+    {
+      "path": "00_data_graph/data/reconstruction_reference/nonseed_to_nonseed_augmentation_edges.csv",
+      "bytes": 3999152,
+      "data_rows": 34336,
+      "sha256": "55A98EA20C67555E23A1C51485DB350C1C53E8C973BA5D4F973515324F0A3F68"
+    },
+    {
+      "path": "00_data_graph/provenance/label_snapshots/dune_cex_addresses.csv",
+      "bytes": 9189,
+      "data_rows": 150,
+      "sha256": "C24A01A03587B7338EA19096AD2D259A59E3A5E1EF8F97F67E44B0477DEE85CC"
+    },
+    {
+      "path": "00_data_graph/provenance/label_snapshots/dune_defi_addresses.csv",
+      "bytes": 8570,
+      "data_rows": 150,
+      "sha256": "6D2CF841E2D42E4A2AE28A8D7B2FD3E051101B312BF619671B43A8274476D0BF"
+    },
+    {
+      "path": "00_data_graph/provenance/label_snapshots/seed_cex_addresses_active.csv",
+      "bytes": 2974,
+      "data_rows": 51,
+      "sha256": "3E384A8509E3C1CE7B679B243EEA1AAA21187582DD02EF1A08BF4BDBE687E8FB"
+    },
+    {
+      "path": "00_data_graph/provenance/label_snapshots/seed_mev_addresses.csv",
+      "bytes": 22531,
+      "data_rows": 300,
+      "sha256": "DF61AB7CC10994EF068F76C73E0AB31767F0F6751590596325339ECABB162A70"
+    }
+  ],
+  "label_audit": {
+    "active_file": "00_data_graph/data/main/final_seed_address500.csv",
+    "active_sha256": "88B00CFE2A1A3CE5B6C3FD9AD2CA993A6C116EDD709E49ADA655B00F8B374E7F",
+    "active_rows": 500,
+    "label_counts": {
+      "Malicious_MEV": 299,
+      "DeFi": 150,
+      "CEX": 51
+    },
+    "source_rows_before_deduplication": 501,
+    "duplicate_source_rows_removed": 1,
+    "address_membership_matches": true,
+    "address_label_mapping_matches": true,
+    "historical_row_order_reproduced": false,
+    "row_order_note": "The frozen active file is authoritative. Its address-label mapping is fully auditable, but the historical post-merge row ordering step was not retained."
+  },
+  "graph_reconstruction_audit": {
+    "raw_rows": 12861,
+    "augmentation_rows": 34336,
+    "reconstructed_rows": 47197,
+    "reconstructed_nodes": 8029,
+    "raw_seed_touching_rows": 12861,
+    "raw_nonseed_to_nonseed_rows": 0,
+    "augmentation_seed_touching_rows": 0,
+    "augmentation_nonseed_to_nonseed_rows": 34336,
+    "component_pair_overlap": 0,
+    "self_loops": 0,
+    "augmentation_new_nodes": 0,
+    "byte_exact_match": true,
+    "active_sha256": "59CECEDA94AF4792C1B3397A9EA5F5E44A3B15C2A59BB14FA27AE01B05BB1DAB"
+  },
+  "read_only_sql": {
+    "00_data_graph/sql/documented_original_top100_query.sql": true,
+    "00_data_graph/sql/nonseed_to_nonseed_augmentation_query.sql": true
+  },
+  "local_database_files": []
+}

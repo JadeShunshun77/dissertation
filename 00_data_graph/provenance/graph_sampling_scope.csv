@@ -1,0 +1,4 @@
+graph,directed_rows,undirected_pairs,nodes,seeds_present,seed_seed_rows,seed_nonseed_rows,nonseed_nonseed_rows,self_loops,duplicate_directed_pairs
+original_top100,12861,12694,8029,436,158,12703,0,0,0
+fixed_node_augmentation,34336,34259,5314,0,0,0,34336,0,0
+active_reconstructed,47197,46953,8029,436,158,12703,34336,0,0

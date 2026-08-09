@@ -1,0 +1,7 @@
+.claude/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+03_unsupervised/node2vec_rerun_validation/
+.DS_Store
+Thumbs.db

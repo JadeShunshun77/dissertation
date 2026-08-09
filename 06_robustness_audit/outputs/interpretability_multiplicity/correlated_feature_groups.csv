@@ -1,0 +1,7 @@
+correlation_group,n_features,features,feature_source_groups,max_abs_spearman_rho,summed_mean_abs_shap,share_of_total_shap,highest_attributed_member,highest_member_share_within_group
+CG01,7,log_out_tx_count | log_total_tx_count | log_weighted_degree | out_tx_count | total_tx_count | weighted_degree | weighted_out_degree,transaction_behaviour,1.0,0.27667,0.576925,weighted_out_degree,0.210684
+CG02,6,in_degree | in_tx_count | log_in_tx_count | pagerank_rank | pagerank_weighted_rank | weighted_in_degree,graph_structural | transaction_behaviour,1.0,0.03426,0.07144,pagerank_rank,0.305604
+CG03,4,log_out_eth_value | log_total_eth_value | out_eth_value | total_eth_value,transaction_behaviour,1.0,0.02693,0.056156,log_out_eth_value,0.29261
+CG04,2,clustering_coeff | has_closed_triangle,graph_structural,0.938629,0.00536,0.011177,clustering_coeff,0.727612
+CG05,2,degree | log_degree,graph_structural,1.0,0.00989,0.020623,degree,0.628918
+CG06,2,in_eth_value | log_in_eth_value,transaction_behaviour,1.0,0.01119,0.023334,in_eth_value,0.529937

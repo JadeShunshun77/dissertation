@@ -1,0 +1,57 @@
+{
+  "checkpoint": {
+    "csv_sha256": "8AB80948B8FC201B7A79C3068027D989EFE0FA154BC46145A99F0DB85538492B",
+    "row_count": 15
+  },
+  "input_hashes": {
+    "feature_sha256": "F06668FF9342513374767985A49BEA041754E38193EDCD5AC299E6EC5F011558",
+    "graph_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "limitations": [
+    "The completed CSV predates M07 and did not seed Python random explicitly.",
+    "The producing code and package hashes were not recorded at run time.",
+    "This checkpoint may be read and verified but must never be extended."
+  ],
+  "mode": "legacy_complete_read_only",
+  "parameters": {
+    "balanced_resamples_per_seed": 10,
+    "dimensions": 64,
+    "label_order": [
+      "CEX",
+      "DeFi",
+      "Malicious_MEV"
+    ],
+    "min_count": 1,
+    "num_walks": 10,
+    "pq_settings": [
+      [
+        "baseline (unbiased, DeepWalk-equivalent)",
+        1,
+        1
+      ],
+      [
+        "BFS-like (local/structural)",
+        0.25,
+        4
+      ],
+      [
+        "DFS-like (outward/community)",
+        4,
+        0.25
+      ]
+    ],
+    "sg": 1,
+    "train_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "walk_length": 30,
+    "weight_key": "weight",
+    "window": 10,
+    "workers": 1
+  },
+  "schema_version": 1
+}

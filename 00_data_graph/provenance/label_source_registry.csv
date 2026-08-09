@@ -1,0 +1,5 @@
+source_id,relative_path,role,source_platform,source_reference,retrieval_date,licence_or_usage_record,status,notes
+cex_candidates,00_data_graph/provenance/label_snapshots/dune_cex_addresses.csv,CEX candidate export,Dune,not_recorded,not_recorded,not_recorded,frozen historical snapshot,"150 candidate rows; exact Dune query ID and URL were not retained"
+cex_active,00_data_graph/provenance/label_snapshots/seed_cex_addresses_active.csv,CEX active selection,Dune-derived local selection,not_recorded,not_recorded,not_recorded,frozen historical snapshot,"51 rows; selection procedure from the 150 candidates was not retained"
+defi_labels,00_data_graph/provenance/label_snapshots/dune_defi_addresses.csv,DeFi label export,Dune,not_recorded,not_recorded,not_recorded,frozen historical snapshot,"150 rows; exact Dune query ID and URL were not retained"
+mev_labels,00_data_graph/provenance/label_snapshots/seed_mev_addresses.csv,MEV-related label export,not_recorded,not_recorded,not_recorded,not_recorded,frozen historical snapshot,"300 source rows and 299 unique addresses; upstream platform and query were not retained"

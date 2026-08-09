@@ -1,0 +1,7 @@
+comparison,model,mean_diff,paired_t_stat,paired_p_value,n_folds_improved
+hand_crafted vs transaction_behaviour,LogisticRegression,-0.0118,-0.9076,0.4154,1
+hand_crafted vs transaction_behaviour,RandomForest,0.0037,0.2753,0.7967,2
+hand_crafted vs transaction_behaviour,XGBoost,-0.0188,-1.1686,0.3075,1
+hand_crafted_embedding vs hand_crafted,LogisticRegression,0.0,0.0009,0.9994,2
+hand_crafted_embedding vs hand_crafted,RandomForest,-0.0129,-1.6301,0.1784,0
+hand_crafted_embedding vs hand_crafted,XGBoost,-0.0024,-0.1279,0.9044,3

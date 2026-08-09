@@ -1,0 +1,1401 @@
+scenario,held_out_group,repeat,seed,feature_set,model,n_train_per_class,n_test_per_class,train_test_address_overlap,macro_f1,balanced_accuracy,heldout_role_recall,mev_control_recall
+cex_unseen_entity_eoa_only,coinbase,0,42,hand_crafted,LogisticRegression,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,0,42,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,0,42,hand_crafted_embedding,LogisticRegression,16,10,0,0.7916666666666667,0.8,0.6,1.0
+cex_unseen_entity_eoa_only,coinbase,0,42,hand_crafted_embedding,RandomForest,16,10,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,coinbase,1,43,hand_crafted,LogisticRegression,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,1,43,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,1,43,hand_crafted_embedding,LogisticRegression,16,10,0,0.5604395604395604,0.6,0.3,0.9
+cex_unseen_entity_eoa_only,coinbase,1,43,hand_crafted_embedding,RandomForest,16,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+cex_unseen_entity_eoa_only,coinbase,2,44,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,2,44,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,2,44,hand_crafted_embedding,LogisticRegression,16,10,0,0.6419437340153453,0.65,0.5,0.8
+cex_unseen_entity_eoa_only,coinbase,2,44,hand_crafted_embedding,RandomForest,16,10,0,0.6266666666666667,0.65,0.4,0.9
+cex_unseen_entity_eoa_only,coinbase,3,45,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,3,45,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,3,45,hand_crafted_embedding,LogisticRegression,16,10,0,0.8,0.8,0.8,0.8
+cex_unseen_entity_eoa_only,coinbase,3,45,hand_crafted_embedding,RandomForest,16,10,0,0.949874686716792,0.95,0.9,1.0
+cex_unseen_entity_eoa_only,coinbase,4,46,hand_crafted,LogisticRegression,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,4,46,hand_crafted,RandomForest,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,4,46,hand_crafted_embedding,LogisticRegression,16,10,0,0.6266666666666667,0.65,0.4,0.9
+cex_unseen_entity_eoa_only,coinbase,4,46,hand_crafted_embedding,RandomForest,16,10,0,0.6266666666666667,0.65,0.4,0.9
+cex_unseen_entity_eoa_only,coinbase,5,47,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,5,47,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,5,47,hand_crafted_embedding,LogisticRegression,16,10,0,0.7916666666666667,0.8,0.6,1.0
+cex_unseen_entity_eoa_only,coinbase,5,47,hand_crafted_embedding,RandomForest,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,6,48,hand_crafted,LogisticRegression,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,6,48,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,6,48,hand_crafted_embedding,LogisticRegression,16,10,0,0.5833333333333333,0.6000000000000001,0.4,0.8
+cex_unseen_entity_eoa_only,coinbase,6,48,hand_crafted_embedding,RandomForest,16,10,0,0.5833333333333333,0.6000000000000001,0.4,0.8
+cex_unseen_entity_eoa_only,coinbase,7,49,hand_crafted,LogisticRegression,16,10,0,0.7333333333333334,0.75,1.0,0.5
+cex_unseen_entity_eoa_only,coinbase,7,49,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,7,49,hand_crafted_embedding,LogisticRegression,16,10,0,0.6,0.6,0.6,0.6
+cex_unseen_entity_eoa_only,coinbase,7,49,hand_crafted_embedding,RandomForest,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,8,50,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,8,50,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,8,50,hand_crafted_embedding,LogisticRegression,16,10,0,0.7,0.7,0.7,0.7
+cex_unseen_entity_eoa_only,coinbase,8,50,hand_crafted_embedding,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,9,51,hand_crafted,LogisticRegression,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,9,51,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,9,51,hand_crafted_embedding,LogisticRegression,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,9,51,hand_crafted_embedding,RandomForest,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,10,52,hand_crafted,LogisticRegression,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,10,52,hand_crafted,RandomForest,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,10,52,hand_crafted_embedding,LogisticRegression,16,10,0,0.797979797979798,0.8,0.7,0.9
+cex_unseen_entity_eoa_only,coinbase,10,52,hand_crafted_embedding,RandomForest,16,10,0,0.6875,0.7,0.5,0.9
+cex_unseen_entity_eoa_only,coinbase,11,53,hand_crafted,LogisticRegression,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,11,53,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,11,53,hand_crafted_embedding,LogisticRegression,16,10,0,0.5488721804511278,0.55,0.5,0.6
+cex_unseen_entity_eoa_only,coinbase,11,53,hand_crafted_embedding,RandomForest,16,10,0,0.595959595959596,0.6,0.5,0.7
+cex_unseen_entity_eoa_only,coinbase,12,54,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,12,54,hand_crafted,RandomForest,16,10,0,0.7916666666666667,0.8,1.0,0.6
+cex_unseen_entity_eoa_only,coinbase,12,54,hand_crafted_embedding,LogisticRegression,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,12,54,hand_crafted_embedding,RandomForest,16,10,0,0.797979797979798,0.8,0.7,0.9
+cex_unseen_entity_eoa_only,coinbase,13,55,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,13,55,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,13,55,hand_crafted_embedding,LogisticRegression,16,10,0,0.8,0.8,0.8,0.8
+cex_unseen_entity_eoa_only,coinbase,13,55,hand_crafted_embedding,RandomForest,16,10,0,0.8465473145780051,0.85,0.7,1.0
+cex_unseen_entity_eoa_only,coinbase,14,56,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,14,56,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,14,56,hand_crafted_embedding,LogisticRegression,16,10,0,0.6419437340153453,0.65,0.8,0.5
+cex_unseen_entity_eoa_only,coinbase,14,56,hand_crafted_embedding,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,15,57,hand_crafted,LogisticRegression,16,10,0,0.6875,0.7,0.9,0.5
+cex_unseen_entity_eoa_only,coinbase,15,57,hand_crafted,RandomForest,16,10,0,0.7916666666666667,0.8,1.0,0.6
+cex_unseen_entity_eoa_only,coinbase,15,57,hand_crafted_embedding,LogisticRegression,16,10,0,0.696969696969697,0.7,0.6,0.8
+cex_unseen_entity_eoa_only,coinbase,15,57,hand_crafted_embedding,RandomForest,16,10,0,0.5488721804511278,0.55,0.6,0.5
+cex_unseen_entity_eoa_only,coinbase,16,58,hand_crafted,LogisticRegression,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,16,58,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,16,58,hand_crafted_embedding,LogisticRegression,16,10,0,0.797979797979798,0.8,0.7,0.9
+cex_unseen_entity_eoa_only,coinbase,16,58,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,17,59,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,17,59,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,17,59,hand_crafted_embedding,LogisticRegression,16,10,0,0.6491228070175439,0.6499999999999999,0.6,0.7
+cex_unseen_entity_eoa_only,coinbase,17,59,hand_crafted_embedding,RandomForest,16,10,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,coinbase,18,60,hand_crafted,LogisticRegression,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,18,60,hand_crafted,RandomForest,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,18,60,hand_crafted_embedding,LogisticRegression,16,10,0,0.595959595959596,0.6,0.5,0.7
+cex_unseen_entity_eoa_only,coinbase,18,60,hand_crafted_embedding,RandomForest,16,10,0,0.7493734335839599,0.75,0.8,0.7
+cex_unseen_entity_eoa_only,coinbase,19,61,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,19,61,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,19,61,hand_crafted_embedding,LogisticRegression,16,10,0,0.7916666666666667,0.8,0.6,1.0
+cex_unseen_entity_eoa_only,coinbase,19,61,hand_crafted_embedding,RandomForest,16,10,0,0.6875,0.7,0.5,0.9
+cex_unseen_entity_eoa_only,coinbase,20,62,hand_crafted,LogisticRegression,16,10,0,0.7333333333333334,0.75,1.0,0.5
+cex_unseen_entity_eoa_only,coinbase,20,62,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,20,62,hand_crafted_embedding,LogisticRegression,16,10,0,0.4949494949494949,0.5,0.4,0.6
+cex_unseen_entity_eoa_only,coinbase,20,62,hand_crafted_embedding,RandomForest,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,21,63,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,21,63,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,21,63,hand_crafted_embedding,LogisticRegression,16,10,0,0.6875,0.7,0.5,0.9
+cex_unseen_entity_eoa_only,coinbase,21,63,hand_crafted_embedding,RandomForest,16,10,0,0.6266666666666667,0.65,0.4,0.9
+cex_unseen_entity_eoa_only,coinbase,22,64,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,0.9,1.0
+cex_unseen_entity_eoa_only,coinbase,22,64,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,22,64,hand_crafted_embedding,LogisticRegression,16,10,0,0.7916666666666667,0.8,0.6,1.0
+cex_unseen_entity_eoa_only,coinbase,22,64,hand_crafted_embedding,RandomForest,16,10,0,0.6875,0.7,0.5,0.9
+cex_unseen_entity_eoa_only,coinbase,23,65,hand_crafted,LogisticRegression,16,10,0,0.8,0.8,0.8,0.8
+cex_unseen_entity_eoa_only,coinbase,23,65,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,0.9,1.0
+cex_unseen_entity_eoa_only,coinbase,23,65,hand_crafted_embedding,LogisticRegression,16,10,0,0.6266666666666667,0.65,0.4,0.9
+cex_unseen_entity_eoa_only,coinbase,23,65,hand_crafted_embedding,RandomForest,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,24,66,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,24,66,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,24,66,hand_crafted_embedding,LogisticRegression,16,10,0,0.898989898989899,0.9,0.8,1.0
+cex_unseen_entity_eoa_only,coinbase,24,66,hand_crafted_embedding,RandomForest,16,10,0,0.8465473145780051,0.85,0.7,1.0
+cex_unseen_entity_eoa_only,coinbase,25,67,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,25,67,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,25,67,hand_crafted_embedding,LogisticRegression,16,10,0,0.6875,0.7,0.5,0.9
+cex_unseen_entity_eoa_only,coinbase,25,67,hand_crafted_embedding,RandomForest,16,10,0,0.6419437340153453,0.65,0.5,0.8
+cex_unseen_entity_eoa_only,coinbase,26,68,hand_crafted,LogisticRegression,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,26,68,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,26,68,hand_crafted_embedding,LogisticRegression,16,10,0,0.7493734335839599,0.75,0.7,0.8
+cex_unseen_entity_eoa_only,coinbase,26,68,hand_crafted_embedding,RandomForest,16,10,0,0.7493734335839599,0.75,0.7,0.8
+cex_unseen_entity_eoa_only,coinbase,27,69,hand_crafted,LogisticRegression,16,10,0,0.7916666666666667,0.8,1.0,0.6
+cex_unseen_entity_eoa_only,coinbase,27,69,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,27,69,hand_crafted_embedding,LogisticRegression,16,10,0,0.696969696969697,0.7,0.8,0.6
+cex_unseen_entity_eoa_only,coinbase,27,69,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,28,70,hand_crafted,LogisticRegression,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,28,70,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,28,70,hand_crafted_embedding,LogisticRegression,16,10,0,0.696969696969697,0.7,0.6,0.8
+cex_unseen_entity_eoa_only,coinbase,28,70,hand_crafted_embedding,RandomForest,16,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+cex_unseen_entity_eoa_only,coinbase,29,71,hand_crafted,LogisticRegression,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,29,71,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,29,71,hand_crafted_embedding,LogisticRegression,16,10,0,0.7493734335839599,0.75,0.7,0.8
+cex_unseen_entity_eoa_only,coinbase,29,71,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,30,72,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,30,72,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,30,72,hand_crafted_embedding,LogisticRegression,16,10,0,0.52,0.55,0.3,0.8
+cex_unseen_entity_eoa_only,coinbase,30,72,hand_crafted_embedding,RandomForest,16,10,0,0.6491228070175439,0.6499999999999999,0.6,0.7
+cex_unseen_entity_eoa_only,coinbase,31,73,hand_crafted,LogisticRegression,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,31,73,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,31,73,hand_crafted_embedding,LogisticRegression,16,10,0,0.7,0.7,0.7,0.7
+cex_unseen_entity_eoa_only,coinbase,31,73,hand_crafted_embedding,RandomForest,16,10,0,0.797979797979798,0.8,0.7,0.9
+cex_unseen_entity_eoa_only,coinbase,32,74,hand_crafted,LogisticRegression,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,32,74,hand_crafted,RandomForest,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,32,74,hand_crafted_embedding,LogisticRegression,16,10,0,0.696969696969697,0.7,0.6,0.8
+cex_unseen_entity_eoa_only,coinbase,32,74,hand_crafted_embedding,RandomForest,16,10,0,0.696969696969697,0.7,0.6,0.8
+cex_unseen_entity_eoa_only,coinbase,33,75,hand_crafted,LogisticRegression,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,33,75,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,33,75,hand_crafted_embedding,LogisticRegression,16,10,0,0.696969696969697,0.7,0.6,0.8
+cex_unseen_entity_eoa_only,coinbase,33,75,hand_crafted_embedding,RandomForest,16,10,0,0.7916666666666667,0.8,0.6,1.0
+cex_unseen_entity_eoa_only,coinbase,34,76,hand_crafted,LogisticRegression,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,34,76,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,34,76,hand_crafted_embedding,LogisticRegression,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,34,76,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,35,77,hand_crafted,LogisticRegression,16,10,0,0.7916666666666667,0.8,1.0,0.6
+cex_unseen_entity_eoa_only,coinbase,35,77,hand_crafted,RandomForest,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,35,77,hand_crafted_embedding,LogisticRegression,16,10,0,0.5488721804511278,0.55,0.6,0.5
+cex_unseen_entity_eoa_only,coinbase,35,77,hand_crafted_embedding,RandomForest,16,10,0,0.696969696969697,0.7,0.6,0.8
+cex_unseen_entity_eoa_only,coinbase,36,78,hand_crafted,LogisticRegression,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,36,78,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,36,78,hand_crafted_embedding,LogisticRegression,16,10,0,0.5604395604395604,0.6,0.3,0.9
+cex_unseen_entity_eoa_only,coinbase,36,78,hand_crafted_embedding,RandomForest,16,10,0,0.6011396011396011,0.65,0.3,1.0
+cex_unseen_entity_eoa_only,coinbase,37,79,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,37,79,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,37,79,hand_crafted_embedding,LogisticRegression,16,10,0,0.7,0.7,0.7,0.7
+cex_unseen_entity_eoa_only,coinbase,37,79,hand_crafted_embedding,RandomForest,16,10,0,0.797979797979798,0.8,0.7,0.9
+cex_unseen_entity_eoa_only,coinbase,38,80,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,38,80,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,38,80,hand_crafted_embedding,LogisticRegression,16,10,0,0.797979797979798,0.8,0.7,0.9
+cex_unseen_entity_eoa_only,coinbase,38,80,hand_crafted_embedding,RandomForest,16,10,0,0.949874686716792,0.95,0.9,1.0
+cex_unseen_entity_eoa_only,coinbase,39,81,hand_crafted,LogisticRegression,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,39,81,hand_crafted,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,39,81,hand_crafted_embedding,LogisticRegression,16,10,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,coinbase,39,81,hand_crafted_embedding,RandomForest,16,10,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,coinbase,40,82,hand_crafted,LogisticRegression,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,40,82,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,40,82,hand_crafted_embedding,LogisticRegression,16,10,0,0.696969696969697,0.7,0.8,0.6
+cex_unseen_entity_eoa_only,coinbase,40,82,hand_crafted_embedding,RandomForest,16,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+cex_unseen_entity_eoa_only,coinbase,41,83,hand_crafted,LogisticRegression,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,41,83,hand_crafted,RandomForest,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,41,83,hand_crafted_embedding,LogisticRegression,16,10,0,0.4791666666666667,0.5,0.3,0.7
+cex_unseen_entity_eoa_only,coinbase,41,83,hand_crafted_embedding,RandomForest,16,10,0,0.6419437340153453,0.65,0.5,0.8
+cex_unseen_entity_eoa_only,coinbase,42,84,hand_crafted,LogisticRegression,16,10,0,0.9,0.9,0.9,0.9
+cex_unseen_entity_eoa_only,coinbase,42,84,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,0.9,1.0
+cex_unseen_entity_eoa_only,coinbase,42,84,hand_crafted_embedding,LogisticRegression,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,42,84,hand_crafted_embedding,RandomForest,16,10,0,0.7916666666666667,0.8,0.6,1.0
+cex_unseen_entity_eoa_only,coinbase,43,85,hand_crafted,LogisticRegression,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,43,85,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,43,85,hand_crafted_embedding,LogisticRegression,16,10,0,0.6419437340153453,0.65,0.5,0.8
+cex_unseen_entity_eoa_only,coinbase,43,85,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,44,86,hand_crafted,LogisticRegression,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,44,86,hand_crafted,RandomForest,16,10,0,0.7442455242966752,0.75,0.9,0.6
+cex_unseen_entity_eoa_only,coinbase,44,86,hand_crafted_embedding,LogisticRegression,16,10,0,0.30666666666666664,0.35,0.1,0.6
+cex_unseen_entity_eoa_only,coinbase,44,86,hand_crafted_embedding,RandomForest,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,45,87,hand_crafted,LogisticRegression,16,10,0,0.6266666666666667,0.65,0.9,0.4
+cex_unseen_entity_eoa_only,coinbase,45,87,hand_crafted,RandomForest,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,45,87,hand_crafted_embedding,LogisticRegression,16,10,0,0.6491228070175439,0.6499999999999999,0.6,0.7
+cex_unseen_entity_eoa_only,coinbase,45,87,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,46,88,hand_crafted,LogisticRegression,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,46,88,hand_crafted,RandomForest,16,10,0,0.898989898989899,0.9,1.0,0.8
+cex_unseen_entity_eoa_only,coinbase,46,88,hand_crafted_embedding,LogisticRegression,16,10,0,0.8465473145780051,0.85,0.7,1.0
+cex_unseen_entity_eoa_only,coinbase,46,88,hand_crafted_embedding,RandomForest,16,10,0,0.8465473145780051,0.85,0.7,1.0
+cex_unseen_entity_eoa_only,coinbase,47,89,hand_crafted,LogisticRegression,16,10,0,0.8,0.8,0.8,0.8
+cex_unseen_entity_eoa_only,coinbase,47,89,hand_crafted,RandomForest,16,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+cex_unseen_entity_eoa_only,coinbase,47,89,hand_crafted_embedding,LogisticRegression,16,10,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,coinbase,47,89,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,48,90,hand_crafted,LogisticRegression,16,10,0,0.797979797979798,0.8,0.9,0.7
+cex_unseen_entity_eoa_only,coinbase,48,90,hand_crafted,RandomForest,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,48,90,hand_crafted_embedding,LogisticRegression,16,10,0,0.696969696969697,0.7,0.6,0.8
+cex_unseen_entity_eoa_only,coinbase,48,90,hand_crafted_embedding,RandomForest,16,10,0,0.7442455242966752,0.75,0.6,0.9
+cex_unseen_entity_eoa_only,coinbase,49,91,hand_crafted,LogisticRegression,16,10,0,0.8465473145780051,0.85,1.0,0.7
+cex_unseen_entity_eoa_only,coinbase,49,91,hand_crafted,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,coinbase,49,91,hand_crafted_embedding,LogisticRegression,16,10,0,0.6,0.6,0.6,0.6
+cex_unseen_entity_eoa_only,coinbase,49,91,hand_crafted_embedding,RandomForest,16,10,0,0.949874686716792,0.95,1.0,0.9
+cex_unseen_entity_eoa_only,okx,0,42,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,0,42,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,0,42,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,0,42,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,1,43,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,1,43,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,1,43,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,1,43,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,2,44,hand_crafted,LogisticRegression,42,7,0,0.641025641025641,0.6428571428571428,0.7142857142857143,0.5714285714285714
+cex_unseen_entity_eoa_only,okx,2,44,hand_crafted,RandomForest,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,2,44,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,2,44,hand_crafted_embedding,RandomForest,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,3,45,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,3,45,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,3,45,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,3,45,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,4,46,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,4,46,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,4,46,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,4,46,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,5,47,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,5,47,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,5,47,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,5,47,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,6,48,hand_crafted,LogisticRegression,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,6,48,hand_crafted,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,6,48,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,6,48,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,7,49,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,7,49,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,7,49,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,7,49,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,8,50,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,8,50,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,8,50,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,8,50,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,9,51,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,9,51,hand_crafted,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,9,51,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,9,51,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,10,52,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,10,52,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,10,52,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,10,52,hand_crafted_embedding,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,11,53,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,11,53,hand_crafted,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,11,53,hand_crafted_embedding,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.8571428571428571,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,11,53,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,12,54,hand_crafted,LogisticRegression,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,12,54,hand_crafted,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,12,54,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,12,54,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,13,55,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,13,55,hand_crafted,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,13,55,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,13,55,hand_crafted_embedding,RandomForest,42,7,0,0.7083333333333333,0.7142857142857142,0.5714285714285714,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,14,56,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,14,56,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,14,56,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,14,56,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,15,57,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,15,57,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,15,57,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,15,57,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,16,58,hand_crafted,LogisticRegression,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,16,58,hand_crafted,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,16,58,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,16,58,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,17,59,hand_crafted,LogisticRegression,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,17,59,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,17,59,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,17,59,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,18,60,hand_crafted,LogisticRegression,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,18,60,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,18,60,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,18,60,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,19,61,hand_crafted,LogisticRegression,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,19,61,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,19,61,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,19,61,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,20,62,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,20,62,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,20,62,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,20,62,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,21,63,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,21,63,hand_crafted,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,21,63,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,21,63,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,22,64,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,22,64,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,22,64,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,22,64,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,23,65,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,23,65,hand_crafted,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,23,65,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,23,65,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,24,66,hand_crafted,LogisticRegression,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,24,66,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,24,66,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,24,66,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,25,67,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,25,67,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,25,67,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,25,67,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,26,68,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,26,68,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,26,68,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,26,68,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,27,69,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,27,69,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,27,69,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,27,69,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,28,70,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,28,70,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,28,70,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,28,70,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,29,71,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,29,71,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,29,71,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,29,71,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,30,72,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,30,72,hand_crafted,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,30,72,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,30,72,hand_crafted_embedding,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,31,73,hand_crafted,LogisticRegression,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,31,73,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,31,73,hand_crafted_embedding,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,31,73,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,32,74,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,32,74,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,32,74,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,32,74,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,33,75,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,33,75,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,33,75,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,33,75,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,34,76,hand_crafted,LogisticRegression,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,34,76,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,34,76,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,34,76,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,35,77,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,35,77,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,35,77,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,35,77,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,36,78,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,36,78,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,36,78,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,36,78,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,37,79,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,37,79,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,37,79,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,37,79,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,38,80,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,38,80,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,38,80,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,38,80,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,39,81,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,39,81,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,39,81,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,39,81,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,40,82,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,40,82,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,40,82,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,40,82,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,41,83,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,41,83,hand_crafted,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,41,83,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,41,83,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,42,84,hand_crafted,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,42,84,hand_crafted,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,42,84,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,42,84,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,43,85,hand_crafted,LogisticRegression,42,7,0,0.641025641025641,0.6428571428571428,0.7142857142857143,0.5714285714285714
+cex_unseen_entity_eoa_only,okx,43,85,hand_crafted,RandomForest,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,43,85,hand_crafted_embedding,LogisticRegression,42,7,0,0.7846153846153847,0.7857142857142857,0.8571428571428571,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,43,85,hand_crafted_embedding,RandomForest,42,7,0,0.7142857142857143,0.7142857142857143,0.7142857142857143,0.7142857142857143
+cex_unseen_entity_eoa_only,okx,44,86,hand_crafted,LogisticRegression,42,7,0,0.7083333333333333,0.7142857142857142,0.5714285714285714,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,44,86,hand_crafted,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,44,86,hand_crafted_embedding,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,44,86,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,45,87,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,45,87,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,45,87,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,45,87,hand_crafted_embedding,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,46,88,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,46,88,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,46,88,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,46,88,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,47,89,hand_crafted,LogisticRegression,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,47,89,hand_crafted,RandomForest,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,47,89,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,47,89,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,48,90,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,48,90,hand_crafted,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,48,90,hand_crafted_embedding,LogisticRegression,42,7,0,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,48,90,hand_crafted_embedding,RandomForest,42,7,0,0.7846153846153847,0.7857142857142857,0.7142857142857143,0.8571428571428571
+cex_unseen_entity_eoa_only,okx,49,91,hand_crafted,LogisticRegression,42,7,0,0.8541666666666667,0.8571428571428572,0.7142857142857143,1.0
+cex_unseen_entity_eoa_only,okx,49,91,hand_crafted,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,okx,49,91,hand_crafted_embedding,LogisticRegression,42,7,0,0.9282051282051282,0.9285714285714286,0.8571428571428571,1.0
+cex_unseen_entity_eoa_only,okx,49,91,hand_crafted_embedding,RandomForest,42,7,0,0.7754010695187166,0.7857142857142857,0.5714285714285714,1.0
+cex_unseen_entity_eoa_only,binance,0,42,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,0,42,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,0,42,hand_crafted_embedding,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,1.0,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,0,42,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,1,43,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,1,43,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,1,43,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,1,43,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,2,44,hand_crafted,LogisticRegression,43,6,0,0.7482517482517483,0.75,0.6666666666666666,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,2,44,hand_crafted,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,2,44,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,2,44,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,3,45,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,3,45,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,3,45,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,3,45,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,4,46,hand_crafted,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,4,46,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,4,46,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,4,46,hand_crafted_embedding,RandomForest,43,6,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,binance,5,47,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,5,47,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,5,47,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,5,47,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,6,48,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,6,48,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,6,48,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,6,48,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,7,49,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,7,49,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,7,49,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,7,49,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,8,50,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,8,50,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,8,50,hand_crafted_embedding,LogisticRegression,43,6,0,0.625,0.6666666666666666,0.3333333333333333,1.0
+cex_unseen_entity_eoa_only,binance,8,50,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,9,51,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,9,51,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,9,51,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,9,51,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,10,52,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,10,52,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,10,52,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,10,52,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,11,53,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,11,53,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,11,53,hand_crafted_embedding,LogisticRegression,43,6,0,0.7482517482517483,0.75,0.8333333333333334,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,11,53,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,12,54,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,12,54,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,12,54,hand_crafted_embedding,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,12,54,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,13,55,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,13,55,hand_crafted,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,13,55,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,13,55,hand_crafted_embedding,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,14,56,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,14,56,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,14,56,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,14,56,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,15,57,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,15,57,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,15,57,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,15,57,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,16,58,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,16,58,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,16,58,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,16,58,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,17,59,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,17,59,hand_crafted,RandomForest,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,17,59,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,17,59,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,18,60,hand_crafted,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,18,60,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,18,60,hand_crafted_embedding,LogisticRegression,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,18,60,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,19,61,hand_crafted,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,19,61,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,19,61,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,19,61,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,20,62,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,20,62,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,20,62,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,20,62,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,21,63,hand_crafted,LogisticRegression,43,6,0,0.7482517482517483,0.75,0.6666666666666666,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,21,63,hand_crafted,RandomForest,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,21,63,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,21,63,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,22,64,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,22,64,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,22,64,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,22,64,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,23,65,hand_crafted,LogisticRegression,43,6,0,0.7482517482517483,0.75,0.6666666666666666,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,23,65,hand_crafted,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,23,65,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,23,65,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,24,66,hand_crafted,LogisticRegression,43,6,0,0.5804195804195804,0.5833333333333333,0.5,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,24,66,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,24,66,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,24,66,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,25,67,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,25,67,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,25,67,hand_crafted_embedding,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,25,67,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,26,68,hand_crafted,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,26,68,hand_crafted,RandomForest,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,26,68,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,26,68,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,27,69,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,27,69,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,27,69,hand_crafted_embedding,LogisticRegression,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,27,69,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,28,70,hand_crafted,LogisticRegression,43,6,0,0.7482517482517483,0.75,0.6666666666666666,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,28,70,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,28,70,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,28,70,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,29,71,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,29,71,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,29,71,hand_crafted_embedding,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,29,71,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,30,72,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,30,72,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,30,72,hand_crafted_embedding,LogisticRegression,43,6,0,0.7482517482517483,0.75,0.6666666666666666,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,30,72,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,31,73,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,31,73,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,31,73,hand_crafted_embedding,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,31,73,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,32,74,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,32,74,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,32,74,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,1.0,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,32,74,hand_crafted_embedding,RandomForest,43,6,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,binance,33,75,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,33,75,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,33,75,hand_crafted_embedding,LogisticRegression,43,6,0,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,33,75,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,34,76,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,34,76,hand_crafted,RandomForest,43,6,0,0.5804195804195804,0.5833333333333333,0.6666666666666666,0.5
+cex_unseen_entity_eoa_only,binance,34,76,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,34,76,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,35,77,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,35,77,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,35,77,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,35,77,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,36,78,hand_crafted,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,36,78,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,36,78,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,36,78,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,37,79,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,37,79,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,37,79,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,37,79,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,38,80,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,38,80,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,38,80,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,38,80,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,39,81,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,39,81,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,39,81,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,39,81,hand_crafted_embedding,RandomForest,43,6,0,1.0,1.0,1.0,1.0
+cex_unseen_entity_eoa_only,binance,40,82,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,40,82,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,40,82,hand_crafted_embedding,LogisticRegression,43,6,0,0.6666666666666666,0.6666666666666666,0.6666666666666666,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,40,82,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,41,83,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,41,83,hand_crafted,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,41,83,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,41,83,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,42,84,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,42,84,hand_crafted,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,42,84,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,42,84,hand_crafted_embedding,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,43,85,hand_crafted,LogisticRegression,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,43,85,hand_crafted,RandomForest,43,6,0,0.7482517482517483,0.75,0.8333333333333334,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,43,85,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,43,85,hand_crafted_embedding,RandomForest,43,6,0,0.7482517482517483,0.75,0.8333333333333334,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,44,86,hand_crafted,LogisticRegression,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,44,86,hand_crafted,RandomForest,43,6,0,0.7482517482517483,0.75,0.6666666666666666,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,44,86,hand_crafted_embedding,LogisticRegression,43,6,0,0.7482517482517483,0.75,0.6666666666666666,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,44,86,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,45,87,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,45,87,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,45,87,hand_crafted_embedding,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,45,87,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,46,88,hand_crafted,LogisticRegression,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,46,88,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,46,88,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,46,88,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,47,89,hand_crafted,LogisticRegression,43,6,0,0.8285714285714285,0.8333333333333333,0.6666666666666666,1.0
+cex_unseen_entity_eoa_only,binance,47,89,hand_crafted,RandomForest,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,47,89,hand_crafted_embedding,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,47,89,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,48,90,hand_crafted,LogisticRegression,43,6,0,0.7333333333333334,0.75,0.5,1.0
+cex_unseen_entity_eoa_only,binance,48,90,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,48,90,hand_crafted_embedding,LogisticRegression,43,6,0,0.6571428571428571,0.6666666666666667,0.5,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,48,90,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,49,91,hand_crafted,LogisticRegression,43,6,0,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334
+cex_unseen_entity_eoa_only,binance,49,91,hand_crafted,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+cex_unseen_entity_eoa_only,binance,49,91,hand_crafted_embedding,LogisticRegression,43,6,0,0.5804195804195804,0.5833333333333333,0.5,0.6666666666666666
+cex_unseen_entity_eoa_only,binance,49,91,hand_crafted_embedding,RandomForest,43,6,0,0.916083916083916,0.9166666666666667,0.8333333333333334,1.0
+defi_unseen_protocol_contract_only,uniswap,0,42,hand_crafted,LogisticRegression,22,10,0,0.696969696969697,0.7,0.8,0.6
+defi_unseen_protocol_contract_only,uniswap,0,42,hand_crafted,RandomForest,22,10,0,0.6875,0.7,0.9,0.5
+defi_unseen_protocol_contract_only,uniswap,0,42,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,0,42,hand_crafted_embedding,RandomForest,22,10,0,0.6875,0.7,0.9,0.5
+defi_unseen_protocol_contract_only,uniswap,1,43,hand_crafted,LogisticRegression,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,1,43,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,1,43,hand_crafted_embedding,LogisticRegression,22,10,0,0.8465473145780051,0.85,0.7,1.0
+defi_unseen_protocol_contract_only,uniswap,1,43,hand_crafted_embedding,RandomForest,22,10,0,0.7916666666666667,0.8,0.6,1.0
+defi_unseen_protocol_contract_only,uniswap,2,44,hand_crafted,LogisticRegression,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,2,44,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,2,44,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,2,44,hand_crafted_embedding,RandomForest,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,3,45,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,3,45,hand_crafted,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,3,45,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,3,45,hand_crafted_embedding,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,4,46,hand_crafted,LogisticRegression,22,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,uniswap,4,46,hand_crafted,RandomForest,22,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,uniswap,4,46,hand_crafted_embedding,LogisticRegression,22,10,0,0.8465473145780051,0.85,0.7,1.0
+defi_unseen_protocol_contract_only,uniswap,4,46,hand_crafted_embedding,RandomForest,22,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,uniswap,5,47,hand_crafted,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,5,47,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,5,47,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,5,47,hand_crafted_embedding,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,6,48,hand_crafted,LogisticRegression,22,10,0,0.6875,0.7,0.9,0.5
+defi_unseen_protocol_contract_only,uniswap,6,48,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,6,48,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,6,48,hand_crafted_embedding,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,7,49,hand_crafted,LogisticRegression,22,10,0,0.7493734335839599,0.75,0.7,0.8
+defi_unseen_protocol_contract_only,uniswap,7,49,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,7,49,hand_crafted_embedding,LogisticRegression,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,7,49,hand_crafted_embedding,RandomForest,22,10,0,0.8465473145780051,0.85,0.7,1.0
+defi_unseen_protocol_contract_only,uniswap,8,50,hand_crafted,LogisticRegression,22,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,uniswap,8,50,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,8,50,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,8,50,hand_crafted_embedding,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,9,51,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,9,51,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,9,51,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,9,51,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,10,52,hand_crafted,LogisticRegression,22,10,0,0.7493734335839599,0.75,0.8,0.7
+defi_unseen_protocol_contract_only,uniswap,10,52,hand_crafted,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,10,52,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,10,52,hand_crafted_embedding,RandomForest,22,10,0,0.8465473145780051,0.85,0.7,1.0
+defi_unseen_protocol_contract_only,uniswap,11,53,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,11,53,hand_crafted,RandomForest,22,10,0,0.7493734335839599,0.75,0.8,0.7
+defi_unseen_protocol_contract_only,uniswap,11,53,hand_crafted_embedding,LogisticRegression,22,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,uniswap,11,53,hand_crafted_embedding,RandomForest,22,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,uniswap,12,54,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,12,54,hand_crafted,RandomForest,22,10,0,0.696969696969697,0.7,0.6,0.8
+defi_unseen_protocol_contract_only,uniswap,12,54,hand_crafted_embedding,LogisticRegression,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,12,54,hand_crafted_embedding,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,13,55,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,13,55,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,13,55,hand_crafted_embedding,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,13,55,hand_crafted_embedding,RandomForest,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,14,56,hand_crafted,LogisticRegression,22,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,uniswap,14,56,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,14,56,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,14,56,hand_crafted_embedding,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,15,57,hand_crafted,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,15,57,hand_crafted,RandomForest,22,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,uniswap,15,57,hand_crafted_embedding,LogisticRegression,22,10,0,0.7442455242966752,0.75,0.6,0.9
+defi_unseen_protocol_contract_only,uniswap,15,57,hand_crafted_embedding,RandomForest,22,10,0,0.7442455242966752,0.75,0.6,0.9
+defi_unseen_protocol_contract_only,uniswap,16,58,hand_crafted,LogisticRegression,22,10,0,0.7493734335839599,0.75,0.8,0.7
+defi_unseen_protocol_contract_only,uniswap,16,58,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,16,58,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,16,58,hand_crafted_embedding,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,17,59,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,17,59,hand_crafted,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,17,59,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,17,59,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,18,60,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,18,60,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,18,60,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,18,60,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,19,61,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,19,61,hand_crafted,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,19,61,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,19,61,hand_crafted_embedding,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,20,62,hand_crafted,LogisticRegression,22,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,uniswap,20,62,hand_crafted,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,20,62,hand_crafted_embedding,LogisticRegression,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,20,62,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,21,63,hand_crafted,LogisticRegression,22,10,0,0.6266666666666667,0.65,0.9,0.4
+defi_unseen_protocol_contract_only,uniswap,21,63,hand_crafted,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,21,63,hand_crafted_embedding,LogisticRegression,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,21,63,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,22,64,hand_crafted,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,22,64,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,22,64,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,22,64,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,23,65,hand_crafted,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,23,65,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,23,65,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,23,65,hand_crafted_embedding,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,24,66,hand_crafted,LogisticRegression,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,24,66,hand_crafted,RandomForest,22,10,0,0.7442455242966752,0.75,0.6,0.9
+defi_unseen_protocol_contract_only,uniswap,24,66,hand_crafted_embedding,LogisticRegression,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,24,66,hand_crafted_embedding,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,25,67,hand_crafted,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,25,67,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,25,67,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,25,67,hand_crafted_embedding,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,26,68,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,26,68,hand_crafted,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,26,68,hand_crafted_embedding,LogisticRegression,22,10,0,0.8465473145780051,0.85,0.7,1.0
+defi_unseen_protocol_contract_only,uniswap,26,68,hand_crafted_embedding,RandomForest,22,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,uniswap,27,69,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,27,69,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,27,69,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,27,69,hand_crafted_embedding,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,28,70,hand_crafted,LogisticRegression,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,28,70,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,28,70,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,28,70,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,29,71,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,29,71,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,29,71,hand_crafted_embedding,LogisticRegression,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,29,71,hand_crafted_embedding,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,30,72,hand_crafted,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,30,72,hand_crafted,RandomForest,22,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,uniswap,30,72,hand_crafted_embedding,LogisticRegression,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,30,72,hand_crafted_embedding,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,31,73,hand_crafted,LogisticRegression,22,10,0,0.6875,0.7,0.9,0.5
+defi_unseen_protocol_contract_only,uniswap,31,73,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,31,73,hand_crafted_embedding,LogisticRegression,22,10,0,0.7493734335839599,0.75,0.8,0.7
+defi_unseen_protocol_contract_only,uniswap,31,73,hand_crafted_embedding,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,32,74,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,32,74,hand_crafted,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,32,74,hand_crafted_embedding,LogisticRegression,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,32,74,hand_crafted_embedding,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,33,75,hand_crafted,LogisticRegression,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,33,75,hand_crafted,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,33,75,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,33,75,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,34,76,hand_crafted,LogisticRegression,22,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,uniswap,34,76,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,34,76,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,34,76,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,35,77,hand_crafted,LogisticRegression,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,35,77,hand_crafted,RandomForest,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,35,77,hand_crafted_embedding,LogisticRegression,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,35,77,hand_crafted_embedding,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,36,78,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,36,78,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,36,78,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,36,78,hand_crafted_embedding,RandomForest,22,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,uniswap,37,79,hand_crafted,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,37,79,hand_crafted,RandomForest,22,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,uniswap,37,79,hand_crafted_embedding,LogisticRegression,22,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,uniswap,37,79,hand_crafted_embedding,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,38,80,hand_crafted,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,38,80,hand_crafted,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,38,80,hand_crafted_embedding,LogisticRegression,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,38,80,hand_crafted_embedding,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,39,81,hand_crafted,LogisticRegression,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,39,81,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,39,81,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,39,81,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,40,82,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,40,82,hand_crafted,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,40,82,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,40,82,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,41,83,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,41,83,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,41,83,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,41,83,hand_crafted_embedding,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,42,84,hand_crafted,LogisticRegression,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,42,84,hand_crafted,RandomForest,22,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,uniswap,42,84,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,42,84,hand_crafted_embedding,RandomForest,22,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,uniswap,43,85,hand_crafted,LogisticRegression,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,43,85,hand_crafted,RandomForest,22,10,0,0.8465473145780051,0.85,0.7,1.0
+defi_unseen_protocol_contract_only,uniswap,43,85,hand_crafted_embedding,LogisticRegression,22,10,0,0.8465473145780051,0.85,0.7,1.0
+defi_unseen_protocol_contract_only,uniswap,43,85,hand_crafted_embedding,RandomForest,22,10,0,0.7916666666666667,0.8,0.6,1.0
+defi_unseen_protocol_contract_only,uniswap,44,86,hand_crafted,LogisticRegression,22,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,uniswap,44,86,hand_crafted,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,44,86,hand_crafted_embedding,LogisticRegression,22,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,uniswap,44,86,hand_crafted_embedding,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,45,87,hand_crafted,LogisticRegression,22,10,0,0.7442455242966752,0.75,0.9,0.6
+defi_unseen_protocol_contract_only,uniswap,45,87,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,45,87,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,45,87,hand_crafted_embedding,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,46,88,hand_crafted,LogisticRegression,22,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,uniswap,46,88,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,46,88,hand_crafted_embedding,LogisticRegression,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,46,88,hand_crafted_embedding,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,47,89,hand_crafted,LogisticRegression,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,47,89,hand_crafted,RandomForest,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,47,89,hand_crafted_embedding,LogisticRegression,22,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,uniswap,47,89,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,uniswap,48,90,hand_crafted,LogisticRegression,22,10,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,uniswap,48,90,hand_crafted,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,48,90,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,48,90,hand_crafted_embedding,RandomForest,22,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,uniswap,49,91,hand_crafted,LogisticRegression,22,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,uniswap,49,91,hand_crafted,RandomForest,22,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,uniswap,49,91,hand_crafted_embedding,LogisticRegression,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,uniswap,49,91,hand_crafted_embedding,RandomForest,22,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,0,42,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,0,42,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,0,42,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,0,42,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,1,43,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,1,43,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,1,43,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,1,43,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,2,44,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,2,44,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,2,44,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,2,44,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,3,45,hand_crafted,LogisticRegression,24,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,curve,3,45,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,3,45,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,3,45,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,4,46,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,4,46,hand_crafted,RandomForest,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,4,46,hand_crafted_embedding,LogisticRegression,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,4,46,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,5,47,hand_crafted,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,5,47,hand_crafted,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,5,47,hand_crafted_embedding,LogisticRegression,24,10,0,0.797979797979798,0.8,0.7,0.9
+defi_unseen_protocol_contract_only,curve,5,47,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,6,48,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,6,48,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,6,48,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,6,48,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,7,49,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,7,49,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,7,49,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,7,49,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,8,50,hand_crafted,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,8,50,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,8,50,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,8,50,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,9,51,hand_crafted,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,9,51,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,9,51,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,9,51,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,10,52,hand_crafted,LogisticRegression,24,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,curve,10,52,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,10,52,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,10,52,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,11,53,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,11,53,hand_crafted,RandomForest,24,10,0,0.7916666666666667,0.8,1.0,0.6
+defi_unseen_protocol_contract_only,curve,11,53,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,11,53,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,12,54,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,12,54,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,12,54,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,12,54,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,13,55,hand_crafted,LogisticRegression,24,10,0,0.7442455242966752,0.75,0.9,0.6
+defi_unseen_protocol_contract_only,curve,13,55,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,13,55,hand_crafted_embedding,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,13,55,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,14,56,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,14,56,hand_crafted,RandomForest,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,14,56,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,14,56,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,15,57,hand_crafted,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,15,57,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,15,57,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,15,57,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,16,58,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,16,58,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,16,58,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,16,58,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,17,59,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,17,59,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,17,59,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,17,59,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,18,60,hand_crafted,LogisticRegression,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,18,60,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,18,60,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,18,60,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,19,61,hand_crafted,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,19,61,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,19,61,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,19,61,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,20,62,hand_crafted,LogisticRegression,24,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,curve,20,62,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,20,62,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,20,62,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,21,63,hand_crafted,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,21,63,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,21,63,hand_crafted_embedding,LogisticRegression,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,21,63,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,22,64,hand_crafted,LogisticRegression,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,22,64,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,22,64,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,22,64,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,23,65,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,23,65,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,23,65,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,23,65,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,24,66,hand_crafted,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,24,66,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,24,66,hand_crafted_embedding,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,24,66,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,25,67,hand_crafted,LogisticRegression,24,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,curve,25,67,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,25,67,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,25,67,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,26,68,hand_crafted,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,26,68,hand_crafted,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,26,68,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,26,68,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,27,69,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,27,69,hand_crafted,RandomForest,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,27,69,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,27,69,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,28,70,hand_crafted,LogisticRegression,24,10,0,0.7442455242966752,0.75,0.9,0.6
+defi_unseen_protocol_contract_only,curve,28,70,hand_crafted,RandomForest,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,28,70,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,28,70,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,29,71,hand_crafted,LogisticRegression,24,10,0,0.7493734335839599,0.75,0.8,0.7
+defi_unseen_protocol_contract_only,curve,29,71,hand_crafted,RandomForest,24,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,curve,29,71,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,29,71,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,30,72,hand_crafted,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,30,72,hand_crafted,RandomForest,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,30,72,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,30,72,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,31,73,hand_crafted,LogisticRegression,24,10,0,0.7442455242966752,0.75,0.9,0.6
+defi_unseen_protocol_contract_only,curve,31,73,hand_crafted,RandomForest,24,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,curve,31,73,hand_crafted_embedding,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,31,73,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,32,74,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,32,74,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,32,74,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,32,74,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,33,75,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,33,75,hand_crafted,RandomForest,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,33,75,hand_crafted_embedding,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,33,75,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,34,76,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,34,76,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,34,76,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,34,76,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,35,77,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,35,77,hand_crafted,RandomForest,24,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,curve,35,77,hand_crafted_embedding,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,35,77,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,36,78,hand_crafted,LogisticRegression,24,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,curve,36,78,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,36,78,hand_crafted_embedding,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,36,78,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,37,79,hand_crafted,LogisticRegression,24,10,0,0.7442455242966752,0.75,0.9,0.6
+defi_unseen_protocol_contract_only,curve,37,79,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,37,79,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,37,79,hand_crafted_embedding,RandomForest,24,10,0,0.8465473145780051,0.85,1.0,0.7
+defi_unseen_protocol_contract_only,curve,38,80,hand_crafted,LogisticRegression,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,38,80,hand_crafted,RandomForest,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,38,80,hand_crafted_embedding,LogisticRegression,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,38,80,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,39,81,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.8,0.9
+defi_unseen_protocol_contract_only,curve,39,81,hand_crafted,RandomForest,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,39,81,hand_crafted_embedding,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,39,81,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,40,82,hand_crafted,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,40,82,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,40,82,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,40,82,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,41,83,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,41,83,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,41,83,hand_crafted_embedding,LogisticRegression,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,41,83,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,42,84,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,42,84,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,42,84,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,42,84,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,43,85,hand_crafted,LogisticRegression,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,43,85,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,43,85,hand_crafted_embedding,LogisticRegression,24,10,0,0.6875,0.7,0.9,0.5
+defi_unseen_protocol_contract_only,curve,43,85,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,44,86,hand_crafted,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,44,86,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,44,86,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,44,86,hand_crafted_embedding,RandomForest,24,10,0,0.949874686716792,0.95,1.0,0.9
+defi_unseen_protocol_contract_only,curve,45,87,hand_crafted,LogisticRegression,24,10,0,0.797979797979798,0.8,0.9,0.7
+defi_unseen_protocol_contract_only,curve,45,87,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,45,87,hand_crafted_embedding,LogisticRegression,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,45,87,hand_crafted_embedding,RandomForest,24,10,0,0.898989898989899,0.9,1.0,0.8
+defi_unseen_protocol_contract_only,curve,46,88,hand_crafted,LogisticRegression,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,46,88,hand_crafted,RandomForest,24,10,0,0.898989898989899,0.9,0.8,1.0
+defi_unseen_protocol_contract_only,curve,46,88,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,46,88,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,47,89,hand_crafted,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,47,89,hand_crafted,RandomForest,24,10,0,0.949874686716792,0.95,0.9,1.0
+defi_unseen_protocol_contract_only,curve,47,89,hand_crafted_embedding,LogisticRegression,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,47,89,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,curve,48,90,hand_crafted,LogisticRegression,24,10,0,0.7442455242966752,0.75,0.9,0.6
+defi_unseen_protocol_contract_only,curve,48,90,hand_crafted,RandomForest,24,10,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,curve,48,90,hand_crafted_embedding,LogisticRegression,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,48,90,hand_crafted_embedding,RandomForest,24,10,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,curve,49,91,hand_crafted,LogisticRegression,24,10,0,0.8,0.8,0.8,0.8
+defi_unseen_protocol_contract_only,curve,49,91,hand_crafted,RandomForest,24,10,0,0.849624060150376,0.8500000000000001,0.9,0.8
+defi_unseen_protocol_contract_only,curve,49,91,hand_crafted_embedding,LogisticRegression,24,10,0,0.9,0.9,0.9,0.9
+defi_unseen_protocol_contract_only,curve,49,91,hand_crafted_embedding,RandomForest,24,10,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,0,42,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,0,42,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,0,42,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,0,42,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,1,43,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,1,43,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,1,43,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,1,43,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,2,44,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,2,44,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,2,44,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,2,44,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,3,45,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,3,45,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,3,45,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,3,45,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,4,46,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,4,46,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,4,46,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,4,46,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,5,47,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,5,47,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,5,47,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,5,47,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,6,48,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,6,48,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,6,48,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,6,48,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,7,49,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,7,49,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,7,49,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,7,49,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,8,50,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,0x api,8,50,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,8,50,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,8,50,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,9,51,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,9,51,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,9,51,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,9,51,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,10,52,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,10,52,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,10,52,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,10,52,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,11,53,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,11,53,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,11,53,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,11,53,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,12,54,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,12,54,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,12,54,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,12,54,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,13,55,hand_crafted,LogisticRegression,32,2,0,0.3333333333333333,0.5,1.0,0.0
+defi_unseen_protocol_contract_only,0x api,13,55,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,13,55,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,13,55,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,14,56,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,14,56,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,14,56,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,14,56,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,15,57,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,15,57,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,15,57,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,15,57,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,16,58,hand_crafted,LogisticRegression,32,2,0,0.2,0.25,0.5,0.0
+defi_unseen_protocol_contract_only,0x api,16,58,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,16,58,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,16,58,hand_crafted_embedding,RandomForest,32,2,0,0.3333333333333333,0.5,0.0,1.0
+defi_unseen_protocol_contract_only,0x api,17,59,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,17,59,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,17,59,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,17,59,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,18,60,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,18,60,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,18,60,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,18,60,hand_crafted_embedding,RandomForest,32,2,0,0.3333333333333333,0.5,0.0,1.0
+defi_unseen_protocol_contract_only,0x api,19,61,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,19,61,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,19,61,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,19,61,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,20,62,hand_crafted,LogisticRegression,32,2,0,0.3333333333333333,0.5,0.0,1.0
+defi_unseen_protocol_contract_only,0x api,20,62,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,20,62,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,20,62,hand_crafted_embedding,RandomForest,32,2,0,0.3333333333333333,0.5,0.0,1.0
+defi_unseen_protocol_contract_only,0x api,21,63,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,0x api,21,63,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,21,63,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,21,63,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,22,64,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,22,64,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,22,64,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,22,64,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,23,65,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,23,65,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,23,65,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,23,65,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,24,66,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,24,66,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,24,66,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,24,66,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,25,67,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,25,67,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,25,67,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,25,67,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,26,68,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,26,68,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,26,68,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,26,68,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,27,69,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,27,69,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,27,69,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,27,69,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,28,70,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,28,70,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,28,70,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,28,70,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,29,71,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,29,71,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,29,71,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,29,71,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,30,72,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,30,72,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,30,72,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,30,72,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,31,73,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,31,73,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,31,73,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,31,73,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,32,74,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,32,74,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,32,74,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,32,74,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,33,75,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,33,75,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,33,75,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,33,75,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,34,76,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,34,76,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,34,76,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,34,76,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,35,77,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,35,77,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,35,77,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,35,77,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,36,78,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,36,78,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,36,78,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,36,78,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,37,79,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,37,79,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,37,79,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,37,79,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,38,80,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,38,80,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,38,80,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,38,80,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,39,81,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,39,81,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,39,81,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,39,81,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,40,82,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,40,82,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,40,82,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,40,82,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,41,83,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,41,83,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,41,83,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,41,83,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,42,84,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,42,84,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,42,84,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,42,84,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,43,85,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,43,85,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,43,85,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,43,85,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,44,86,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,44,86,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,44,86,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,44,86,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,45,87,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,45,87,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,45,87,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,45,87,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,46,88,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,46,88,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,46,88,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,46,88,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,47,89,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,47,89,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,47,89,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,47,89,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,48,90,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,48,90,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,48,90,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,48,90,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,0x api,49,91,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,0x api,49,91,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,0x api,49,91,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,0x api,49,91,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,0,42,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,0,42,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,0,42,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,0,42,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,1,43,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,1,43,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,1,43,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,1,43,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,2,44,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,2,44,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,2,44,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,2,44,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,3,45,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,3,45,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,3,45,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,3,45,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,4,46,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,4,46,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,4,46,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,4,46,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,5,47,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,5,47,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,5,47,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,5,47,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,6,48,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,6,48,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,6,48,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,6,48,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,7,49,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,7,49,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,7,49,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,7,49,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,8,50,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,dodo,8,50,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,8,50,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,8,50,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,9,51,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,9,51,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,9,51,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,9,51,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,10,52,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,10,52,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,10,52,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,10,52,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,11,53,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,dodo,11,53,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,11,53,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,11,53,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,12,54,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,12,54,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,12,54,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,12,54,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,13,55,hand_crafted,LogisticRegression,32,2,0,0.2,0.25,0.5,0.0
+defi_unseen_protocol_contract_only,dodo,13,55,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,13,55,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,13,55,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,14,56,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,14,56,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,14,56,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,14,56,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,15,57,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,15,57,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,15,57,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,15,57,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,16,58,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,16,58,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,16,58,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,16,58,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,17,59,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,17,59,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,17,59,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,17,59,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,18,60,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,18,60,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,18,60,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,18,60,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,19,61,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,19,61,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,19,61,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,19,61,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,20,62,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,20,62,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,20,62,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,20,62,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,21,63,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,dodo,21,63,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,21,63,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,21,63,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,22,64,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,22,64,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,22,64,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,22,64,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,23,65,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,23,65,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,23,65,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,23,65,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,24,66,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,24,66,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,24,66,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,24,66,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,25,67,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,25,67,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,25,67,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,25,67,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,26,68,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,dodo,26,68,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,26,68,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,26,68,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,27,69,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,27,69,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,27,69,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,27,69,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,28,70,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,28,70,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,28,70,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,28,70,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,29,71,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,29,71,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,29,71,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,29,71,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,30,72,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,30,72,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,30,72,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,30,72,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,31,73,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,31,73,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,31,73,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,31,73,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,32,74,hand_crafted,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,32,74,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,32,74,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,32,74,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,33,75,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,33,75,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,33,75,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,33,75,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,34,76,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,34,76,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,34,76,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,34,76,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,35,77,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,35,77,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,35,77,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,35,77,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,36,78,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,36,78,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,36,78,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,36,78,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,37,79,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,37,79,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,37,79,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,37,79,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,38,80,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,38,80,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,38,80,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,38,80,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,39,81,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,39,81,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,39,81,hand_crafted_embedding,LogisticRegression,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,39,81,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,40,82,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,40,82,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,40,82,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,40,82,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,41,83,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,dodo,41,83,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,41,83,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,41,83,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,42,84,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,42,84,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,42,84,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,42,84,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,43,85,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,43,85,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,43,85,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,43,85,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,44,86,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,44,86,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,44,86,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,44,86,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,45,87,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,45,87,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,45,87,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,45,87,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,46,88,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,46,88,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,46,88,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,46,88,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,47,89,hand_crafted,LogisticRegression,32,2,0,0.7333333333333334,0.75,0.5,1.0
+defi_unseen_protocol_contract_only,dodo,47,89,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,47,89,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,47,89,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,48,90,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,dodo,48,90,hand_crafted,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,48,90,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,48,90,hand_crafted_embedding,RandomForest,32,2,0,0.7333333333333334,0.75,1.0,0.5
+defi_unseen_protocol_contract_only,dodo,49,91,hand_crafted,LogisticRegression,32,2,0,0.5,0.5,0.5,0.5
+defi_unseen_protocol_contract_only,dodo,49,91,hand_crafted,RandomForest,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,49,91,hand_crafted_embedding,LogisticRegression,32,2,0,1.0,1.0,1.0,1.0
+defi_unseen_protocol_contract_only,dodo,49,91,hand_crafted_embedding,RandomForest,32,2,0,1.0,1.0,1.0,1.0
