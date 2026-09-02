@@ -1,3 +1,0 @@
-comparison,n_seeds,mean_diff,diff_95ci_lo,diff_95ci_hi,paired_t_stat,paired_p_value,pct_seeds_a_better
-GraphSAGE(real edges) - MLP(no edges),5,0.0233,-0.0055,0.0521,2.2424,0.0884,0.8
-GraphSAGE(real edges) - GraphSAGE(degree-preserving rewired edges),5,0.1195,0.055,0.184,5.1468,0.0068,1.0

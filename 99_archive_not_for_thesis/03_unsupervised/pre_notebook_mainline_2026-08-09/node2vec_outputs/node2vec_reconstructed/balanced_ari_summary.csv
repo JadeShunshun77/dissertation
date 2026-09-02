@@ -1,3 +1,0 @@
-method,ari_mean,ari_std,ari_p5,ari_p50,ari_p95,ari_min,ari_max,pct_significant_at_0.05
-"KMeans (fixed full-sample clustering, balanced eval)",0.1303,0.0338,0.0819,0.1312,0.188,0.0804,0.2283,1.0
-KMeans (refit fresh on each balanced subset),0.1551,0.0489,0.0824,0.1544,0.2277,0.0595,0.2839,1.0

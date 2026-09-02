@@ -1,5 +1,0 @@
-condition,n_seeds,macro_f1_mean,macro_f1_std
-RandomForest_graph_structural,5,0.786,0.0034
-RandomForest_hand_crafted,5,0.9084,0.0093
-XGBoost_graph_structural,5,0.8146,0.0
-XGBoost_hand_crafted,5,0.8843,0.0

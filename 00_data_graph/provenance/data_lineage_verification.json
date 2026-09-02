@@ -88,9 +88,5 @@
     "byte_exact_match": true,
     "active_sha256": "59CECEDA94AF4792C1B3397A9EA5F5E44A3B15C2A59BB14FA27AE01B05BB1DAB"
   },
-  "read_only_sql": {
-    "00_data_graph/sql/documented_original_top100_query.sql": true,
-    "00_data_graph/sql/nonseed_to_nonseed_augmentation_query.sql": true
-  },
   "local_database_files": []
 }

@@ -1,0 +1,10 @@
+family,condition,n_training_seed_labels,macro_f1_mean,macro_f1_sd_across_seeds,macro_f1_min,macro_f1_max,n_unique_seed_scores,randomness_varied,address_samples,fold_assignments,graph_snapshots,population_inference_supported
+full_feature_gnn,GCN,5,0.8254848743873646,0.026654016591381797,0.8025531099572021,0.862863879065252,5,"weight initialisation, dropout and validation permutation",1,1,1,False
+full_feature_gnn,GraphSAGE,5,0.827399301601931,0.024287135018851037,0.8075547454494822,0.8672661153775705,5,"weight initialisation, dropout and validation permutation",1,1,1,False
+tree_baseline,RandomForest_graph_structural,5,0.7860092754944014,0.003821859239349039,0.7794505961874384,0.7886086362150435,4,bootstrap and feature-subsampling seed,1,1,1,False
+tree_baseline,RandomForest_hand_crafted,5,0.9083779144831776,0.010344565113486635,0.8950512645249488,0.9186564897091212,5,bootstrap and feature-subsampling seed,1,1,1,False
+tree_baseline,XGBoost_graph_structural,5,0.8146443381180223,0.0,0.8146443381180223,0.8146443381180223,1,model seed requested; configuration produced identical scores,1,1,1,False
+tree_baseline,XGBoost_hand_crafted,5,0.8842585396038082,0.0,0.8842585396038082,0.8842585396038082,1,model seed requested; configuration produced identical scores,1,1,1,False
+P3,A_MLP_no_edges,5,0.6861378614749079,0.019032860736021423,0.6616445645531102,0.7117666775574973,5,"weight initialisation, dropout and validation permutation",1,1,1,False
+P3,B_GraphSAGE_real_edges,5,0.7199945442771732,0.03654015768274514,0.6587815179989093,0.7445450707723781,5,"weight initialisation, dropout and validation permutation",1,1,1,False
+P3,C_GraphSAGE_rewired_edges,5,0.57450917921901,0.07686138602590477,0.4485028817366502,0.6391014756918647,5,training and degree-preserving graph rewiring,1,1,1,False

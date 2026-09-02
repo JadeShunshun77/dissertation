@@ -1,5 +1,0 @@
-baseline,graphsage_mean,baseline_mean,mean_diff,paired_t_stat,paired_p_value,n_folds_graphsage_better
-"graph_structural (RF, structural-only, apples-to-apples)",0.731,0.7886,-0.0576,-1.4881,0.211,2
-"graph_structural (XGBoost, structural-only, apples-to-apples)",0.731,0.8146,-0.0836,-4.1738,0.014,0
-"hand_crafted (RF, includes transaction features -- NOT apples-to-apples)",0.731,0.9184,-0.1874,-2.9563,0.0417,0
-"hand_crafted (XGBoost, includes transaction features -- NOT apples-to-apples)",0.731,0.8843,-0.1532,-2.2871,0.0841,0

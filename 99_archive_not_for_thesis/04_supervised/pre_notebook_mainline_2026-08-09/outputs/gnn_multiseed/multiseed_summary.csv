@@ -1,3 +1,0 @@
-condition,n_seeds,macro_f1_mean,macro_f1_std
-GraphSAGE,5,0.8274,0.0217
-GCN,5,0.8255,0.0238

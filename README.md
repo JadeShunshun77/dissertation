@@ -1,59 +1,67 @@
-# Dissertation Experiment Pipeline
+# Dissertation Experiment Workspace
 
-This workspace is ordered by the experiment pipeline. Directories `00` through
-`07` contain the active dissertation evidence. `99_archive_not_for_thesis`
-contains superseded or pre-reconstruction material and is not an input to the
-active pipeline.
+This workspace contains the code, data and frozen outputs used for the
+dissertation experiments on graph-based clustering and classification of
+publicly labelled Ethereum addresses.
 
-## Active pipeline
+The active project uses a label-seeded, fixed-node, partially reconstructed
+90-day Ethereum transaction subgraph. The main labelled sample contains 436
+graph-active addresses from 500 public seed labels.
 
-| Stage | Purpose | Main output |
+## Recommended Reading Order
+
+Open the folders in this order if you want to understand or reproduce the
+project:
+
+1. `00_data_graph`
+2. `01_sanity_eda`
+3. `02_feature_engineering`
+4. `03_unsupervised`
+5. `04_supervised/01_traditional_ml`
+6. `05_interpretability`
+7. `04_supervised/02_gnn_models`
+8. `04_supervised/03_gnn_evaluation`
+9. `06_robustness_audit`
+
+This order follows the dissertation logic: data construction, graph checking,
+feature construction, Node2Vec, traditional classification, SHAP
+interpretation, GNN evaluation and robustness checks.
+
+## Folder Guide
+
+| Folder | Role | Main files or outputs |
 |---|---|---|
-| `00_data_graph` | Seed labels and reconstructed graph | `raw_edges_reconstructed.csv` |
-| `01_sanity_eda` | Sanity checks, EDA and topology comparison | sanity summary and topology comparison |
-| `02_feature_engineering` | Seed and full-graph node features | `seed_feature_matrix_reconstructed.csv` |
-| `03_unsupervised` | Executed Node2Vec and clustering notebook | `node2vec_results/` |
-| `04_supervised` | Executed classification, repeated-CV and GNN notebooks | semantic core-CSV result folders beside each notebook group |
-| `05_interpretability` | Executed feature-group ablation and SHAP notebook | `feature_ablation_shap_results/` |
-| `06_robustness_audit` | Balance, contract confounding and grouped checks | robustness outputs |
-| `07_thesis_synthesis` | Thesis-facing evidence map and reference material | `progress_summary.md` |
+| `00_data_graph` | Stores the final seed-label file, reconstructed graph and graph provenance checks. | `data/main/final_seed_address500.csv`, `data/main/raw_edges_reconstructed.csv`, `code/build_seed_labels.py`, `code/build_reconstructed_graph.py` |
+| `01_sanity_eda` | Checks graph quality and compares topology before and after reconstruction. | `sanity_check/sanity_summary.csv`, `sanity_check/topology_comparison.csv`, `eda_walkthrough.ipynb` |
+| `02_feature_engineering` | Builds transaction-behaviour and graph-structural features. | `feature_engineering/seed_feature_matrix_reconstructed.csv`, `feature_engineering/feature_groups.json`, `feature_engineering/feature_engineering.py` |
+| `03_unsupervised` | Runs Node2Vec, clustering, p/q sensitivity and balanced ARI checks. | `node2vec.ipynb`, `node2vec_results/` |
+| `04_supervised/01_traditional_ml` | Runs Logistic Regression, Random Forest, XGBoost and repeated cross-validation. | `01_classification.ipynb`, `02_repeated_cv.ipynb`, `classification_cv_results/` |
+| `04_supervised/02_gnn_models` | Runs the final multi-seed GraphSAGE and GCN experiments. | `03_graphsage_gcn.ipynb`, `graphsage_gcn_multiseed_results/` |
+| `04_supervised/03_gnn_evaluation` | Compares GNNs with matched RF/XGBoost baselines and message-passing diagnostics. | `04_message_passing_ablation.ipynb`, `05_rf_xgb_matched_baselines.ipynb`, `06_gnn_evaluation.ipynb`, `message_passing_and_baseline_results/` |
+| `05_interpretability` | Runs feature-group ablation and SHAP interpretation. | `feature_ablation_shap.ipynb`, `feature_ablation_shap_results/` |
+| `06_robustness_audit` | Stores robustness checks for balance, contract status, entity/protocol holdout and methodology evidence. | `01_balanced_subset/`, `02_contract_confound/`, `03_entity_generalisation/`, `04_methodology_evidence/` |
 
-The eight methodology concerns identified during the thesis review are tracked
-individually in `07_thesis_synthesis/methodology_issue_tracker.md`. Existing
-experiment artifacts remain frozen while each issue is investigated and
-validated.
+## Key Data Files
 
-The active code path now retains the reproducible pipeline and the audit
-scripts needed to defend the thesis claims. Superseded one-off validation
-material is isolated under `99_archive_not_for_thesis`; formal outputs and
-resolution records for the active robustness checks remain available in
-`06_robustness_audit/outputs/` and `07_thesis_synthesis/`.
+- `00_data_graph/data/main/final_seed_address500.csv`: 500 public seed labels
+  (`CEX=51`, `DeFi=150`, internal stored label `Malicious_MEV=299`).
+- `00_data_graph/data/main/raw_edges_reconstructed.csv`: final reconstructed
+  graph with 47,197 directed aggregated transaction rows over 8,029 nodes.
+- `00_data_graph/data/reconstruction_reference/raw_edges.csv`: original
+  12,861-row label-seeded Top-100 graph, retained as reconstruction evidence.
+- `00_data_graph/data/reconstruction_reference/nonseed_to_nonseed_augmentation_edges.csv`:
+  34,336 neighbour-to-neighbour rows added during fixed-node reconstruction.
 
-## Thesis claim boundary
+The dissertation text should refer to the internal `Malicious_MEV` label as
+`MEV-related` or `MEV/arbitrage`, because the category mainly represents
+arbitrage-labelled addresses rather than independently verified malicious
+actors.
 
-This project classifies publicly labelled address roles in a label-seeded,
-fixed-node, partially reconstructed 90-day Ethereum transaction subgraph. It
-must not be described as a general malicious-address detector, a real-world
-identity attribution system, a complete Ethereum network analysis, or an
-inductive cold-start classifier for arbitrary unseen addresses.
+## Main Execution Order
 
-The stored label `Malicious_MEV` is an internal artifact name only. Thesis
-text, figures and tables should call that class `MEV-related` or
-`MEV/arbitrage`, because almost all samples are arbitrage-labelled addresses
-rather than independently verified malicious actors.
-
-High three-class macro-F1 is acceptable evidence that the observed public role
-labels are predictable within this sample, but it is also affected by account
-type. All active DeFi seeds are contracts, while CEX and MEV-related seeds are
-mostly EOAs; a minimal `is_contract + has_out_edge + out_tx_count` baseline
-already reaches high macro-F1. This contract-status confounding is a central
-limitation, not a side note.
-
-Active scripts resolve paths from their own file location, and active notebooks
-discover the project root from the current directory. Script CLI arguments still
-allow inputs and output directories to be overridden for validation runs.
-
-## Main execution order
+The project already contains frozen outputs. Re-running notebooks may overwrite
+some result files, so use this order only when intentionally reproducing the
+pipeline.
 
 ```powershell
 python 00_data_graph/code/build_seed_labels.py
@@ -65,80 +73,41 @@ jupyter nbconvert --to notebook --execute --inplace 03_unsupervised/node2vec.ipy
 jupyter nbconvert --to notebook --execute --inplace 04_supervised/01_traditional_ml/01_classification.ipynb
 jupyter nbconvert --to notebook --execute --inplace 04_supervised/01_traditional_ml/02_repeated_cv.ipynb
 jupyter nbconvert --to notebook --execute --inplace 05_interpretability/feature_ablation_shap.ipynb
-python 06_robustness_audit/code/balanced_subset_robustness.py
-python 06_robustness_audit/code/contract_confound_check.py
-python 06_robustness_audit/code/confound_followup.py
-python 06_robustness_audit/code/entity_grouped_check.py
 jupyter nbconvert --to notebook --execute --inplace 04_supervised/02_gnn_models/03_graphsage_gcn.ipynb
 jupyter nbconvert --to notebook --execute --inplace 04_supervised/03_gnn_evaluation/04_message_passing_ablation.ipynb
 jupyter nbconvert --to notebook --execute --inplace 04_supervised/03_gnn_evaluation/05_rf_xgb_matched_baselines.ipynb
 jupyter nbconvert --to notebook --execute --inplace 04_supervised/03_gnn_evaluation/06_gnn_evaluation.ipynb
+jupyter nbconvert --to notebook --execute --inplace 06_robustness_audit/01_balanced_subset/balanced_subset_robustness.ipynb
+jupyter nbconvert --to notebook --execute --inplace 06_robustness_audit/02_contract_confound/contract_confound_robustness.ipynb
+jupyter nbconvert --to notebook --execute --inplace 06_robustness_audit/03_entity_generalisation/entity_generalisation.ipynb
 ```
 
-Module 4 is notebook-centric. Each numbered notebook contains the complete
-experiment, displays tables and figures inline, and exports only the core CSVs
-needed for downstream analysis and audit. The GNN notebooks require the frozen
-balanced-subset inputs under `06_robustness_audit/outputs/balanced_subset/`;
-their numerical outputs are generated by the notebooks themselves.
+## Thesis Claim Boundary
 
-Module 3 is notebook-centric. `03_unsupervised/node2vec.ipynb` contains the
-graph construction, Node2Vec training logic, clustering evaluation, repeated
-balanced ARI, p/q sensitivity and multi-seed stability analysis. Its default
-mode verifies SHA-256 hashes and displays the frozen evidence in
-`03_unsupervised/node2vec_results/`. Optional retraining writes only to
-`03_unsupervised/node2vec_rerun_validation/`, so the active evidence and the
-completed read-only p/q checkpoint cannot be overwritten.
+The project classifies public address-role labels within one observed graph.
+It should not be described as a general malicious-address detector, a complete
+Ethereum network analysis, a real-world identity attribution system or an
+inductive cold-start classifier for arbitrary unseen addresses.
 
-`02_feature_engineering/nonseed_transaction_query/query_nonseed_tx_behaviour.py`
-performs a read-only BigQuery query and `verify_contract_reproducibility.py`
-performs live Ethereum RPC calls. Their existing outputs are already present;
-they are intentionally excluded from ordinary local reruns.
+The main conclusion is bounded: transaction-behaviour features are the most
+stable predictive source in this sample, while graph-derived methods provide
+limited or conditional additional value.
 
-The two `00_data_graph` commands are local reconstruction checks. They do not
-execute the preserved BigQuery SQL, contact Dune or overwrite frozen inputs.
+## Notes On External Calls
 
-## Frozen evidence rule
+Most scripts and notebooks use stored local files. Two areas may require
+external services if deliberately re-run:
 
-The active graph is the reconstructed graph. Final GNN performance and the
-GraphSAGE-vs-GCN comparison come from
-`04_supervised/02_gnn_models/graphsage_gcn_multiseed_results/`. Final GNN comparisons against
-RF/XGBoost come from
-`04_supervised/03_gnn_evaluation/message_passing_and_baseline_results/symmetric_multiseed_comparison.csv`.
-Single-run GNN outputs in `99_archive_not_for_thesis` must not be cited as final
-evidence.
+- `02_feature_engineering/nonseed_transaction_query/query_nonseed_tx_behaviour.py`
+  performs a BigQuery query.
+- `06_robustness_audit/02_contract_confound/query_contract_status.py` and
+  related checks may use Ethereum RPC calls.
 
-The multiseed means remain the final numerical GNN comparisons, but their
-uncertainty must be interpreted through
-`06_robustness_audit/outputs/gnn_uncertainty/`. Five training-seed labels on
-one fixed sample and fold assignment measure conditional algorithmic
-stability, not population-level significance.
+The frozen outputs needed for the dissertation are already present, so normal
+inspection of the workspace does not require network access.
 
-Graph-representation scope is governed by
-`06_robustness_audit/outputs/graph_representation/`. Node2Vec uses an
-undirected `tx_count`-weighted view; final GNN propagation is undirected and
-unweighted while its node features retain directed and weighted aggregates.
-The project does not model transaction timing, token transfers, internal
-traces or decoded protocol events.
+## Git Ignore
 
-Node2Vec reproducibility is governed by
-`06_robustness_audit/outputs/node2vec_reproducibility/`. Python, NumPy and
-Word2Vec vocabulary initialisation are now controlled, and two clean full-size
-runs were identical across different process hash seeds. Frozen pre-M07
-Node2Vec results remain preserved and are not extended as checkpoints.
-
-SHAP and statistical-test interpretation is governed by
-`06_robustness_audit/outputs/interpretability_multiplicity/`. SHAP values are
-model-specific descriptive attributions, with correlated feature components
-reported before individual ranks. Thesis-primary repeated-CV comparisons use
-the Holm-adjusted p-values in `multiplicity_adjusted_tests.csv`; single-split
-and model-seed p-values remain exploratory or conditional diagnostics.
-
-The frozen artifact hashes and the completed migration/runtime checks are
-recorded in `07_thesis_synthesis/artifact_manifest.csv` and
-`07_thesis_synthesis/verification_report.md`.
-
-The corrected entity-generalisation audit writes to
-`06_robustness_audit/outputs/entity_generalisation/`. Its tests are one-sided
-CEX-entity and DeFi-protocol holdouts with address-disjoint MEV controls. The
-older grouped/LOPO outputs are archived because they treated an MEV role label
-as an entity group and reused MEV addresses across train and test.
+The `.gitignore` file tells Git to ignore temporary caches, notebook
+checkpoints and rerun-validation outputs. It does not affect code execution or
+the dissertation PDF.

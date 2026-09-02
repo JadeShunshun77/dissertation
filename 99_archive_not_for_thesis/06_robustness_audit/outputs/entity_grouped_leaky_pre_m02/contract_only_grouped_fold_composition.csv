@@ -1,6 +1,0 @@
-fold,test_groups,test_label_counts,train_label_counts
-0,uniswap,{'DeFi': 64},"{'Malicious_MEV': 34, 'DeFi': 22}"
-1,Arbitrage Trader,{'Malicious_MEV': 33},"{'DeFi': 86, 'Malicious_MEV': 1}"
-2,curve,{'DeFi': 10},"{'DeFi': 76, 'Malicious_MEV': 34}"
-3,0x API;1inch-LOP;bancor;fluid;sushiswap;swaap,{'DeFi': 7},"{'DeFi': 79, 'Malicious_MEV': 34}"
-4,Arbitrage Trader; Sandwich Attacker;balancer;dodo;ekubo;pancakeswap,"{'DeFi': 5, 'Malicious_MEV': 1}","{'DeFi': 81, 'Malicious_MEV': 33}"

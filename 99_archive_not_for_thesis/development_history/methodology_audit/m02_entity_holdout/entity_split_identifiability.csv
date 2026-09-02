@@ -1,6 +1,0 @@
-evaluation,identifiable,reason
-full_three_class_entity_disjoint,False,MEV sub_labels are role labels and provide no independent entity groups
-cex_side_unseen_entity_eoa_only,True,CEX entity groups are available; MEV controls can be address-disjoint only
-defi_side_unseen_protocol_contract_only,True,DeFi protocol groups are available; MEV controls can be address-disjoint only
-mev_side_unseen_entity,False,MEV entity ownership/group metadata is absent
-temporal_holdout_from_current_edges,False,active edge tables are aggregated and contain no timestamps
