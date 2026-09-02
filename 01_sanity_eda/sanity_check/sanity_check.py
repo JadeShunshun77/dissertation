@@ -9,7 +9,7 @@ import numpy as np
 # =========================
 # Optional CLI args: edges_file seeds_file output_file
 # Defaults resolve from this script, so execution does not depend on cwd.
-# (progress_summary.md §13), the project's main-line dataset from Week 11 on.
+# Main-line reconstructed dataset used by the dissertation experiments.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 EDGES_FILE = Path(sys.argv[1]) if len(sys.argv) > 1 else PROJECT_ROOT / "00_data_graph" / "data" / "main" / "raw_edges_reconstructed.csv"
 SEEDS_FILE = Path(sys.argv[2]) if len(sys.argv) > 2 else PROJECT_ROOT / "00_data_graph" / "data" / "main" / "final_seed_address500.csv"

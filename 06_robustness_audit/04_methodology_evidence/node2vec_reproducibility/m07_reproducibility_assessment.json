@@ -2,7 +2,7 @@
   "active_outputs_unchanged_during_checkpoint_test": true,
   "checkpoint_tests_passed": true,
   "database_operations_performed": false,
-  "details_directory": "99_archive_not_for_thesis\\development_history\\methodology_audit\\m07_node2vec_validation",
+  "details_directory": "not_retained_in_cleaned_workspace",
   "different_pythonhashseed_values": [
     "101",
     "202"
